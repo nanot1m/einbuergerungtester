@@ -129,6 +129,15 @@
         <div id="translation-tooltip-text" class="translation-tooltip-text"></div>
       </div>
     </div>
+    <div id="image-viewer" class="image-viewer hidden" role="dialog" aria-modal="true" aria-label="Просмотр изображения">
+      <div id="image-viewer-backdrop" class="image-viewer-backdrop"></div>
+      <div class="image-viewer-ui">
+        <button id="image-viewer-close" class="image-viewer-close" type="button" aria-label="Закрыть изображение">✕</button>
+      </div>
+      <div id="image-viewer-stage" class="image-viewer-stage">
+        <img id="image-viewer-img" class="image-viewer-img" alt="" />
+      </div>
+    </div>
 
     <script type="module" src="./app.js"></script>
   </body>

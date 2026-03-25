@@ -70,6 +70,11 @@ const confirmResetBtn = document.getElementById('confirm-reset');
 const translationTooltipEl = document.getElementById('translation-tooltip');
 const translationTooltipTextEl = document.getElementById('translation-tooltip-text');
 const translationTooltipCloseEl = document.getElementById('translation-tooltip-close');
+const imageViewerEl = document.getElementById('image-viewer');
+const imageViewerBackdropEl = document.getElementById('image-viewer-backdrop');
+const imageViewerCloseEl = document.getElementById('image-viewer-close');
+const imageViewerStageEl = document.getElementById('image-viewer-stage');
+const imageViewerImgEl = document.getElementById('image-viewer-img');
 
 const gesture = {
   active: false,
@@ -84,6 +89,23 @@ const longPress = {
   suppressOptionClick: false,
 };
 let tooltipSelectableTimer = null;
+const imageViewerState = {
+  open: false,
+  scale: 1,
+  x: 0,
+  y: 0,
+  pointers: new Map(),
+  dragStartX: 0,
+  dragStartY: 0,
+  startX: 0,
+  startY: 0,
+  pinchDistance: 0,
+  pinchScale: 1,
+  pinchMidX: 0,
+  pinchMidY: 0,
+  pinchStartX: 0,
+  pinchStartY: 0,
+};
 
 function escapeRegex(input) {
   return input.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
@@ -168,12 +190,64 @@ function renderQuestionImages(container, card) {
   container.innerHTML = images
     .map(
       (image) => `<figure class="question-media-item">
-        <img src="${escapeHtml(image.src)}" alt="${escapeHtml(image.alt)}" loading="lazy" />
+        <button class="question-media-open" type="button" data-image-src="${escapeHtml(image.src)}" data-image-alt="${escapeHtml(image.alt)}" aria-label="Открыть изображение">
+          <img src="${escapeHtml(image.src)}" alt="${escapeHtml(image.alt)}" loading="lazy" />
+        </button>
         ${image.caption ? `<figcaption>${escapeHtml(image.caption)}</figcaption>` : ''}
       </figure>`
     )
     .join('');
   container.classList.remove('hidden');
+}
+
+function clamp(value, min, max) {
+  return Math.min(max, Math.max(min, value));
+}
+
+function updateViewerTransform() {
+  imageViewerImgEl.style.transform = `translate3d(${imageViewerState.x}px, ${imageViewerState.y}px, 0) scale(${imageViewerState.scale})`;
+}
+
+function closeImageViewer() {
+  imageViewerState.open = false;
+  imageViewerState.scale = 1;
+  imageViewerState.x = 0;
+  imageViewerState.y = 0;
+  imageViewerState.pointers.clear();
+  imageViewerEl.classList.add('hidden');
+  document.body.classList.remove('viewer-open');
+  imageViewerImgEl.src = '';
+  imageViewerImgEl.alt = '';
+  updateViewerTransform();
+}
+
+function openImageViewer(src, alt) {
+  imageViewerState.open = true;
+  imageViewerState.scale = 1;
+  imageViewerState.x = 0;
+  imageViewerState.y = 0;
+  imageViewerState.pointers.clear();
+  imageViewerImgEl.src = src;
+  imageViewerImgEl.alt = alt || '';
+  updateViewerTransform();
+  imageViewerEl.classList.remove('hidden');
+  document.body.classList.add('viewer-open');
+}
+
+function pointerDistance(a, b) {
+  return Math.hypot(a.x - b.x, a.y - b.y);
+}
+
+function pointerMidpoint(a, b) {
+  return { x: (a.x + b.x) / 2, y: (a.y + b.y) / 2 };
+}
+
+function clampViewerPosition() {
+  const rect = imageViewerStageEl.getBoundingClientRect();
+  const maxX = Math.max(0, ((rect.width * imageViewerState.scale) - rect.width) / 2);
+  const maxY = Math.max(0, ((rect.height * imageViewerState.scale) - rect.height) / 2);
+  imageViewerState.x = clamp(imageViewerState.x, -maxX, maxX);
+  imageViewerState.y = clamp(imageViewerState.y, -maxY, maxY);
 }
 
 function renderOptionInner(card, optionText, idx) {
@@ -858,6 +932,10 @@ confirmModalEl.addEventListener('click', (event) => {
 });
 
 document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape' && imageViewerState.open) {
+    closeImageViewer();
+    return;
+  }
   if (event.key === 'Escape' && !confirmModalEl.classList.contains('hidden')) {
     closeResetModal();
   }
@@ -969,12 +1047,128 @@ quizOptionsEl.addEventListener('pointerleave', endLongPress);
 
 questionDeEl.addEventListener('contextmenu', (event) => event.preventDefault());
 quizOptionsEl.addEventListener('contextmenu', (event) => event.preventDefault());
+questionMediaEl.addEventListener('pointerdown', (event) => event.stopPropagation());
+simQuestionMediaEl.addEventListener('pointerdown', (event) => event.stopPropagation());
+questionMediaEl.addEventListener('click', (event) => {
+  const btn = event.target.closest('[data-image-src]');
+  if (!btn) return;
+  openImageViewer(btn.dataset.imageSrc, btn.dataset.imageAlt || '');
+});
+simQuestionMediaEl.addEventListener('click', (event) => {
+  const btn = event.target.closest('[data-image-src]');
+  if (!btn) return;
+  openImageViewer(btn.dataset.imageSrc, btn.dataset.imageAlt || '');
+});
 translationTooltipCloseEl.addEventListener('click', () => hideTranslationTooltip());
 translationTooltipEl.addEventListener('pointerdown', (event) => {
   const insideCard = event.target.closest('.translation-tooltip-card');
   if (!insideCard) {
     hideTranslationTooltip();
   }
+});
+imageViewerCloseEl.addEventListener('click', () => closeImageViewer());
+imageViewerBackdropEl.addEventListener('click', () => closeImageViewer());
+imageViewerStageEl.addEventListener('dblclick', (event) => {
+  event.preventDefault();
+  if (!imageViewerState.open) return;
+  if (imageViewerState.scale > 1) {
+    imageViewerState.scale = 1;
+    imageViewerState.x = 0;
+    imageViewerState.y = 0;
+  } else {
+    imageViewerState.scale = 2.2;
+  }
+  clampViewerPosition();
+  updateViewerTransform();
+});
+imageViewerStageEl.addEventListener('wheel', (event) => {
+  if (!imageViewerState.open) return;
+  event.preventDefault();
+  const nextScale = clamp(imageViewerState.scale - event.deltaY * 0.0015, 1, 4);
+  imageViewerState.scale = nextScale;
+  if (nextScale === 1) {
+    imageViewerState.x = 0;
+    imageViewerState.y = 0;
+  }
+  clampViewerPosition();
+  updateViewerTransform();
+}, { passive: false });
+imageViewerStageEl.addEventListener('pointerdown', (event) => {
+  if (!imageViewerState.open) return;
+  event.preventDefault();
+  imageViewerStageEl.setPointerCapture(event.pointerId);
+  imageViewerState.pointers.set(event.pointerId, { x: event.clientX, y: event.clientY });
+  if (imageViewerState.pointers.size === 1) {
+    imageViewerState.dragStartX = imageViewerState.x;
+    imageViewerState.dragStartY = imageViewerState.y;
+    imageViewerState.startX = event.clientX;
+    imageViewerState.startY = event.clientY;
+  } else if (imageViewerState.pointers.size === 2) {
+    const [a, b] = [...imageViewerState.pointers.values()];
+    imageViewerState.pinchDistance = pointerDistance(a, b);
+    imageViewerState.pinchScale = imageViewerState.scale;
+    const midpoint = pointerMidpoint(a, b);
+    imageViewerState.pinchMidX = midpoint.x;
+    imageViewerState.pinchMidY = midpoint.y;
+    imageViewerState.pinchStartX = imageViewerState.x;
+    imageViewerState.pinchStartY = imageViewerState.y;
+  }
+});
+imageViewerStageEl.addEventListener('pointermove', (event) => {
+  if (!imageViewerState.open || !imageViewerState.pointers.has(event.pointerId)) return;
+  event.preventDefault();
+  imageViewerState.pointers.set(event.pointerId, { x: event.clientX, y: event.clientY });
+
+  if (imageViewerState.pointers.size >= 2) {
+    const [a, b] = [...imageViewerState.pointers.values()];
+    const nextDistance = pointerDistance(a, b);
+    if (imageViewerState.pinchDistance > 0) {
+      const midpoint = pointerMidpoint(a, b);
+      const nextScale = clamp(imageViewerState.pinchScale * (nextDistance / imageViewerState.pinchDistance), 1, 4);
+      const scaleRatio = nextScale / imageViewerState.pinchScale;
+      imageViewerState.scale = nextScale;
+      imageViewerState.x = imageViewerState.pinchStartX + (midpoint.x - imageViewerState.pinchMidX);
+      imageViewerState.y = imageViewerState.pinchStartY + (midpoint.y - imageViewerState.pinchMidY);
+      imageViewerState.x += (midpoint.x - imageViewerStageEl.clientWidth / 2) * (scaleRatio - 1);
+      imageViewerState.y += (midpoint.y - imageViewerStageEl.clientHeight / 2) * (scaleRatio - 1);
+      clampViewerPosition();
+      updateViewerTransform();
+    }
+    return;
+  }
+
+  if (imageViewerState.scale <= 1) return;
+  imageViewerState.x = imageViewerState.dragStartX + (event.clientX - imageViewerState.startX);
+  imageViewerState.y = imageViewerState.dragStartY + (event.clientY - imageViewerState.startY);
+  clampViewerPosition();
+  updateViewerTransform();
+});
+imageViewerStageEl.addEventListener('pointerup', (event) => {
+  if (imageViewerStageEl.hasPointerCapture(event.pointerId)) {
+    imageViewerStageEl.releasePointerCapture(event.pointerId);
+  }
+  imageViewerState.pointers.delete(event.pointerId);
+  if (imageViewerState.pointers.size === 1) {
+    const [rest] = [...imageViewerState.pointers.values()];
+    imageViewerState.dragStartX = imageViewerState.x;
+    imageViewerState.dragStartY = imageViewerState.y;
+    imageViewerState.startX = rest.x;
+    imageViewerState.startY = rest.y;
+  }
+  if (imageViewerState.scale <= 1) {
+    imageViewerState.x = 0;
+    imageViewerState.y = 0;
+  }
+  clampViewerPosition();
+  updateViewerTransform();
+});
+imageViewerStageEl.addEventListener('pointercancel', (event) => {
+  if (imageViewerStageEl.hasPointerCapture(event.pointerId)) {
+    imageViewerStageEl.releasePointerCapture(event.pointerId);
+  }
+  imageViewerState.pointers.delete(event.pointerId);
+  clampViewerPosition();
+  updateViewerTransform();
 });
 
 backCardBtn.addEventListener('click', () => {
