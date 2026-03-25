@@ -733,18 +733,18 @@
       "task_number": 21,
       "question": "Welches ist das Wappen der Bundesrepublik Deutschland?",
       "options": [
-        "Bild 1",
-        "Bild 2",
-        "Bild 3",
-        "Bild 4"
+        "1",
+        "2",
+        "3",
+        "4"
       ],
       "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
-      "question_ru": "Что такое герб Федеративной Республики Германия?",
+      "question_ru": "Какой из этих гербов является гербом Федеративной Республики Германия?",
       "options_ru": [
-        "Изображение 1",
-        "Изображение 2",
-        "Изображение 3",
-        "Изображение 4"
+        "1",
+        "2",
+        "3",
+        "4"
       ],
       "keywords_de": [
         "Wappen"
@@ -755,7 +755,13 @@
       "correct_letter": "A",
       "correct_index": 0,
       "correct_option_de": "Bild 1",
-      "correct_option_ru": "Изображение 1"
+      "correct_option_ru": "Изображение 1",
+      "question_images": [
+        {
+          "src": "./data/images/questions/general_21_question.png",
+          "alt": "Четыре варианта герба, пронумерованные от 1 до 4"
+        }
+      ]
     },
     {
       "section": "general",
@@ -1953,11 +1959,11 @@
         "das Bundeskanzleramt in Berlin"
       ],
       "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
-      "question_ru": "Что изображено на этой картинке? © Бундестаг Германии/Ахим Мельде",
+      "question_ru": "Что изображено на этой фотографии?",
       "options_ru": [
-        "место Бундестага в Берлине",
+        "здание Бундестага в Берлине",
         "Федеральный конституционный суд в Карлсруэ",
-        "Здание Федерального совета в Берлине",
+        "здание Бундесрата в Берлине",
         "Федеральная канцелярия в Берлине"
       ],
       "keywords_de": [
@@ -1975,7 +1981,13 @@
       "correct_letter": "A",
       "correct_index": 0,
       "correct_option_de": "den Bundestagssitz in Berlin",
-      "correct_option_ru": "место Бундестага в Берлине"
+      "correct_option_ru": "место Бундестага в Берлине",
+      "question_images": [
+        {
+          "src": "./data/images/questions/general_55_question.jpg",
+          "alt": "Здание Рейхстага в Берлине"
+        }
+      ]
     },
     {
       "section": "general",
@@ -2515,7 +2527,13 @@
       "correct_letter": "D",
       "correct_index": 3,
       "correct_option_de": "Sie/Er schlägt die Kanzlerin/den Kanzler zur Wahl vor.",
-      "correct_option_ru": "Она/он выдвигает кандидатуру канцлера на выборы."
+      "correct_option_ru": "Она/он выдвигает кандидатуру канцлера на выборы.",
+      "question_images": [
+        {
+          "src": "./data/images/questions/general_70_question.png",
+          "alt": "Густав Хайнеманн вручает Хельмуту Шмидту грамоту о назначении"
+        }
+      ]
     },
     {
       "section": "general",
@@ -4653,7 +4671,7 @@
         "4"
       ],
       "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
-      "question_ru": "Какой избирательный бюллетень будет действителен на федеральных выборах? На основании Федеральных избирательных правил (БВО), Приложение 26.",
+      "question_ru": "Какой из этих бюллетеней был бы действительным на выборах в Бундестаг?",
       "options_ru": [
         "1",
         "2",
@@ -4675,7 +4693,13 @@
       "correct_letter": "A",
       "correct_index": 0,
       "correct_option_de": "1",
-      "correct_option_ru": "1"
+      "correct_option_ru": "1",
+      "question_images": [
+        {
+          "src": "./data/images/questions/general_130_question.png",
+          "alt": "Четыре бюллетеня для выборов в Бундестаг"
+        }
+      ]
     },
     {
       "section": "general",
@@ -6317,7 +6341,13 @@
       "correct_letter": "C",
       "correct_index": 2,
       "correct_option_de": "1=Großbritannien, 2=Sowjetunion, 3=USA, 4=Frankreich",
-      "correct_option_ru": "1=Великобритания, 2=Советский Союз, 3=США, 4=Франция"
+      "correct_option_ru": "1=Великобритания, 2=Советский Союз, 3=США, 4=Франция",
+      "question_images": [
+        {
+          "src": "./data/images/questions/general_176_question.png",
+          "alt": "Карта Германии с четырьмя пронумерованными зонами оккупации"
+        }
+      ]
     },
     {
       "section": "general",
@@ -6497,7 +6527,13 @@
       "correct_letter": "B",
       "correct_index": 1,
       "correct_option_de": "Er bat Polen und die polnischen Juden um Vergebung.",
-      "correct_option_ru": "Он попросил у Польши и польских евреев прощения."
+      "correct_option_ru": "Он попросил у Польши и польских евреев прощения.",
+      "question_images": [
+        {
+          "src": "./data/images/questions/general_181_question.jpg",
+          "alt": "Вилли Брандт стоит на коленях в Варшаве"
+        }
+      ]
     },
     {
       "section": "general",
@@ -6709,7 +6745,13 @@
       "correct_letter": "D",
       "correct_index": 3,
       "correct_option_de": "DDR",
-      "correct_option_ru": "ГДР"
+      "correct_option_ru": "ГДР",
+      "question_images": [
+        {
+          "src": "./data/images/questions/general_187_question.png",
+          "alt": "Флаг с молотом, циркулем и венком из колосьев"
+        }
+      ]
     },
     {
       "section": "general",
@@ -7471,18 +7513,18 @@
       "task_number": 209,
       "question": "Welches war das Wappen der Deutschen Demokratischen Republik?",
       "options": [
-        "Bild 1",
-        "Bild 2",
-        "Bild 3",
-        "Bild 4"
+        "1",
+        "2",
+        "3",
+        "4"
       ],
       "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
-      "question_ru": "Какой был герб Германской Демократической Республики?",
+      "question_ru": "Какой из этих гербов был гербом Германской Демократической Республики?",
       "options_ru": [
-        "Изображение 1",
-        "Изображение 2",
-        "Изображение 3",
-        "Изображение 4"
+        "1",
+        "2",
+        "3",
+        "4"
       ],
       "keywords_de": [
         "Demokratischen",
@@ -7497,7 +7539,13 @@
       "correct_letter": "D",
       "correct_index": 3,
       "correct_option_de": "Bild 4",
-      "correct_option_ru": "Изображение 4"
+      "correct_option_ru": "Изображение 4",
+      "question_images": [
+        {
+          "src": "./data/images/questions/general_209_question.png",
+          "alt": "Четыре варианта герба, пронумерованные от 1 до 4"
+        }
+      ]
     },
     {
       "section": "general",
@@ -7747,7 +7795,13 @@
       "correct_letter": "A",
       "correct_index": 0,
       "correct_option_de": "der Bundesadler",
-      "correct_option_ru": "федеральный орел"
+      "correct_option_ru": "федеральный орел",
+      "question_images": [
+        {
+          "src": "./data/images/questions/general_216_question.jpg",
+          "alt": "Пленарный зал немецкого Бундестага"
+        }
+      ]
     },
     {
       "section": "general",
@@ -8075,18 +8129,18 @@
       "task_number": 226,
       "question": "Welche ist die Flagge der Europäischen Union?",
       "options": [
-        "Bild 1",
-        "Bild 2",
-        "Bild 3",
-        "Bild 4"
+        "1",
+        "2",
+        "3",
+        "4"
       ],
       "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
-      "question_ru": "Какой флаг Евросоюза?",
+      "question_ru": "Какой из этих флагов является флагом Европейского союза?",
       "options_ru": [
-        "Изображение 1",
-        "Изображение 2",
-        "Изображение 3",
-        "Изображение 4"
+        "1",
+        "2",
+        "3",
+        "4"
       ],
       "keywords_de": [
         "Europäischen",
@@ -8101,7 +8155,13 @@
       "correct_letter": "B",
       "correct_index": 1,
       "correct_option_de": "Bild 2",
-      "correct_option_ru": "Изображение 2"
+      "correct_option_ru": "Изображение 2",
+      "question_images": [
+        {
+          "src": "./data/images/questions/general_226_question.png",
+          "alt": "Четыре флага, пронумерованные от 1 до 4"
+        }
+      ]
     },
     {
       "section": "general",
@@ -8425,7 +8485,13 @@
       "correct_letter": "C",
       "correct_index": 2,
       "correct_option_de": "Frieden und Sicherheit in den Ländern der EU",
-      "correct_option_ru": "Мир и безопасность в странах ЕС"
+      "correct_option_ru": "Мир и безопасность в странах ЕС",
+      "question_images": [
+        {
+          "src": "./data/images/questions/general_235_question.jpg",
+          "alt": "Франсуа Миттеран и Гельмут Коль в Вердене"
+        }
+      ]
     },
     {
       "section": "general",
@@ -10763,20 +10829,20 @@
       "section": "state",
       "state": "Berlin",
       "task_number": 1,
-      "question": "Welches Wappen gehört zum Bundesland Berlin? Bi ld 1 Bild 2 Bild 3 Bild 4",
+      "question": "Welches Wappen gehört zum Bundesland Berlin?",
       "options": [
-        "Bild 1",
-        "Bild 2",
-        "Bild 3",
-        "Bild 4"
+        "1",
+        "2",
+        "3",
+        "4"
       ],
       "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
-      "question_ru": "Какой герб принадлежит федеральной земле Берлин? Изображение 1 Изображение 2 Изображение 3 Изображение 4",
+      "question_ru": "Какой из этих гербов принадлежит федеральной земле Берлин?",
       "options_ru": [
-        "Изображение 1",
-        "Изображение 2",
-        "Изображение 3",
-        "Изображение 4"
+        "1",
+        "2",
+        "3",
+        "4"
       ],
       "keywords_de": [
         "Wappen",
@@ -10789,7 +10855,13 @@
       "correct_letter": "D",
       "correct_index": 3,
       "correct_option_de": "Bild 4",
-      "correct_option_ru": "Изображение 4"
+      "correct_option_ru": "Изображение 4",
+      "question_images": [
+        {
+          "src": "./data/images/questions/berlin_1_question.png",
+          "alt": "Четыре варианта герба, пронумерованные от 1 до 4"
+        }
+      ]
     },
     {
       "section": "state",
@@ -11019,7 +11091,7 @@
         "4"
       ],
       "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
-      "question_ru": "Какой федеральной землей является Берлин?",
+      "question_ru": "Какая из отмеченных на карте федеральных земель является Берлином?",
       "options_ru": [
         "1",
         "2",
@@ -11035,7 +11107,13 @@
       "correct_letter": "D",
       "correct_index": 3,
       "correct_option_de": "4",
-      "correct_option_ru": "4"
+      "correct_option_ru": "4",
+      "question_images": [
+        {
+          "src": "./data/images/questions/berlin_8_question.png",
+          "alt": "Карта Германии с четырьмя пронумерованными отметками"
+        }
+      ]
     },
     {
       "section": "state",

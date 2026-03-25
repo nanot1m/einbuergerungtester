@@ -259,6 +259,43 @@ h1 {
   font-size: 1.05rem;
 }
 
+.question-media {
+  margin-top: 10px;
+  display: grid;
+  gap: 10px;
+}
+
+.question-media.hidden {
+  display: none;
+}
+
+.question-media-item {
+  margin: 0;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid #dde6ea;
+  background: #f6f8f8;
+  min-height: 180px;
+  max-height: 220px;
+}
+
+.question-media-item img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 180px;
+  max-height: 220px;
+  object-fit: contain;
+  background: #f3f6f6;
+}
+
+.question-media-item figcaption {
+  padding: 8px 10px;
+  color: #60717a;
+  font-size: 0.76rem;
+  line-height: 1.35;
+}
+
 .card-face h3 {
   color: #24414e;
 }
@@ -331,6 +368,32 @@ h1 {
   cursor: pointer;
   -webkit-user-select: none;
   user-select: none;
+}
+
+.option-content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.option-content.with-image {
+  align-items: stretch;
+}
+
+.option-image {
+  display: block;
+  width: 100%;
+  max-height: 132px;
+  object-fit: contain;
+  border-radius: 10px;
+  background: #f5f7f7;
+  border: 1px solid #e0e7ea;
+}
+
+.option-image-label {
+  color: #5d7079;
+  font-size: 0.74rem;
+  line-height: 1.2;
 }
 
 .quiz-option-btn.selected {
@@ -759,6 +822,16 @@ mark {
   .question {
     font-size: 1rem;
     line-height: 1.42;
+  }
+
+  .question-media-item {
+    min-height: 150px;
+    max-height: 180px;
+  }
+
+  .question-media-item img {
+    min-height: 150px;
+    max-height: 180px;
   }
 
   .quiz-option-btn {

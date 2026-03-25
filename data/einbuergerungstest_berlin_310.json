@@ -273,12 +273,25 @@
       "task_number": 21,
       "question": "Welches ist das Wappen der Bundesrepublik Deutschland?",
       "options": [
-        "Bild 1",
-        "Bild 2",
-        "Bild 3",
-        "Bild 4"
+        "1",
+        "2",
+        "3",
+        "4"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "question_ru": "Какой из этих гербов является гербом Федеративной Республики Германия?",
+      "options_ru": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "question_images": [
+        {
+          "src": "./data/images/questions/general_21_question.png",
+          "alt": "Четыре варианта герба, пронумерованные от 1 до 4"
+        }
+      ]
     },
     {
       "section": "general",
@@ -720,7 +733,20 @@
         "das Bundesratsgebäude in Berlin",
         "das Bundeskanzleramt in Berlin"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "question_images": [
+        {
+          "src": "./data/images/questions/general_55_question.jpg",
+          "alt": "Здание Рейхстага в Берлине"
+        }
+      ],
+      "question_ru": "Что изображено на этой фотографии?",
+      "options_ru": [
+        "здание Бундестага в Берлине",
+        "Федеральный конституционный суд в Карлсруэ",
+        "здание Бундесрата в Берлине",
+        "Федеральная канцелярия в Берлине"
+      ]
     },
     {
       "section": "general",
@@ -915,7 +941,13 @@
         "Sie/Er wählt die Ministerinnen/Minister aus.",
         "Sie/Er schlägt die Kanzlerin/den Kanzler zur Wahl vor."
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "question_images": [
+        {
+          "src": "./data/images/questions/general_70_question.png",
+          "alt": "Густав Хайнеманн вручает Хельмуту Шмидту грамоту о назначении"
+        }
+      ]
     },
     {
       "section": "general",
@@ -1695,7 +1727,20 @@
         "3",
         "4"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "question_images": [
+        {
+          "src": "./data/images/questions/general_130_question.png",
+          "alt": "Четыре бюллетеня для выборов в Бундестаг"
+        }
+      ],
+      "question_ru": "Какой из этих бюллетеней был бы действительным на выборах в Бундестаг?",
+      "options_ru": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ]
     },
     {
       "section": "general",
@@ -2293,7 +2338,13 @@
         "1=Großbritannien, 2=Sowjetunion, 3=USA, 4=Frankreich",
         "1=Großbritannien, 2=USA, 3=Sowjetunion, 4=Frankreich"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "question_images": [
+        {
+          "src": "./data/images/questions/general_176_question.png",
+          "alt": "Карта Германии с четырьмя пронумерованными зонами оккупации"
+        }
+      ]
     },
     {
       "section": "general",
@@ -2358,7 +2409,13 @@
         "Er zeigte seine Demut vor dem Warschauer Pakt.",
         "Er sprach ein Gebet am Grab des Unbekannten Soldaten."
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "question_images": [
+        {
+          "src": "./data/images/questions/general_181_question.jpg",
+          "alt": "Вилли Брандт стоит на коленях в Варшаве"
+        }
+      ]
     },
     {
       "section": "general",
@@ -2436,7 +2493,13 @@
         "\"Drittes Reich\"",
         "DDR"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "question_images": [
+        {
+          "src": "./data/images/questions/general_187_question.png",
+          "alt": "Флаг с молотом, циркулем и венком из колосьев"
+        }
+      ]
     },
     {
       "section": "general",
@@ -2717,12 +2780,25 @@
       "task_number": 209,
       "question": "Welches war das Wappen der Deutschen Demokratischen Republik?",
       "options": [
-        "Bild 1",
-        "Bild 2",
-        "Bild 3",
-        "Bild 4"
+        "1",
+        "2",
+        "3",
+        "4"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "question_ru": "Какой из этих гербов был гербом Германской Демократической Республики?",
+      "options_ru": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "question_images": [
+        {
+          "src": "./data/images/questions/general_209_question.png",
+          "alt": "Четыре варианта герба, пронумерованные от 1 до 4"
+        }
+      ]
     },
     {
       "section": "general",
@@ -2813,7 +2889,13 @@
         "der Reichsadler",
         "die Reichskrone"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "question_images": [
+        {
+          "src": "./data/images/questions/general_216_question.jpg",
+          "alt": "Пленарный зал немецкого Бундестага"
+        }
+      ]
     },
     {
       "section": "general",
@@ -2938,12 +3020,25 @@
       "task_number": 226,
       "question": "Welche ist die Flagge der Europäischen Union?",
       "options": [
-        "Bild 1",
-        "Bild 2",
-        "Bild 3",
-        "Bild 4"
+        "1",
+        "2",
+        "3",
+        "4"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "question_ru": "Какой из этих флагов является флагом Европейского союза?",
+      "options_ru": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "question_images": [
+        {
+          "src": "./data/images/questions/general_226_question.png",
+          "alt": "Четыре флага, пронумерованные от 1 до 4"
+        }
+      ]
     },
     {
       "section": "general",
@@ -3060,7 +3155,13 @@
         "Frieden und Sicherheit in den Ländern der EU",
         "einheitliche Feiertage in den Ländern der EU"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "question_images": [
+        {
+          "src": "./data/images/questions/general_235_question.jpg",
+          "alt": "Франсуа Миттеран и Гельмут Коль в Вердене"
+        }
+      ]
     },
     {
       "section": "general",
@@ -3911,14 +4012,27 @@
       "section": "state",
       "state": "Berlin",
       "task_number": 1,
-      "question": "Welches Wappen gehört zum Bundesland Berlin? Bi ld 1 Bild 2 Bild 3 Bild 4",
+      "question": "Welches Wappen gehört zum Bundesland Berlin?",
       "options": [
-        "Bild 1",
-        "Bild 2",
-        "Bild 3",
-        "Bild 4"
+        "1",
+        "2",
+        "3",
+        "4"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "question_ru": "Какой из этих гербов принадлежит федеральной земле Берлин?",
+      "options_ru": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "question_images": [
+        {
+          "src": "./data/images/questions/berlin_1_question.png",
+          "alt": "Четыре варианта герба, пронумерованные от 1 до 4"
+        }
+      ]
     },
     {
       "section": "state",
@@ -4009,7 +4123,20 @@
         "3",
         "4"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "question_images": [
+        {
+          "src": "./data/images/questions/berlin_8_question.png",
+          "alt": "Карта Германии с четырьмя пронумерованными отметками"
+        }
+      ],
+      "question_ru": "Какая из отмеченных на карте федеральных земель является Берлином?",
+      "options_ru": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ]
     },
     {
       "section": "state",

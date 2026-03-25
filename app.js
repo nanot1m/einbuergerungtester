@@ -41,6 +41,7 @@ const simCardEl = document.getElementById('sim-card');
 const simTagEl = document.getElementById('sim-tag');
 const simGroupEl = document.getElementById('sim-group');
 const simQuestionEl = document.getElementById('sim-question');
+const simQuestionMediaEl = document.getElementById('sim-question-media');
 const simOptionsEl = document.getElementById('sim-options');
 const simPrevEl = document.getElementById('sim-prev');
 const simNextEl = document.getElementById('sim-next');
@@ -55,6 +56,7 @@ const cardGroupEl = document.getElementById('card-group');
 const backCardBtn = document.getElementById('back-card');
 const forwardCardBtn = document.getElementById('forward-card');
 const questionDeEl = document.getElementById('question-de');
+const questionMediaEl = document.getElementById('question-media');
 const quizOptionsEl = document.getElementById('quiz-options');
 const revealActionsEl = document.getElementById('reveal-actions');
 const gradeActionsEl = document.getElementById('grade-actions');
@@ -120,6 +122,73 @@ function escapeHtml(text) {
     .replaceAll('>', '&gt;')
     .replaceAll('"', '&quot;')
     .replaceAll("'", '&#39;');
+}
+
+function normalizeImageItem(item) {
+  if (!item) return null;
+  if (typeof item === 'string') return { src: item, alt: 'Иллюстрация к вопросу', caption: '' };
+  if (typeof item !== 'object') return null;
+
+  const src = item.src || item.url || item.path || item.image || item.image_url;
+  if (!src) return null;
+
+  return {
+    src,
+    alt: item.alt || item.caption || item.title || 'Иллюстрация к вопросу',
+    caption: item.caption || item.title || '',
+  };
+}
+
+function extractQuestionImages(card) {
+  const buckets = [
+    card.question_images,
+    card.image,
+    card.image_url,
+    card.images,
+    card.media,
+    card.media?.images,
+    card.assets,
+    card.assets?.images,
+  ];
+
+  return buckets
+    .flatMap((item) => (Array.isArray(item) ? item : item ? [item] : []))
+    .map(normalizeImageItem)
+    .filter(Boolean);
+}
+
+function renderQuestionImages(container, card) {
+  const images = extractQuestionImages(card);
+  if (!images.length) {
+    container.innerHTML = '';
+    container.classList.add('hidden');
+    return;
+  }
+
+  container.innerHTML = images
+    .map(
+      (image) => `<figure class="question-media-item">
+        <img src="${escapeHtml(image.src)}" alt="${escapeHtml(image.alt)}" loading="lazy" />
+        ${image.caption ? `<figcaption>${escapeHtml(image.caption)}</figcaption>` : ''}
+      </figure>`
+    )
+    .join('');
+  container.classList.remove('hidden');
+}
+
+function renderOptionInner(card, optionText, idx) {
+  const optionImage = Array.isArray(card.option_images) ? card.option_images[idx] : null;
+  const image = normalizeImageItem(optionImage);
+  const label = escapeHtml(optionText);
+
+  if (!image) {
+    return `<span>${label}</span>`;
+  }
+
+  return `<span class="option-content with-image">
+    <img class="option-image" src="${escapeHtml(image.src)}" alt="${escapeHtml(image.alt || optionText)}" loading="lazy" />
+    <span class="option-image-label">${label}</span>
+  </span>`;
 }
 
 function cardId(card) {
@@ -344,16 +413,17 @@ function renderSimView() {
   simGroupEl.textContent = stage;
   simGroupEl.className = `tag group-tag ${stage}`;
   simQuestionEl.textContent = q.question;
+  renderQuestionImages(simQuestionMediaEl, q);
 
   simOptionsEl.innerHTML = q.options
     .map((opt, idx) => {
       const selected = sim.answers[cardId(q)] === idx ? ' selected' : '';
-      return `<li><button class="quiz-option-btn${selected}" data-sim-option="${idx}" type="button"><span>${escapeHtml(opt)}</span></button></li>`;
+      return `<li><button class="quiz-option-btn${selected}" data-sim-option="${idx}" type="button">${renderOptionInner(q, opt, idx)}</button></li>`;
     })
     .join('');
 
-  simPrevEl.disabled = sim.current === 0;
-  simNextEl.disabled = sim.current >= sim.questions.length - 1;
+  simPrevEl.disabled = false;
+  simNextEl.disabled = false;
   simSubmitEl.disabled = false;
 }
 
@@ -609,7 +679,7 @@ function renderQuizOptions(card, revealCorrect = false) {
 
       return `<li>
         <button class="${classes.join(' ')}" data-option-index="${idx}" ${revealCorrect ? 'disabled' : ''}>
-          <span>${escapeHtml(opt)}</span>
+          ${renderOptionInner(card, opt, idx)}
         </button>
       </li>`;
     })
@@ -633,6 +703,7 @@ function renderCard(card) {
   cardGroupEl.className = `tag group-tag ${meta.stage}`;
 
   questionDeEl.textContent = card.question;
+  renderQuestionImages(questionMediaEl, card);
 
   renderQuizOptions(card, false);
 
@@ -909,8 +980,9 @@ translationTooltipEl.addEventListener('pointerdown', (event) => {
 backCardBtn.addEventListener('click', () => {
   if (!state.currentCard || !state.deck) return;
   const idx = currentCardIndex();
-  if (idx <= 0) return;
-  const prevCard = state.deck.questions[idx - 1];
+  if (idx < 0) return;
+  const prevIdx = idx === 0 ? state.deck.questions.length - 1 : idx - 1;
+  const prevCard = state.deck.questions[prevIdx];
   animateFlip(() => {
     renderStats();
     renderCard(prevCard);
@@ -920,8 +992,9 @@ backCardBtn.addEventListener('click', () => {
 forwardCardBtn.addEventListener('click', () => {
   if (!state.currentCard || !state.deck) return;
   const idx = currentCardIndex();
-  if (idx < 0 || idx >= state.deck.questions.length - 1) return;
-  const nextCard = state.deck.questions[idx + 1];
+  if (idx < 0) return;
+  const nextIdx = idx === state.deck.questions.length - 1 ? 0 : idx + 1;
+  const nextCard = state.deck.questions[nextIdx];
   animateFlip(() => {
     renderStats();
     renderCard(nextCard);
@@ -967,13 +1040,15 @@ simOptionsEl.addEventListener('click', (event) => {
 
 simPrevEl.addEventListener('click', () => {
   if (!state.simulation.active) return;
-  state.simulation.current = Math.max(0, state.simulation.current - 1);
+  const lastIdx = state.simulation.questions.length - 1;
+  state.simulation.current = state.simulation.current === 0 ? lastIdx : state.simulation.current - 1;
   renderSimView();
 });
 
 simNextEl.addEventListener('click', () => {
   if (!state.simulation.active) return;
-  state.simulation.current = Math.min(state.simulation.questions.length - 1, state.simulation.current + 1);
+  const lastIdx = state.simulation.questions.length - 1;
+  state.simulation.current = state.simulation.current === lastIdx ? 0 : state.simulation.current + 1;
   renderSimView();
 });
 
