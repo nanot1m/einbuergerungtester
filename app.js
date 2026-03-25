@@ -12,6 +12,13 @@ const state = {
   suppressOptionClick: false,
   activeTab: 'study',
   statsCategory: 'due',
+  simulation: {
+    active: false,
+    questions: [],
+    answers: {},
+    current: 0,
+    submitted: false,
+  },
 };
 
 const dueCountEl = document.getElementById('due-count');
@@ -24,8 +31,23 @@ const studyViewEl = document.getElementById('study-view');
 const statsViewEl = document.getElementById('stats-view');
 const tabStudyEl = document.getElementById('tab-study');
 const tabStatsEl = document.getElementById('tab-stats');
+const tabSimEl = document.getElementById('tab-sim');
 const statsCategoriesEl = document.getElementById('stats-categories');
 const statsListEl = document.getElementById('stats-list');
+const simViewEl = document.getElementById('sim-view');
+const simStartEl = document.getElementById('sim-start');
+const simProgressEl = document.getElementById('sim-progress');
+const simCardEl = document.getElementById('sim-card');
+const simTagEl = document.getElementById('sim-tag');
+const simGroupEl = document.getElementById('sim-group');
+const simQuestionEl = document.getElementById('sim-question');
+const simOptionsEl = document.getElementById('sim-options');
+const simPrevEl = document.getElementById('sim-prev');
+const simNextEl = document.getElementById('sim-next');
+const simSubmitEl = document.getElementById('sim-submit');
+const simResultModalEl = document.getElementById('sim-result-modal');
+const simResultCloseEl = document.getElementById('sim-result-close');
+const simResultContentEl = document.getElementById('sim-result-content');
 
 const cardIndexEl = document.getElementById('card-index');
 const cardTagEl = document.getElementById('card-tag');
@@ -126,6 +148,7 @@ function defaultMeta() {
     dueAt: 0,
     lastReviewedAt: 0,
     stage: 'new',
+    noTranslationSuccesses: 0,
   };
 }
 
@@ -240,15 +263,21 @@ function setRevealMode(showAnswer) {
 function updateTabButtons() {
   tabStudyEl.classList.toggle('active', state.activeTab === 'study');
   tabStatsEl.classList.toggle('active', state.activeTab === 'stats');
+  tabSimEl.classList.toggle('active', state.activeTab === 'sim');
 }
 
 function switchTab(nextTab) {
   if (state.activeTab === nextTab) return;
-  const fromEl = state.activeTab === 'study' ? studyViewEl : statsViewEl;
-  const toEl = nextTab === 'study' ? studyViewEl : statsViewEl;
+  const viewByTab = { study: studyViewEl, stats: statsViewEl, sim: simViewEl };
+  const fromEl = viewByTab[state.activeTab];
+  const toEl = viewByTab[nextTab];
   state.activeTab = nextTab;
   updateTabButtons();
+  hideTranslationTooltip();
+  clearTimeout(longPress.timer);
+  longPress.triggered = false;
   if (nextTab === 'stats') renderStatsView();
+  if (nextTab === 'sim') renderSimView();
 
   toEl.classList.remove('hidden');
   toEl.style.opacity = '0';
@@ -274,6 +303,106 @@ function switchTab(nextTab) {
     toEl.style.opacity = '';
     toEl.style.transform = '';
   }, 180);
+}
+
+function shuffled(arr) {
+  const out = [...arr];
+  for (let i = out.length - 1; i > 0; i -= 1) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [out[i], out[j]] = [out[j], out[i]];
+  }
+  return out;
+}
+
+function startSimulation() {
+  const general = state.deck.questions.filter((q) => q.section === 'general');
+  const berlin = state.deck.questions.filter((q) => q.section === 'state' && q.state === 'Berlin');
+  const selected = [...shuffled(general).slice(0, 30), ...shuffled(berlin).slice(0, 3)];
+  state.simulation = {
+    active: true,
+    questions: shuffled(selected),
+    answers: {},
+    current: 0,
+    submitted: false,
+  };
+  renderSimView();
+}
+
+function renderSimView() {
+  const sim = state.simulation;
+  if (!sim.active) {
+    simProgressEl.textContent = 'Не начат';
+    simCardEl.classList.add('hidden');
+    return;
+  }
+
+  const q = sim.questions[sim.current];
+  simCardEl.classList.remove('hidden');
+  simProgressEl.textContent = `${sim.current + 1} / ${sim.questions.length}`;
+  simTagEl.textContent = q.section === 'state' ? `Berlin #${q.task_number}` : `Общие #${q.task_number}`;
+  const stage = getMeta(q).stage;
+  simGroupEl.textContent = stage;
+  simGroupEl.className = `tag group-tag ${stage}`;
+  simQuestionEl.textContent = q.question;
+
+  simOptionsEl.innerHTML = q.options
+    .map((opt, idx) => {
+      const selected = sim.answers[cardId(q)] === idx ? ' selected' : '';
+      return `<li><button class="quiz-option-btn${selected}" data-sim-option="${idx}" type="button"><span>${escapeHtml(opt)}</span></button></li>`;
+    })
+    .join('');
+
+  simPrevEl.disabled = sim.current === 0;
+  simNextEl.disabled = sim.current >= sim.questions.length - 1;
+  simSubmitEl.disabled = false;
+}
+
+function openSimResultModal() {
+  const sim = state.simulation;
+  const correct = sim.questions.filter((qq) => sim.answers[cardId(qq)] === qq.correct_index).length;
+  const passed = correct >= 17;
+  const wrong = sim.questions.filter((qq) => sim.answers[cardId(qq)] !== qq.correct_index);
+
+  simResultContentEl.innerHTML = `
+    <div id="sim-result-title" class="sim-result-title">${passed ? 'Тест сдан' : 'Тест не сдан'} — ${correct} / ${sim.questions.length}</div>
+    <div class="sim-result-list">
+      ${wrong.length === 0
+        ? '<div class="stats-empty">Ошибок нет. Отличный результат.</div>'
+        : wrong
+            .map((qq) => {
+              const idx = state.deck.questions.findIndex((x) => cardId(x) === cardId(qq)) + 1;
+              return `<div class="sim-result-item">
+                <div class="sim-result-item-title">${idx} / ${state.deck.questions.length}</div>
+                <div class="sim-result-item-q">${escapeHtml(qq.question)}</div>
+                <button class="back-btn" type="button" data-sim-jump="${cardId(qq)}">Открыть в тренировке</button>
+              </div>`;
+            })
+            .join('')}
+    </div>
+  `;
+  simResultModalEl.classList.remove('hidden');
+}
+
+function openSimMissingModal(unanswered) {
+  simResultContentEl.innerHTML = `
+    <div id="sim-result-title" class="sim-result-title">Есть пропуски: ${unanswered.length}. Ответьте на них перед завершением.</div>
+    <div class="sim-missing">
+      <div class="sim-missing-list">
+        ${unanswered
+          .map((q) => {
+            const idx = state.simulation.questions.findIndex((x) => cardId(x) === cardId(q)) + 1;
+            return `<button class="sim-jump-btn" type="button" data-sim-missing-jump="${cardId(q)}">Вопрос ${idx}</button>`;
+          })
+          .join('')}
+      </div>
+    </div>
+  `;
+  simResultModalEl.classList.remove('hidden');
+}
+
+function closeSimResultModal() {
+  simResultModalEl.classList.add('hidden');
+  simResultContentEl.innerHTML = '';
 }
 
 function animateFlip(updateUI, direction = 'none') {
@@ -554,10 +683,18 @@ function applyGrade(grade, direction = 'none') {
   if (state.translationUsedForCurrent) {
     state.schedule.translationStack = state.schedule.translationStack.filter((x) => x !== id);
     state.schedule.translationStack.push(id);
-  } else if (state.lastAnswerCorrect === true) {
+    meta.noTranslationSuccesses = 0;
     state.schedule.noTranslationMastered = state.schedule.noTranslationMastered.filter((x) => x !== id);
-    state.schedule.noTranslationMastered.push(id);
-    state.schedule.translationStack = state.schedule.translationStack.filter((x) => x !== id);
+  } else if (state.lastAnswerCorrect === true) {
+    meta.noTranslationSuccesses = (meta.noTranslationSuccesses || 0) + 1;
+    if (meta.noTranslationSuccesses >= 2) {
+      state.schedule.noTranslationMastered = state.schedule.noTranslationMastered.filter((x) => x !== id);
+      state.schedule.noTranslationMastered.push(id);
+      state.schedule.translationStack = state.schedule.translationStack.filter((x) => x !== id);
+    }
+  } else {
+    meta.noTranslationSuccesses = 0;
+    state.schedule.noTranslationMastered = state.schedule.noTranslationMastered.filter((x) => x !== id);
   }
 
   incrementTodayDoneUnique(id);
@@ -731,6 +868,7 @@ cardEl.addEventListener('pointercancel', () => {
 
 questionDeEl.addEventListener('pointerdown', (event) => {
   event.stopPropagation();
+  if (state.activeTab !== 'study') return;
   if (!state.currentCard) return;
   startLongPress(
     () => `DE: ${state.currentCard?.question || ''}\nRU: ${state.currentCard?.question_ru || ''}`,
@@ -744,6 +882,7 @@ questionDeEl.addEventListener('pointerleave', endLongPress);
 
 quizOptionsEl.addEventListener('pointerdown', (event) => {
   event.stopPropagation();
+  if (state.activeTab !== 'study') return;
   const btn = event.target.closest('[data-option-index]');
   if (!btn || !state.currentCard) return;
   const idx = Number(btn.dataset.optionIndex);
@@ -791,6 +930,7 @@ forwardCardBtn.addEventListener('click', () => {
 
 tabStudyEl.addEventListener('click', () => switchTab('study'));
 tabStatsEl.addEventListener('click', () => switchTab('stats'));
+tabSimEl.addEventListener('click', () => switchTab('sim'));
 
 statsCategoriesEl.addEventListener('click', (event) => {
   const btn = event.target.closest('[data-category]');
@@ -811,6 +951,73 @@ statsListEl.addEventListener('click', (event) => {
       renderCard(target);
     }, 'enter-right');
   }, 20);
+});
+
+simStartEl.addEventListener('click', () => {
+  startSimulation();
+});
+
+simOptionsEl.addEventListener('click', (event) => {
+  const btn = event.target.closest('[data-sim-option]');
+  if (!btn || !state.simulation.active || state.simulation.submitted) return;
+  const q = state.simulation.questions[state.simulation.current];
+  state.simulation.answers[cardId(q)] = Number(btn.dataset.simOption);
+  renderSimView();
+});
+
+simPrevEl.addEventListener('click', () => {
+  if (!state.simulation.active) return;
+  state.simulation.current = Math.max(0, state.simulation.current - 1);
+  renderSimView();
+});
+
+simNextEl.addEventListener('click', () => {
+  if (!state.simulation.active) return;
+  state.simulation.current = Math.min(state.simulation.questions.length - 1, state.simulation.current + 1);
+  renderSimView();
+});
+
+simSubmitEl.addEventListener('click', () => {
+  if (!state.simulation.active) return;
+  const unanswered = state.simulation.questions.filter((q) => !(cardId(q) in state.simulation.answers));
+  if (unanswered.length > 0) {
+    openSimMissingModal(unanswered);
+    return;
+  }
+  state.simulation.submitted = true;
+  openSimResultModal();
+});
+
+simResultContentEl.addEventListener('click', (event) => {
+  const reviewBtn = event.target.closest('[data-sim-jump]');
+  if (reviewBtn && state.deck) {
+    const target = state.deck.questions.find((q) => cardId(q) === reviewBtn.dataset.simJump);
+    if (!target) return;
+    closeSimResultModal();
+    switchTab('study');
+    window.setTimeout(() => {
+      animateFlip(() => {
+        renderStats();
+        renderCard(target);
+      }, 'enter-right');
+    }, 20);
+    return;
+  }
+
+  const missingBtn = event.target.closest('[data-sim-missing-jump]');
+  if (!missingBtn || !state.simulation.active) return;
+  const idx = state.simulation.questions.findIndex((q) => cardId(q) === missingBtn.dataset.simMissingJump);
+  if (idx < 0) return;
+  closeSimResultModal();
+  state.simulation.current = idx;
+  renderSimView();
+});
+
+simResultCloseEl.addEventListener('click', () => closeSimResultModal());
+simResultModalEl.addEventListener('click', (event) => {
+  if (event.target === simResultModalEl) {
+    closeSimResultModal();
+  }
 });
 
 async function init() {

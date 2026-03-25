@@ -33,6 +33,7 @@
       <div class="tabs">
         <button id="tab-study" class="tab-btn active" type="button">Тренировка</button>
         <button id="tab-stats" class="tab-btn" type="button">Статистика</button>
+        <button id="tab-sim" class="tab-btn" type="button">Симуляция</button>
       </div>
 
       <div id="study-view">
@@ -74,6 +75,32 @@
         <div id="stats-categories" class="stats-categories"></div>
         <div id="stats-list" class="stats-list"></div>
       </section>
+
+      <section id="sim-view" class="sim-view hidden">
+        <div class="sim-top">
+          <button id="sim-start" class="back-btn" type="button">Новый тест (33)</button>
+          <div class="nav-row">
+            <button id="sim-prev" class="back-btn" type="button">&lt; назад</button>
+            <span id="sim-progress" class="nav-index">Не начат</span>
+            <button id="sim-next" class="back-btn" type="button">вперед &gt;</button>
+          </div>
+        </div>
+
+        <section id="sim-card" class="card sim-card hidden">
+          <div class="card-meta">
+            <span id="sim-tag" class="tag">Общие</span>
+            <span id="sim-group" class="tag group-tag">new</span>
+          </div>
+          <div class="card-face">
+            <p id="sim-question" class="question"></p>
+            <ol id="sim-options" class="quiz-options sim-options"></ol>
+          </div>
+          <div class="actions">
+            <button id="sim-submit" class="primary-btn" type="button">Завершить тест</button>
+          </div>
+        </section>
+
+      </section>
     </main>
 
     <div id="confirm-modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="confirm-title">
@@ -84,6 +111,14 @@
           <button id="cancel-reset" class="modal-btn ghost">Отмена</button>
           <button id="confirm-reset" class="modal-btn danger">Сбросить</button>
         </div>
+      </div>
+    </div>
+    <div id="sim-result-modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="sim-result-title">
+      <div class="modal-card sim-result-modal-card">
+        <div class="modal-actions top">
+          <button id="sim-result-close" class="modal-btn ghost" type="button">Закрыть</button>
+        </div>
+        <div id="sim-result-content"></div>
       </div>
     </div>
     <div id="translation-tooltip" class="translation-tooltip hidden" role="status" aria-live="polite">
