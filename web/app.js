@@ -1,0 +1,829 @@
+const DATA_PATH = '../data/einbuergerungstest_berlin_310_ru.json';
+const STORAGE_KEY = 'einburgerung-berlin-sm2-v2';
+
+const state = {
+  deck: null,
+  schedule: {},
+  currentCard: null,
+  selectedOptionIndex: null,
+  answerChecked: false,
+  lastAnswerCorrect: null,
+  translationUsedForCurrent: false,
+  suppressOptionClick: false,
+  activeTab: 'study',
+  statsCategory: 'due',
+};
+
+const dueCountEl = document.getElementById('due-count');
+const doneTodayEl = document.getElementById('done-today');
+const withoutTranslationCountEl = document.getElementById('without-translation-count');
+const translationStackCountEl = document.getElementById('translation-stack-count');
+const cardEl = document.getElementById('card');
+const emptyStateEl = document.getElementById('empty-state');
+const studyViewEl = document.getElementById('study-view');
+const statsViewEl = document.getElementById('stats-view');
+const tabStudyEl = document.getElementById('tab-study');
+const tabStatsEl = document.getElementById('tab-stats');
+const statsCategoriesEl = document.getElementById('stats-categories');
+const statsListEl = document.getElementById('stats-list');
+
+const cardIndexEl = document.getElementById('card-index');
+const cardTagEl = document.getElementById('card-tag');
+const cardGroupEl = document.getElementById('card-group');
+const backCardBtn = document.getElementById('back-card');
+const forwardCardBtn = document.getElementById('forward-card');
+const questionDeEl = document.getElementById('question-de');
+const quizOptionsEl = document.getElementById('quiz-options');
+const revealActionsEl = document.getElementById('reveal-actions');
+const gradeActionsEl = document.getElementById('grade-actions');
+
+const showAnswerBtn = document.getElementById('show-answer');
+const resetProgressBtn = document.getElementById('reset-progress');
+const swipeIndicatorEl = document.getElementById('swipe-indicator');
+const confirmModalEl = document.getElementById('confirm-modal');
+const cancelResetBtn = document.getElementById('cancel-reset');
+const confirmResetBtn = document.getElementById('confirm-reset');
+const translationTooltipEl = document.getElementById('translation-tooltip');
+const translationTooltipTextEl = document.getElementById('translation-tooltip-text');
+const translationTooltipCloseEl = document.getElementById('translation-tooltip-close');
+
+const gesture = {
+  active: false,
+  startX: 0,
+  startY: 0,
+  startTs: 0,
+};
+
+const longPress = {
+  timer: null,
+  triggered: false,
+  suppressOptionClick: false,
+};
+let tooltipSelectableTimer = null;
+
+function escapeRegex(input) {
+  return input.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+function highlightText(text, keywords = []) {
+  let out = text;
+  for (const keyword of keywords) {
+    if (!keyword || keyword.length < 3) continue;
+    const re = new RegExp(`(${escapeRegex(keyword)})`, 'gi');
+    out = out.replace(re, '<mark>$1</mark>');
+  }
+  return out;
+}
+
+function questionFocusTerms(question, keywords = []) {
+  const terms = [...keywords];
+
+  const fixed = ['Menschen'];
+  for (const t of fixed) {
+    if (question.includes(t)) terms.push(t);
+  }
+
+  const phraseMatch = question.match(/gegen\s+die\s+[^,.!?;]+?\s+sagen/i);
+  if (phraseMatch?.[0]) {
+    terms.push(phraseMatch[0].trim());
+  }
+
+  return [...new Set(terms)];
+}
+
+function escapeHtml(text) {
+  return String(text)
+    .replaceAll('&', '&amp;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;')
+    .replaceAll('"', '&quot;')
+    .replaceAll("'", '&#39;');
+}
+
+function cardId(card) {
+  return `${card.section}:${card.state || 'all'}:${card.task_number}`;
+}
+
+function currentCardIndex() {
+  if (!state.currentCard || !state.deck) return -1;
+  return state.deck.questions.findIndex((q) => cardId(q) === cardId(state.currentCard));
+}
+
+function todayKey() {
+  return new Date().toISOString().slice(0, 10);
+}
+
+function nowTs() {
+  return Date.now();
+}
+
+function defaultMeta() {
+  return {
+    intervalDays: 0,
+    ease: 2.5,
+    reps: 0,
+    lapses: 0,
+    dueAt: 0,
+    lastReviewedAt: 0,
+    stage: 'new',
+  };
+}
+
+function defaultSchedule() {
+  return {
+    cards: {},
+    statsByDate: {},
+    translationStack: [],
+    noTranslationMastered: [],
+  };
+}
+
+function loadSchedule() {
+  try {
+    const parsed = JSON.parse(localStorage.getItem(STORAGE_KEY));
+    if (!parsed) return defaultSchedule();
+    const unique = (arr) => [...new Set(Array.isArray(arr) ? arr : [])];
+    const normalizedStats = Object.fromEntries(
+      Object.entries(parsed.statsByDate || {}).map(([key, value]) => {
+        const ids = unique(value?.ids || []);
+        return [key, { done: ids.length, ids }];
+      })
+    );
+    return {
+      cards: parsed.cards || {},
+      statsByDate: normalizedStats,
+      translationStack: unique(parsed.translationStack),
+      noTranslationMastered: unique(parsed.noTranslationMastered),
+    };
+  } catch {
+    return defaultSchedule();
+  }
+}
+
+function saveSchedule() {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(state.schedule));
+}
+
+function getMeta(card) {
+  const id = cardId(card);
+  if (!state.schedule.cards[id]) {
+    state.schedule.cards[id] = defaultMeta();
+  }
+  return state.schedule.cards[id];
+}
+
+function dueCards() {
+  const ts = nowTs();
+  return state.deck.questions.filter((card) => getMeta(card).dueAt <= ts);
+}
+
+function scheduleWithBuckets(meta, grade, isCorrect) {
+  const qMap = { hard: 3, easy: 5 };
+  const q = qMap[grade];
+
+  if (!isCorrect) {
+    const relearnHours = { hard: 0.5, easy: 12 };
+    const hours = relearnHours[grade] || 0.5;
+    meta.reps = 0;
+    meta.lapses += 1;
+    meta.intervalDays = hours / 24;
+    meta.dueAt = nowTs() + Math.round(hours * 60 * 60 * 1000);
+    meta.lastReviewedAt = nowTs();
+    meta.ease = Math.max(1.3, meta.ease - 0.2);
+    meta.stage = 'relearn';
+    return;
+  }
+
+  if (q < 3) {
+    meta.reps = 0;
+    meta.intervalDays = 8 / 24;
+    meta.dueAt = nowTs() + 8 * 60 * 60 * 1000;
+    meta.lastReviewedAt = nowTs();
+    meta.stage = 'learning';
+    return;
+  }
+
+  if (meta.reps === 0) {
+    meta.intervalDays = grade === 'easy' ? 4 : grade === 'hard' ? 1 : 2;
+  } else if (meta.reps === 1) {
+    meta.intervalDays = grade === 'easy' ? 8 : grade === 'hard' ? 3 : 6;
+  } else {
+    const hardFactor = grade === 'hard' ? 1.2 : grade === 'easy' ? 1.45 : 1.0;
+    meta.intervalDays = Math.max(1, Math.round(meta.intervalDays * meta.ease * hardFactor));
+  }
+
+  meta.reps += 1;
+  meta.ease = Math.max(1.3, meta.ease + (0.1 - (5 - q) * (0.08 + (5 - q) * 0.02)));
+  meta.dueAt = nowTs() + Math.round(meta.intervalDays * 24 * 60 * 60 * 1000);
+  meta.lastReviewedAt = nowTs();
+  meta.stage = meta.intervalDays >= 3 ? 'review' : 'learning';
+}
+
+function incrementTodayDoneUnique(cardUniqueId) {
+  const key = todayKey();
+  if (!state.schedule.statsByDate[key]) {
+    state.schedule.statsByDate[key] = { done: 0, ids: [] };
+  }
+  const day = state.schedule.statsByDate[key];
+  if (!Array.isArray(day.ids)) day.ids = [];
+  if (!day.ids.includes(cardUniqueId)) {
+    day.ids.push(cardUniqueId);
+  }
+  day.done = day.ids.length;
+}
+
+function setRevealMode(showAnswer) {
+  revealActionsEl.classList.toggle('hidden', showAnswer);
+  gradeActionsEl.classList.toggle('hidden', !showAnswer);
+}
+
+function updateTabButtons() {
+  tabStudyEl.classList.toggle('active', state.activeTab === 'study');
+  tabStatsEl.classList.toggle('active', state.activeTab === 'stats');
+}
+
+function switchTab(nextTab) {
+  if (state.activeTab === nextTab) return;
+  const fromEl = state.activeTab === 'study' ? studyViewEl : statsViewEl;
+  const toEl = nextTab === 'study' ? studyViewEl : statsViewEl;
+  state.activeTab = nextTab;
+  updateTabButtons();
+  if (nextTab === 'stats') renderStatsView();
+
+  toEl.classList.remove('hidden');
+  toEl.style.opacity = '0';
+  toEl.style.transform = 'translateY(10px)';
+  fromEl.style.opacity = '1';
+  fromEl.style.transform = 'translateY(0)';
+
+  requestAnimationFrame(() => {
+    fromEl.style.transition = 'opacity 140ms ease, transform 140ms ease';
+    toEl.style.transition = 'opacity 170ms ease, transform 170ms ease';
+    fromEl.style.opacity = '0';
+    fromEl.style.transform = 'translateY(6px)';
+    toEl.style.opacity = '1';
+    toEl.style.transform = 'translateY(0)';
+  });
+
+  window.setTimeout(() => {
+    fromEl.classList.add('hidden');
+    fromEl.style.transition = '';
+    fromEl.style.opacity = '';
+    fromEl.style.transform = '';
+    toEl.style.transition = '';
+    toEl.style.opacity = '';
+    toEl.style.transform = '';
+  }, 180);
+}
+
+function animateFlip(updateUI, direction = 'none') {
+  const first = cardEl.getBoundingClientRect();
+  updateUI();
+  const last = cardEl.getBoundingClientRect();
+
+  const dx = first.left - last.left;
+  const dy = first.top - last.top;
+  const sx = first.width / Math.max(last.width, 1);
+  const sy = first.height / Math.max(last.height, 1);
+  const enterFromRight = direction === 'enter-right';
+  const swipeNudge = direction === 'left' ? -22 : direction === 'right' ? 22 : 0;
+  const enterFromLeft = direction === 'enter-left';
+  const startX = enterFromRight
+    ? Math.min(window.innerWidth * 0.22, 140)
+    : enterFromLeft
+      ? -Math.min(window.innerWidth * 0.22, 140)
+      : dx + swipeNudge;
+  const startY = enterFromRight ? 0 : dy;
+  const startScaleX = enterFromRight ? 0.985 : sx;
+  const startScaleY = enterFromRight ? 0.985 : sy;
+
+  cardEl.style.transition = 'none';
+  cardEl.style.transformOrigin = 'center center';
+  cardEl.style.transform = `translate(${startX}px, ${startY}px) scale(${startScaleX}, ${startScaleY})`;
+
+  requestAnimationFrame(() => {
+    cardEl.style.transition = 'transform 180ms cubic-bezier(.2,.8,.2,1), opacity 160ms ease-out';
+    cardEl.style.transform = 'translate(0, 0) scale(1, 1)';
+  });
+}
+
+function hintForSwipe(dx) {
+  if (!state.answerChecked) return null;
+  if (dx <= -60) return 'Easy';
+  if (dx >= 60) return 'Hard';
+  return null;
+}
+
+function renderSwipeHint(label) {
+  if (!label) {
+    swipeIndicatorEl.classList.add('hidden');
+    swipeIndicatorEl.textContent = '';
+    return;
+  }
+  swipeIndicatorEl.textContent = label;
+  swipeIndicatorEl.classList.remove('hidden');
+}
+
+function setSwipeTint(dx = 0) {
+  const root = document.documentElement;
+  if (!state.answerChecked || dx === 0) {
+    root.style.setProperty('--swipe-alpha', '0');
+    return;
+  }
+
+  const intensity = Math.min(0.22, Math.abs(dx) / 700);
+  if (dx < 0) {
+    root.style.setProperty('--swipe-rgb', '24, 121, 78');
+  } else {
+    root.style.setProperty('--swipe-rgb', '180, 35, 24');
+  }
+  root.style.setProperty('--swipe-alpha', String(intensity));
+}
+
+function showTranslationTooltip(text) {
+  if (!text) return;
+  state.translationUsedForCurrent = true;
+  clearTimeout(tooltipSelectableTimer);
+  translationTooltipEl.classList.remove('selectable');
+  translationTooltipTextEl.textContent = text;
+  translationTooltipEl.classList.remove('hidden');
+  try {
+    window.getSelection()?.removeAllRanges();
+  } catch {}
+  tooltipSelectableTimer = window.setTimeout(() => {
+    translationTooltipEl.classList.add('selectable');
+  }, 140);
+}
+
+function hideTranslationTooltip() {
+  clearTimeout(tooltipSelectableTimer);
+  translationTooltipEl.classList.remove('selectable');
+  translationTooltipEl.classList.add('hidden');
+  translationTooltipTextEl.textContent = '';
+}
+
+function startLongPress(getText, options = {}) {
+  clearTimeout(longPress.timer);
+  longPress.triggered = false;
+  longPress.suppressOptionClick = Boolean(options.suppressOptionClick);
+  longPress.timer = window.setTimeout(() => {
+    const text = getText();
+    if (text) {
+      showTranslationTooltip(text);
+      longPress.triggered = true;
+      if (longPress.suppressOptionClick) {
+        state.suppressOptionClick = true;
+        window.setTimeout(() => {
+          state.suppressOptionClick = false;
+        }, 260);
+      }
+    }
+  }, 320);
+}
+
+function endLongPress() {
+  clearTimeout(longPress.timer);
+  longPress.triggered = false;
+}
+
+function renderStats() {
+  const due = dueCards().length;
+  const today = state.schedule.statsByDate[todayKey()]?.done || 0;
+  const withoutTranslation = state.schedule.noTranslationMastered.length;
+  const translationStack = state.schedule.translationStack.length;
+  dueCountEl.textContent = String(due);
+  doneTodayEl.textContent = String(today);
+  withoutTranslationCountEl.textContent = String(withoutTranslation);
+  translationStackCountEl.textContent = String(translationStack);
+  if (state.activeTab === 'stats') {
+    renderStatsView();
+  }
+}
+
+function cardsByIdsInDeckOrder(ids) {
+  const set = new Set(ids);
+  return state.deck.questions.filter((q) => set.has(cardId(q)));
+}
+
+function statsCategoryCards(category) {
+  if (!state.deck) return [];
+  switch (category) {
+    case 'due':
+      return dueCards();
+    case 'translation':
+      return cardsByIdsInDeckOrder(state.schedule.translationStack);
+    case 'mastered':
+      return cardsByIdsInDeckOrder(state.schedule.noTranslationMastered);
+    case 'relearn':
+      return state.deck.questions.filter((q) => {
+        const stage = getMeta(q).stage;
+        return stage === 'relearn' || stage === 'learning';
+      });
+    case 'all':
+      return state.deck.questions;
+    default:
+      return [];
+  }
+}
+
+function renderStatsView() {
+  if (!state.deck) return;
+  const categories = [
+    { id: 'due', label: 'К изучению' },
+    { id: 'translation', label: 'С переводом' },
+    { id: 'mastered', label: 'Без перевода' },
+    { id: 'relearn', label: 'Сложные' },
+    { id: 'all', label: 'Все' },
+  ];
+
+  statsCategoriesEl.innerHTML = categories
+    .map((cat) => {
+      const count = statsCategoryCards(cat.id).length;
+      const active = cat.id === state.statsCategory ? 'active' : '';
+      return `<button class="stats-cat-btn ${active}" data-category="${cat.id}" type="button">${cat.label} (${count})</button>`;
+    })
+    .join('');
+
+  const list = statsCategoryCards(state.statsCategory);
+  if (!list.length) {
+    statsListEl.innerHTML = '<div class="stats-empty">Нет вопросов в этой категории.</div>';
+    return;
+  }
+
+  statsListEl.innerHTML = list
+    .map((q) => {
+      const idx = state.deck.questions.findIndex((x) => cardId(x) === cardId(q)) + 1;
+      const label = q.section === 'state' ? `Berlin #${q.task_number}` : `Общие #${q.task_number}`;
+      const shortQ = escapeHtml(q.question.length > 120 ? `${q.question.slice(0, 120)}...` : q.question);
+      return `<button class="stats-item-btn" data-card-id="${cardId(q)}" type="button">
+        <div class="stats-item-title">${idx} / ${state.deck.questions.length} • ${label}</div>
+        <div class="stats-item-question">${shortQ}</div>
+      </button>`;
+    })
+    .join('');
+}
+
+function updateBackButton() {
+  backCardBtn.disabled = false;
+  forwardCardBtn.disabled = false;
+}
+
+function renderQuizOptions(card, revealCorrect = false) {
+  const correctIndex = card.correct_index;
+
+  quizOptionsEl.innerHTML = card.options
+    .map((opt, idx) => {
+      const classes = ['quiz-option-btn'];
+      if (state.selectedOptionIndex === idx) classes.push('selected');
+      if (revealCorrect && idx === correctIndex) classes.push('correct');
+      if (revealCorrect && state.selectedOptionIndex === idx && idx !== correctIndex) classes.push('wrong');
+
+      return `<li>
+        <button class="${classes.join(' ')}" data-option-index="${idx}" ${revealCorrect ? 'disabled' : ''}>
+          <span>${escapeHtml(opt)}</span>
+        </button>
+      </li>`;
+    })
+    .join('');
+}
+
+function renderCard(card) {
+  state.currentCard = card;
+  state.selectedOptionIndex = null;
+  state.answerChecked = false;
+  state.lastAnswerCorrect = null;
+  state.translationUsedForCurrent = false;
+
+  const cardNum = state.deck.questions.findIndex((c) => cardId(c) === cardId(card)) + 1;
+  const meta = getMeta(card);
+
+  cardIndexEl.textContent = `${cardNum} / ${state.deck.questions.length}`;
+  cardTagEl.textContent = card.section === 'state' ? `Berlin #${card.task_number}` : `Общие #${card.task_number}`;
+
+  cardGroupEl.textContent = meta.stage;
+  cardGroupEl.className = `tag group-tag ${meta.stage}`;
+
+  questionDeEl.textContent = card.question;
+
+  renderQuizOptions(card, false);
+
+  setRevealMode(false);
+  renderSwipeHint(null);
+  setSwipeTint(0);
+  hideTranslationTooltip();
+  updateBackButton();
+  emptyStateEl.classList.add('hidden');
+  cardEl.classList.remove('hidden');
+}
+
+function renderNextCard() {
+  animateFlip(() => {
+    renderStats();
+    const due = dueCards();
+    if (!due.length) {
+      cardEl.classList.add('hidden');
+      emptyStateEl.classList.remove('hidden');
+      state.currentCard = null;
+      return;
+    }
+    renderCard(due[0]);
+  });
+}
+
+function checkAnswer() {
+  if (!state.currentCard || state.selectedOptionIndex == null || state.answerChecked) return;
+  state.answerChecked = true;
+  renderQuizOptions(state.currentCard, true);
+  state.lastAnswerCorrect = state.selectedOptionIndex === state.currentCard.correct_index;
+  animateFlip(() => setRevealMode(true));
+}
+
+async function loadDeck() {
+  const res = await fetch(DATA_PATH, { cache: 'no-store' });
+  if (!res.ok) throw new Error(`Dataset not found: ${DATA_PATH}`);
+  return res.json();
+}
+
+function applyGrade(grade, direction = 'none') {
+  if (!state.currentCard || !state.answerChecked) return;
+
+  const id = cardId(state.currentCard);
+  const meta = getMeta(state.currentCard);
+  scheduleWithBuckets(meta, grade, state.lastAnswerCorrect === true);
+
+  if (state.translationUsedForCurrent) {
+    state.schedule.translationStack = state.schedule.translationStack.filter((x) => x !== id);
+    state.schedule.translationStack.push(id);
+  } else if (state.lastAnswerCorrect === true) {
+    state.schedule.noTranslationMastered = state.schedule.noTranslationMastered.filter((x) => x !== id);
+    state.schedule.noTranslationMastered.push(id);
+    state.schedule.translationStack = state.schedule.translationStack.filter((x) => x !== id);
+  }
+
+  incrementTodayDoneUnique(id);
+  saveSchedule();
+  renderSwipeHint(null);
+  setSwipeTint(0);
+
+  const dismissToLeft = grade === 'easy';
+  const outX = dismissToLeft ? -Math.min(window.innerWidth * 0.95, 520) : Math.min(window.innerWidth * 0.95, 520);
+  const enterDirection = dismissToLeft ? 'enter-right' : 'enter-left';
+
+  cardEl.style.transition = 'transform 170ms cubic-bezier(.2,.8,.2,1), opacity 140ms ease-out';
+  cardEl.style.transform = `translate3d(${outX}px, 0, 0) rotate(${dismissToLeft ? -5 : 5}deg)`;
+  cardEl.style.opacity = '0.35';
+
+  window.setTimeout(() => {
+    cardEl.style.transition = 'none';
+    cardEl.style.opacity = '1';
+    cardEl.style.transform = 'translate3d(0,0,0) rotate(0deg)';
+
+    animateFlip(() => {
+      renderStats();
+      const due = dueCards();
+      if (!due.length) {
+        cardEl.classList.add('hidden');
+        emptyStateEl.classList.remove('hidden');
+        state.currentCard = null;
+        return;
+      }
+      renderCard(due[0]);
+    }, enterDirection);
+  }, 175);
+}
+
+function openResetModal() {
+  confirmModalEl.classList.remove('hidden');
+}
+
+function closeResetModal() {
+  confirmModalEl.classList.add('hidden');
+}
+
+quizOptionsEl.addEventListener('click', (event) => {
+  if (state.suppressOptionClick) {
+    state.suppressOptionClick = false;
+    return;
+  }
+  if (!state.currentCard || state.answerChecked) return;
+  const btn = event.target.closest('[data-option-index]');
+  if (!btn) return;
+  state.selectedOptionIndex = Number(btn.dataset.optionIndex);
+  renderQuizOptions(state.currentCard, false);
+});
+
+showAnswerBtn.addEventListener('click', () => {
+  if (!state.currentCard) return;
+  if (state.selectedOptionIndex == null) {
+    renderSwipeHint('Выберите вариант');
+    setTimeout(() => renderSwipeHint(null), 700);
+    return;
+  }
+  checkAnswer();
+});
+
+gradeActionsEl.addEventListener('click', (event) => {
+  const btn = event.target.closest('[data-grade]');
+  if (!btn || !state.currentCard) return;
+  applyGrade(btn.dataset.grade);
+});
+
+resetProgressBtn.addEventListener('click', () => {
+  openResetModal();
+});
+
+cancelResetBtn.addEventListener('click', () => {
+  closeResetModal();
+});
+
+confirmResetBtn.addEventListener('click', () => {
+  state.schedule = defaultSchedule();
+  saveSchedule();
+  closeResetModal();
+  renderNextCard();
+});
+
+confirmModalEl.addEventListener('click', (event) => {
+  if (event.target === confirmModalEl) {
+    closeResetModal();
+  }
+});
+
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape' && !confirmModalEl.classList.contains('hidden')) {
+    closeResetModal();
+  }
+});
+
+cardEl.addEventListener('pointerdown', (event) => {
+  if (!state.currentCard) return;
+  gesture.active = true;
+  gesture.startX = event.clientX;
+  gesture.startY = event.clientY;
+  gesture.startTs = performance.now();
+  cardEl.classList.add('dragging');
+});
+
+cardEl.addEventListener('pointermove', (event) => {
+  if (!gesture.active || !state.currentCard) return;
+  const dx = event.clientX - gesture.startX;
+  const dy = event.clientY - gesture.startY;
+  const rotation = Math.max(-6, Math.min(6, dx / 24));
+
+  if (state.answerChecked) {
+    cardEl.style.transform = `translate3d(${dx}px, ${dy * 0.12}px, 0) rotate(${rotation}deg)`;
+    renderSwipeHint(hintForSwipe(dx));
+    setSwipeTint(dx);
+  } else {
+    cardEl.style.transform = `translate3d(0, ${Math.min(18, dy * 0.18)}px, 0)`;
+    renderSwipeHint(null);
+    setSwipeTint(0);
+  }
+});
+
+cardEl.addEventListener('pointerup', (event) => {
+  if (!gesture.active || !state.currentCard) return;
+  gesture.active = false;
+  cardEl.classList.remove('dragging');
+
+  const dx = event.clientX - gesture.startX;
+  const dy = event.clientY - gesture.startY;
+  const dt = Math.max(1, performance.now() - gesture.startTs);
+  const vx = Math.abs(dx) / dt;
+
+  cardEl.style.transition = 'transform 130ms ease-out';
+  cardEl.style.transform = 'translate3d(0,0,0) rotate(0deg)';
+  setSwipeTint(0);
+
+  if (!state.answerChecked) {
+    const swipeUp = dy < -58 && Math.abs(dy) > Math.abs(dx);
+    if (swipeUp) {
+      if (state.selectedOptionIndex == null) {
+        renderSwipeHint('Выберите вариант');
+        setTimeout(() => renderSwipeHint(null), 700);
+      } else {
+        checkAnswer();
+      }
+    }
+    return;
+  }
+
+  const swipeLabel = hintForSwipe(dx);
+  if (swipeLabel && (Math.abs(dx) > 58 || vx > 0.45)) {
+    const gradeByLabel = { Hard: 'hard', Easy: 'easy' };
+    const direction = dx < 0 ? 'left' : 'right';
+    applyGrade(gradeByLabel[swipeLabel], direction);
+    return;
+  }
+
+  renderSwipeHint(null);
+  setSwipeTint(0);
+});
+
+cardEl.addEventListener('pointercancel', () => {
+  gesture.active = false;
+  cardEl.classList.remove('dragging');
+  cardEl.style.transition = 'transform 120ms ease-out';
+  cardEl.style.transform = 'translate3d(0,0,0) rotate(0deg)';
+  renderSwipeHint(null);
+  setSwipeTint(0);
+});
+
+questionDeEl.addEventListener('pointerdown', (event) => {
+  event.stopPropagation();
+  if (!state.currentCard) return;
+  startLongPress(
+    () => `DE: ${state.currentCard?.question || ''}\nRU: ${state.currentCard?.question_ru || ''}`,
+    { suppressOptionClick: false }
+  );
+});
+
+questionDeEl.addEventListener('pointerup', endLongPress);
+questionDeEl.addEventListener('pointercancel', endLongPress);
+questionDeEl.addEventListener('pointerleave', endLongPress);
+
+quizOptionsEl.addEventListener('pointerdown', (event) => {
+  event.stopPropagation();
+  const btn = event.target.closest('[data-option-index]');
+  if (!btn || !state.currentCard) return;
+  const idx = Number(btn.dataset.optionIndex);
+  startLongPress(
+    () => `DE: ${state.currentCard?.options?.[idx] || ''}\nRU: ${state.currentCard?.options_ru?.[idx] || ''}`,
+    { suppressOptionClick: true }
+  );
+});
+
+quizOptionsEl.addEventListener('pointerup', endLongPress);
+quizOptionsEl.addEventListener('pointercancel', endLongPress);
+quizOptionsEl.addEventListener('pointerleave', endLongPress);
+
+questionDeEl.addEventListener('contextmenu', (event) => event.preventDefault());
+quizOptionsEl.addEventListener('contextmenu', (event) => event.preventDefault());
+translationTooltipCloseEl.addEventListener('click', () => hideTranslationTooltip());
+translationTooltipEl.addEventListener('pointerdown', (event) => {
+  const insideCard = event.target.closest('.translation-tooltip-card');
+  if (!insideCard) {
+    hideTranslationTooltip();
+  }
+});
+
+backCardBtn.addEventListener('click', () => {
+  if (!state.currentCard || !state.deck) return;
+  const idx = currentCardIndex();
+  if (idx <= 0) return;
+  const prevCard = state.deck.questions[idx - 1];
+  animateFlip(() => {
+    renderStats();
+    renderCard(prevCard);
+  }, 'enter-left');
+});
+
+forwardCardBtn.addEventListener('click', () => {
+  if (!state.currentCard || !state.deck) return;
+  const idx = currentCardIndex();
+  if (idx < 0 || idx >= state.deck.questions.length - 1) return;
+  const nextCard = state.deck.questions[idx + 1];
+  animateFlip(() => {
+    renderStats();
+    renderCard(nextCard);
+  }, 'enter-right');
+});
+
+tabStudyEl.addEventListener('click', () => switchTab('study'));
+tabStatsEl.addEventListener('click', () => switchTab('stats'));
+
+statsCategoriesEl.addEventListener('click', (event) => {
+  const btn = event.target.closest('[data-category]');
+  if (!btn) return;
+  state.statsCategory = btn.dataset.category;
+  renderStatsView();
+});
+
+statsListEl.addEventListener('click', (event) => {
+  const btn = event.target.closest('[data-card-id]');
+  if (!btn || !state.deck) return;
+  const target = state.deck.questions.find((q) => cardId(q) === btn.dataset.cardId);
+  if (!target) return;
+  switchTab('study');
+  window.setTimeout(() => {
+    animateFlip(() => {
+      renderStats();
+      renderCard(target);
+    }, 'enter-right');
+  }, 20);
+});
+
+async function init() {
+  try {
+    state.deck = await loadDeck();
+    state.schedule = loadSchedule();
+    updateTabButtons();
+    cardEl.classList.remove('loading');
+    renderNextCard();
+  } catch (err) {
+    cardEl.classList.remove('loading');
+    cardEl.innerHTML = `<p>Ошибка загрузки данных: ${err.message}</p>`;
+  }
+}
+
+init();

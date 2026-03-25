@@ -1,0 +1,18 @@
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+
+# OS/editor
+.DS_Store
+.vscode/
+.idea/
+
+# Codex local
+.codex/
+
+# Build/cache
+*.log
+
+# Optional large source assets (keep generated JSON)
+data/*.pdf
