@@ -23,91 +23,102 @@
               <span class="mini-item"><span id="progress-without-translation-label">Без перевода</span> <strong id="without-translation-count">0</strong></span>
               <span class="mini-item"><span id="progress-translation-stack-label">Стек перевода</span> <strong id="translation-stack-count">0</strong></span>
             </div>
-            <div class="topbar-actions">
-              <button id="locale-toggle" class="icon-btn locale-btn" type="button" aria-label="Переключить язык" title="Переключить язык">
-                <span id="locale-toggle-label">RU</span>
-              </button>
-              <button id="reset-progress" class="icon-btn" aria-label="Сбросить прогресс" title="Сбросить прогресс">
-                <span aria-hidden="true">↺</span><span id="reset-progress-label">Сброс</span>
-              </button>
-            </div>
           </div>
         </div>
       </header>
 
       <div class="tabs">
-        <button id="tab-study" class="tab-btn active" type="button">Тренировка</button>
-        <button id="tab-stats" class="tab-btn" type="button">Статистика</button>
-        <button id="tab-sim" class="tab-btn" type="button">Симуляция</button>
+        <button id="tab-study" class="tab-btn active" type="button"><span class="tab-icon" aria-hidden="true">◫</span><span>Тренировка</span></button>
+        <button id="tab-stats" class="tab-btn" type="button"><span class="tab-icon" aria-hidden="true">◔</span><span>Статистика</span></button>
+        <button id="tab-sim" class="tab-btn" type="button"><span class="tab-icon" aria-hidden="true">◎</span><span>Симуляция</span></button>
+        <button id="tab-settings" class="tab-btn" type="button"><span class="tab-icon" aria-hidden="true">⚙</span><span>Настройки</span></button>
       </div>
 
-      <div id="study-view">
-        <div class="nav-row">
-          <button id="back-card" class="back-btn" type="button">&lt; назад</button>
-          <span id="card-index" class="nav-index">1 / 310</span>
-          <button id="forward-card" class="back-btn" type="button">вперед &gt;</button>
+      <div class="views-viewport">
+        <div id="views-track" class="views-track">
+          <div id="study-view" class="view-pane">
+            <div class="nav-row">
+              <button id="back-card" class="back-btn" type="button">&lt; назад</button>
+              <span id="card-index" class="nav-index">1 / 310</span>
+              <button id="forward-card" class="back-btn" type="button">вперед &gt;</button>
+            </div>
+
+            <section id="card" class="card loading">
+              <div id="swipe-indicator" class="swipe-indicator hidden"></div>
+              <div class="card-meta">
+                <span id="card-tag" class="tag">Общие</span>
+                <span id="card-group" class="tag group-tag">new</span>
+              </div>
+
+              <div class="card-face" id="front-face">
+                <p id="question-de" class="question"></p>
+                <div id="question-media" class="question-media hidden"></div>
+                <ol id="quiz-options" class="quiz-options"></ol>
+              </div>
+
+              <div class="actions" id="reveal-actions">
+                <button id="show-answer" class="primary-btn">Проверить ответ</button>
+              </div>
+
+              <div class="actions hidden" id="grade-actions">
+                <button id="grade-hard" class="grade-btn hard" data-grade="hard">Сложно</button>
+                <button id="grade-easy" class="grade-btn easy" data-grade="easy">Легко</button>
+              </div>
+            </section>
+
+            <section id="empty-state" class="empty hidden">
+              <h2 id="empty-title">На сегодня карточек нет</h2>
+              <p id="empty-text">Вернитесь позже или сбросьте прогресс, чтобы пройти колоду заново.</p>
+            </section>
+          </div>
+
+          <section id="stats-view" class="stats-view view-pane">
+            <div id="stats-categories" class="stats-categories"></div>
+            <div id="stats-list" class="stats-list"></div>
+          </section>
+
+          <section id="sim-view" class="sim-view view-pane">
+            <div class="sim-top">
+              <button id="sim-start" class="back-btn" type="button">Новый тест (33)</button>
+              <div class="nav-row">
+                <button id="sim-prev" class="back-btn" type="button">&lt; назад</button>
+                <span id="sim-progress" class="nav-index">Не начат</span>
+                <button id="sim-next" class="back-btn" type="button">вперед &gt;</button>
+              </div>
+            </div>
+
+            <section id="sim-card" class="card sim-card hidden">
+              <div class="card-meta">
+                <span id="sim-tag" class="tag">Общие</span>
+                <span id="sim-group" class="tag group-tag">new</span>
+              </div>
+              <div class="card-face">
+                <p id="sim-question" class="question"></p>
+                <div id="sim-question-media" class="question-media hidden"></div>
+                <ol id="sim-options" class="quiz-options sim-options"></ol>
+              </div>
+              <div class="actions">
+                <button id="sim-submit" class="primary-btn" type="button">Завершить тест</button>
+              </div>
+            </section>
+          </section>
+
+          <section id="settings-view" class="settings-view view-pane">
+            <div class="settings-card">
+              <div class="settings-list">
+                <button id="locale-toggle" class="settings-btn" type="button" aria-label="Переключить язык" title="Переключить язык">
+                  <span id="settings-locale-label">Язык интерфейса</span>
+                  <span id="locale-toggle-label">RU</span>
+                </button>
+                <button id="reset-progress" class="settings-btn danger" aria-label="Сбросить прогресс" title="Сбросить прогресс">
+                  <span id="reset-progress-label">Сбросить прогресс</span>
+                  <span aria-hidden="true">↺</span>
+                </button>
+              </div>
+            </div>
+          </section>
         </div>
-
-        <section id="card" class="card loading">
-          <div id="swipe-indicator" class="swipe-indicator hidden"></div>
-          <div class="card-meta">
-            <span id="card-tag" class="tag">Общие</span>
-            <span id="card-group" class="tag group-tag">new</span>
-          </div>
-
-          <div class="card-face" id="front-face">
-            <p id="question-de" class="question"></p>
-            <div id="question-media" class="question-media hidden"></div>
-            <ol id="quiz-options" class="quiz-options"></ol>
-          </div>
-
-          <div class="actions" id="reveal-actions">
-            <button id="show-answer" class="primary-btn">Проверить ответ</button>
-          </div>
-
-          <div class="actions hidden" id="grade-actions">
-            <button id="grade-hard" class="grade-btn hard" data-grade="hard">Сложно</button>
-            <button id="grade-easy" class="grade-btn easy" data-grade="easy">Легко</button>
-          </div>
-        </section>
-
-        <section id="empty-state" class="empty hidden">
-          <h2 id="empty-title">На сегодня карточек нет</h2>
-          <p id="empty-text">Вернитесь позже или сбросьте прогресс, чтобы пройти колоду заново.</p>
-        </section>
       </div>
-
-      <section id="stats-view" class="stats-view hidden">
-        <div id="stats-categories" class="stats-categories"></div>
-        <div id="stats-list" class="stats-list"></div>
-      </section>
-
-      <section id="sim-view" class="sim-view hidden">
-        <div class="sim-top">
-          <button id="sim-start" class="back-btn" type="button">Новый тест (33)</button>
-          <div class="nav-row">
-            <button id="sim-prev" class="back-btn" type="button">&lt; назад</button>
-            <span id="sim-progress" class="nav-index">Не начат</span>
-            <button id="sim-next" class="back-btn" type="button">вперед &gt;</button>
-          </div>
-        </div>
-
-        <section id="sim-card" class="card sim-card hidden">
-          <div class="card-meta">
-            <span id="sim-tag" class="tag">Общие</span>
-            <span id="sim-group" class="tag group-tag">new</span>
-          </div>
-          <div class="card-face">
-            <p id="sim-question" class="question"></p>
-            <div id="sim-question-media" class="question-media hidden"></div>
-            <ol id="sim-options" class="quiz-options sim-options"></ol>
-          </div>
-          <div class="actions">
-            <button id="sim-submit" class="primary-btn" type="button">Завершить тест</button>
-          </div>
-        </section>
-
-      </section>
     </main>
 
     <div id="confirm-modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="confirm-title">

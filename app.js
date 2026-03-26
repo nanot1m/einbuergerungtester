@@ -1,6 +1,12 @@
 const DATA_PATH = './data/einbuergerungstest_berlin_310_ru.json';
 const STORAGE_KEY = 'einburgerung-berlin-sm2-v2';
 const LOCALE_STORAGE_KEY = 'einburgerung-ui-locale-v1';
+const TAB_HASH_MAP = {
+  study: '#study',
+  stats: '#stats',
+  sim: '#simulation',
+  settings: '#settings',
+};
 
 const UI_TEXT = {
   ru: {
@@ -8,11 +14,13 @@ const UI_TEXT = {
     progressToday: 'Сегодня',
     progressWithoutTranslation: 'Без перевода',
     progressTranslationStack: 'Стек перевода',
-    reset: 'Сброс',
+    reset: 'Сброс прогресса',
     switchLanguage: 'Переключить язык',
     tabStudy: 'Тренировка',
     tabStats: 'Статистика',
     tabSim: 'Симуляция',
+    tabSettings: 'Настройки',
+    settingsLanguage: 'Язык интерфейса',
     back: '< назад',
     forward: 'вперед >',
     tagGeneral: 'Общие #{n}',
@@ -53,11 +61,13 @@ const UI_TEXT = {
     progressToday: 'Today',
     progressWithoutTranslation: 'Without translation',
     progressTranslationStack: 'Translation stack',
-    reset: 'Reset',
+    reset: 'Reset progress',
     switchLanguage: 'Switch language',
     tabStudy: 'Study',
     tabStats: 'Stats',
     tabSim: 'Simulation',
+    tabSettings: 'Settings',
+    settingsLanguage: 'Interface language',
     back: '< back',
     forward: 'next >',
     tagGeneral: 'General #{n}',
@@ -128,11 +138,15 @@ const cardEl = document.getElementById('card');
 const emptyStateEl = document.getElementById('empty-state');
 const studyViewEl = document.getElementById('study-view');
 const statsViewEl = document.getElementById('stats-view');
+const viewsTrackEl = document.getElementById('views-track');
 const tabStudyEl = document.getElementById('tab-study');
 const tabStatsEl = document.getElementById('tab-stats');
 const tabSimEl = document.getElementById('tab-sim');
+const tabSettingsEl = document.getElementById('tab-settings');
 const localeToggleEl = document.getElementById('locale-toggle');
 const localeToggleLabelEl = document.getElementById('locale-toggle-label');
+const settingsViewEl = document.getElementById('settings-view');
+const settingsLocaleLabelEl = document.getElementById('settings-locale-label');
 const statsCategoriesEl = document.getElementById('stats-categories');
 const statsListEl = document.getElementById('stats-list');
 const simViewEl = document.getElementById('sim-view');
@@ -289,6 +303,7 @@ function applyStaticTranslations() {
   tabStudyEl.textContent = t('tabStudy');
   tabStatsEl.textContent = t('tabStats');
   tabSimEl.textContent = t('tabSim');
+  tabSettingsEl.textContent = t('tabSettings');
   backCardBtn.textContent = t('back');
   forwardCardBtn.textContent = t('forward');
   showAnswerBtn.textContent = t('showAnswer');
@@ -304,6 +319,7 @@ function applyStaticTranslations() {
   confirmTextEl.textContent = t('resetText');
   cancelResetBtn.textContent = t('cancel');
   confirmResetBtn.textContent = t('reset');
+  settingsLocaleLabelEl.textContent = t('settingsLanguage');
   simResultCloseEl.textContent = t('close');
   translationTooltipCloseEl.setAttribute('aria-label', t('startTranslation'));
   imageViewerEl.setAttribute('aria-label', t('viewImage'));
@@ -311,11 +327,32 @@ function applyStaticTranslations() {
   document.querySelector('.mini-progress')?.setAttribute('aria-label', t('progressAria'));
 }
 
+function updateViewsTrackPosition() {
+  const order = ['study', 'stats', 'sim', 'settings'];
+  const idx = Math.max(0, order.indexOf(state.activeTab));
+  viewsTrackEl.style.transform = `translate3d(-${idx * 25}%, 0, 0)`;
+}
+
+function tabFromHash(hash = window.location.hash) {
+  const normalized = String(hash || '').toLowerCase();
+  const entry = Object.entries(TAB_HASH_MAP).find(([, value]) => value === normalized);
+  return entry?.[0] || 'study';
+}
+
+function syncHashWithTab() {
+  const nextHash = TAB_HASH_MAP[state.activeTab] || TAB_HASH_MAP.study;
+  if (window.location.hash === nextHash) return;
+  history.replaceState(null, '', nextHash);
+}
+
 function applyLocale() {
   saveLocale();
   document.documentElement.lang = state.locale;
   applyStaticTranslations();
-  renderStats();
+  updateViewsTrackPosition();
+  if (state.deck?.questions) {
+    renderStats();
+  }
   if (state.currentCard) {
     cardTagEl.textContent = tagLabel(state.currentCard);
     renderQuestionImages(questionMediaEl, state.currentCard);
@@ -523,6 +560,7 @@ function getMeta(card) {
 }
 
 function dueCards() {
+  if (!state.deck?.questions) return [];
   const ts = nowTs();
   return state.deck.questions.filter((card) => getMeta(card).dueAt <= ts);
 }
@@ -591,45 +629,27 @@ function updateTabButtons() {
   tabStudyEl.classList.toggle('active', state.activeTab === 'study');
   tabStatsEl.classList.toggle('active', state.activeTab === 'stats');
   tabSimEl.classList.toggle('active', state.activeTab === 'sim');
+  tabSettingsEl.classList.toggle('active', state.activeTab === 'settings');
+  const activeBtn = {
+    study: tabStudyEl,
+    stats: tabStatsEl,
+    sim: tabSimEl,
+    settings: tabSettingsEl,
+  }[state.activeTab];
+  activeBtn?.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
 }
 
 function switchTab(nextTab) {
   if (state.activeTab === nextTab) return;
-  const viewByTab = { study: studyViewEl, stats: statsViewEl, sim: simViewEl };
-  const fromEl = viewByTab[state.activeTab];
-  const toEl = viewByTab[nextTab];
   state.activeTab = nextTab;
+  syncHashWithTab();
   updateTabButtons();
   hideTranslationTooltip();
   clearTimeout(longPress.timer);
   longPress.triggered = false;
   if (nextTab === 'stats') renderStatsView();
   if (nextTab === 'sim') renderSimView();
-
-  toEl.classList.remove('hidden');
-  toEl.style.opacity = '0';
-  toEl.style.transform = 'translateY(10px)';
-  fromEl.style.opacity = '1';
-  fromEl.style.transform = 'translateY(0)';
-
-  requestAnimationFrame(() => {
-    fromEl.style.transition = 'opacity 140ms ease, transform 140ms ease';
-    toEl.style.transition = 'opacity 170ms ease, transform 170ms ease';
-    fromEl.style.opacity = '0';
-    fromEl.style.transform = 'translateY(6px)';
-    toEl.style.opacity = '1';
-    toEl.style.transform = 'translateY(0)';
-  });
-
-  window.setTimeout(() => {
-    fromEl.classList.add('hidden');
-    fromEl.style.transition = '';
-    fromEl.style.opacity = '';
-    fromEl.style.transform = '';
-    toEl.style.transition = '';
-    toEl.style.opacity = '';
-    toEl.style.transform = '';
-  }, 180);
+  updateViewsTrackPosition();
 }
 
 function shuffled(arr) {
@@ -807,9 +827,6 @@ function showTranslationTooltip(text) {
   try {
     window.getSelection()?.removeAllRanges();
   } catch {}
-  tooltipSelectableTimer = window.setTimeout(() => {
-    translationTooltipEl.classList.add('selectable');
-  }, 140);
 }
 
 function hideTranslationTooltip() {
@@ -1248,12 +1265,24 @@ simQuestionMediaEl.addEventListener('click', (event) => {
   if (!btn) return;
   openImageViewer(btn.dataset.imageSrc, btn.dataset.imageAlt || '');
 });
-translationTooltipCloseEl.addEventListener('click', () => hideTranslationTooltip());
+translationTooltipCloseEl.addEventListener('pointerdown', (event) => {
+  event.preventDefault();
+  event.stopPropagation();
+});
+translationTooltipCloseEl.addEventListener('click', (event) => {
+  event.preventDefault();
+  event.stopPropagation();
+  hideTranslationTooltip();
+});
 translationTooltipEl.addEventListener('pointerdown', (event) => {
   const insideCard = event.target.closest('.translation-tooltip-card');
   if (!insideCard) {
     hideTranslationTooltip();
   }
+});
+translationTooltipTextEl.addEventListener('click', () => {
+  clearTimeout(tooltipSelectableTimer);
+  translationTooltipEl.classList.add('selectable');
 });
 imageViewerCloseEl.addEventListener('click', () => closeImageViewer());
 imageViewerBackdropEl.addEventListener('click', () => closeImageViewer());
@@ -1387,6 +1416,19 @@ forwardCardBtn.addEventListener('click', () => {
 tabStudyEl.addEventListener('click', () => switchTab('study'));
 tabStatsEl.addEventListener('click', () => switchTab('stats'));
 tabSimEl.addEventListener('click', () => switchTab('sim'));
+tabSettingsEl.addEventListener('click', () => switchTab('settings'));
+window.addEventListener('hashchange', () => {
+  const nextTab = tabFromHash();
+  if (nextTab === state.activeTab) return;
+  state.activeTab = nextTab;
+  updateTabButtons();
+  updateViewsTrackPosition();
+  hideTranslationTooltip();
+  clearTimeout(longPress.timer);
+  longPress.triggered = false;
+  if (nextTab === 'stats') renderStatsView();
+  if (nextTab === 'sim') renderSimView();
+});
 
 statsCategoriesEl.addEventListener('click', (event) => {
   const btn = event.target.closest('[data-category]');
@@ -1480,13 +1522,16 @@ simResultModalEl.addEventListener('click', (event) => {
 
 async function init() {
   try {
+    state.activeTab = tabFromHash();
     applyLocale();
     state.deck = await loadDeck();
     state.schedule = loadSchedule();
+    syncHashWithTab();
     updateTabButtons();
     cardEl.classList.remove('loading');
     renderNextCard();
   } catch (err) {
+    state.activeTab = tabFromHash();
     applyLocale();
     cardEl.classList.remove('loading');
     cardEl.innerHTML = `<p>${escapeHtml(t('loadError', { message: err.message }))}</p>`;
