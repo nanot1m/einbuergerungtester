@@ -110,10 +110,18 @@
                   <span id="settings-locale-label">Язык интерфейса</span>
                   <span id="locale-toggle-label">RU</span>
                 </button>
+                <button id="copy-progress-link" class="settings-btn" type="button" aria-label="Скопировать ссылку с прогрессом" title="Скопировать ссылку с прогрессом">
+                  <span id="copy-progress-link-label">Ссылка с прогрессом</span>
+                  <span aria-hidden="true">🔗</span>
+                </button>
                 <button id="reset-progress" class="settings-btn danger" aria-label="Сбросить прогресс" title="Сбросить прогресс">
                   <span id="reset-progress-label">Сбросить прогресс</span>
                   <span aria-hidden="true">↺</span>
                 </button>
+              </div>
+              <div class="settings-history">
+                <div id="settings-history-title" class="settings-history-title">Версии прогресса</div>
+                <div id="settings-history-list" class="settings-history-list"></div>
               </div>
             </div>
           </section>
@@ -128,6 +136,26 @@
         <div class="modal-actions">
           <button id="cancel-reset" class="modal-btn ghost">Отмена</button>
           <button id="confirm-reset" class="modal-btn danger">Сбросить</button>
+        </div>
+      </div>
+    </div>
+    <div id="import-progress-modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="import-progress-title">
+      <div class="modal-card">
+        <h2 id="import-progress-title">Импортировать прогресс из ссылки?</h2>
+        <p id="import-progress-text">Локальный прогресс на этом устройстве будет перезаписан данными из ссылки.</p>
+        <div class="modal-actions">
+          <button id="cancel-import-progress" class="modal-btn ghost" type="button">Оставить локальный</button>
+          <button id="confirm-import-progress" class="modal-btn danger" type="button">Импортировать</button>
+        </div>
+      </div>
+    </div>
+    <div id="restore-progress-modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="restore-progress-title">
+      <div class="modal-card">
+        <h2 id="restore-progress-title">Восстановить эту версию прогресса?</h2>
+        <p id="restore-progress-text">Текущий локальный прогресс будет перезаписан выбранной сохраненной версией.</p>
+        <div class="modal-actions">
+          <button id="cancel-restore-progress" class="modal-btn ghost" type="button">Отмена</button>
+          <button id="confirm-restore-progress" class="modal-btn danger" type="button">Восстановить</button>
         </div>
       </div>
     </div>

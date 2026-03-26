@@ -1,6 +1,8 @@
 const DATA_PATH = './data/einbuergerungstest_berlin_310_ru.json';
 const STORAGE_KEY = 'einburgerung-berlin-sm2-v2';
+const PROGRESS_HISTORY_KEY = 'einburgerung-berlin-progress-history-v1';
 const LOCALE_STORAGE_KEY = 'einburgerung-ui-locale-v1';
+const PROGRESS_QUERY_KEY = 'progress';
 const TAB_HASH_MAP = {
   study: '#study',
   stats: '#stats',
@@ -21,12 +23,20 @@ const UI_TEXT = {
     tabSim: 'Симуляция',
     tabSettings: 'Настройки',
     settingsLanguage: 'Язык интерфейса',
+    settingsShareProgress: 'Ссылка с прогрессом',
+    settingsShareCopied: 'Ссылка скопирована',
+    settingsHistoryTitle: 'Версии прогресса',
+    settingsHistoryEmpty: 'Сохраненных версий пока нет.',
+    settingsHistoryRestore: 'Восстановить',
+    restoreProgressTitle: 'Восстановить эту версию прогресса?',
+    restoreProgressText: 'Текущий локальный прогресс будет перезаписан выбранной сохраненной версией.',
+    restoreProgressConfirm: 'Восстановить',
     back: '< назад',
     forward: 'вперед >',
     tagGeneral: 'Общие #{n}',
     showAnswer: 'Проверить ответ',
-    gradeHard: 'Сложно',
-    gradeEasy: 'Легко',
+    gradeHard: 'Не знал',
+    gradeEasy: 'Знал',
     emptyTitle: 'На сегодня карточек нет',
     emptyText: 'Вернитесь позже или сбросьте прогресс, чтобы пройти колоду заново.',
     simNewTest: 'Новый тест (33)',
@@ -34,6 +44,10 @@ const UI_TEXT = {
     simFinish: 'Завершить тест',
     resetTitle: 'Сбросить прогресс?',
     resetText: 'Весь прогресс по карточкам будет удален.',
+    importProgressTitle: 'Импортировать прогресс из ссылки?',
+    importProgressText: 'Локальный прогресс на этом устройстве будет перезаписан данными из ссылки.',
+    importProgressConfirm: 'Импортировать',
+    importProgressCancel: 'Оставить локальный',
     cancel: 'Отмена',
     close: 'Закрыть',
     openImage: 'Открыть изображение',
@@ -68,12 +82,20 @@ const UI_TEXT = {
     tabSim: 'Simulation',
     tabSettings: 'Settings',
     settingsLanguage: 'Interface language',
+    settingsShareProgress: 'Progress link',
+    settingsShareCopied: 'Link copied',
+    settingsHistoryTitle: 'Progress versions',
+    settingsHistoryEmpty: 'No saved versions yet.',
+    settingsHistoryRestore: 'Restore',
+    restoreProgressTitle: 'Restore this progress version?',
+    restoreProgressText: 'Current local progress will be overwritten by the selected saved version.',
+    restoreProgressConfirm: 'Restore',
     back: '< back',
     forward: 'next >',
     tagGeneral: 'General #{n}',
     showAnswer: 'Check answer',
-    gradeHard: 'Hard',
-    gradeEasy: 'Easy',
+    gradeHard: "Didn't know",
+    gradeEasy: 'Knew',
     emptyTitle: 'No cards for today',
     emptyText: 'Come back later or reset progress to restart the deck.',
     simNewTest: 'New test (33)',
@@ -81,6 +103,10 @@ const UI_TEXT = {
     simFinish: 'Finish test',
     resetTitle: 'Reset progress?',
     resetText: 'All card progress will be deleted.',
+    importProgressTitle: 'Import progress from link?',
+    importProgressText: 'Local progress on this device will be overwritten by the data from the link.',
+    importProgressConfirm: 'Import',
+    importProgressCancel: 'Keep local progress',
     cancel: 'Cancel',
     close: 'Close',
     openImage: 'Open image',
@@ -108,6 +134,7 @@ const UI_TEXT = {
 const state = {
   deck: null,
   schedule: {},
+  progressHistory: [],
   currentCard: null,
   selectedOptionIndex: null,
   answerChecked: false,
@@ -147,6 +174,10 @@ const localeToggleEl = document.getElementById('locale-toggle');
 const localeToggleLabelEl = document.getElementById('locale-toggle-label');
 const settingsViewEl = document.getElementById('settings-view');
 const settingsLocaleLabelEl = document.getElementById('settings-locale-label');
+const copyProgressLinkBtn = document.getElementById('copy-progress-link');
+const copyProgressLinkLabelEl = document.getElementById('copy-progress-link-label');
+const settingsHistoryTitleEl = document.getElementById('settings-history-title');
+const settingsHistoryListEl = document.getElementById('settings-history-list');
 const statsCategoriesEl = document.getElementById('stats-categories');
 const statsListEl = document.getElementById('stats-list');
 const simViewEl = document.getElementById('sim-view');
@@ -187,6 +218,16 @@ const confirmTitleEl = document.getElementById('confirm-title');
 const confirmTextEl = document.getElementById('confirm-text');
 const cancelResetBtn = document.getElementById('cancel-reset');
 const confirmResetBtn = document.getElementById('confirm-reset');
+const importProgressModalEl = document.getElementById('import-progress-modal');
+const importProgressTitleEl = document.getElementById('import-progress-title');
+const importProgressTextEl = document.getElementById('import-progress-text');
+const cancelImportProgressBtn = document.getElementById('cancel-import-progress');
+const confirmImportProgressBtn = document.getElementById('confirm-import-progress');
+const restoreProgressModalEl = document.getElementById('restore-progress-modal');
+const restoreProgressTitleEl = document.getElementById('restore-progress-title');
+const restoreProgressTextEl = document.getElementById('restore-progress-text');
+const cancelRestoreProgressBtn = document.getElementById('cancel-restore-progress');
+const confirmRestoreProgressBtn = document.getElementById('confirm-restore-progress');
 const translationTooltipEl = document.getElementById('translation-tooltip');
 const translationTooltipTextEl = document.getElementById('translation-tooltip-text');
 const translationTooltipCloseEl = document.getElementById('translation-tooltip-close');
@@ -211,6 +252,9 @@ const longPress = {
   suppressOptionClick: false,
 };
 let tooltipSelectableTimer = null;
+let copyProgressLinkTimer = null;
+let pendingImportedProgress = null;
+let pendingRestoreVersionId = null;
 const imageViewerState = {
   open: false,
   scale: 1,
@@ -300,6 +344,11 @@ function applyStaticTranslations() {
   localeToggleEl.setAttribute('aria-label', t('switchLanguage'));
   localeToggleEl.setAttribute('title', t('switchLanguage'));
   localeToggleLabelEl.textContent = state.locale.toUpperCase();
+  copyProgressLinkBtn.setAttribute('aria-label', t('settingsShareProgress'));
+  copyProgressLinkBtn.setAttribute('title', t('settingsShareProgress'));
+  if (!copyProgressLinkBtn.dataset.copied) {
+    copyProgressLinkLabelEl.textContent = t('settingsShareProgress');
+  }
   tabStudyEl.setAttribute('aria-label', t('tabStudy'));
   tabStudyEl.setAttribute('title', t('tabStudy'));
   tabStatsEl.setAttribute('aria-label', t('tabStats'));
@@ -323,7 +372,16 @@ function applyStaticTranslations() {
   confirmTextEl.textContent = t('resetText');
   cancelResetBtn.textContent = t('cancel');
   confirmResetBtn.textContent = t('reset');
+  importProgressTitleEl.textContent = t('importProgressTitle');
+  importProgressTextEl.textContent = t('importProgressText');
+  cancelImportProgressBtn.textContent = t('importProgressCancel');
+  confirmImportProgressBtn.textContent = t('importProgressConfirm');
   settingsLocaleLabelEl.textContent = t('settingsLanguage');
+  settingsHistoryTitleEl.textContent = t('settingsHistoryTitle');
+  restoreProgressTitleEl.textContent = t('restoreProgressTitle');
+  restoreProgressTextEl.textContent = t('restoreProgressText');
+  cancelRestoreProgressBtn.textContent = t('cancel');
+  confirmRestoreProgressBtn.textContent = t('restoreProgressConfirm');
   simResultCloseEl.textContent = t('close');
   translationTooltipCloseEl.setAttribute('aria-label', t('startTranslation'));
   imageViewerEl.setAttribute('aria-label', t('viewImage'));
@@ -369,6 +427,7 @@ function applyLocale() {
   } else if (!state.simulation.active) {
     simProgressEl.textContent = t('simNotStarted');
   }
+  renderProgressHistory();
 }
 
 function normalizeImageItem(item) {
@@ -529,30 +588,286 @@ function defaultSchedule() {
   };
 }
 
+function normalizeScheduleData(parsed) {
+  const unique = (arr) => [...new Set(Array.isArray(arr) ? arr : [])];
+  const normalizedStats = Object.fromEntries(
+    Object.entries(parsed?.statsByDate || {}).map(([key, value]) => {
+      const ids = unique(value?.ids || []);
+      return [key, { done: ids.length, ids }];
+    })
+  );
+  return {
+    cards: parsed?.cards || {},
+    statsByDate: normalizedStats,
+    translationStack: unique(parsed?.translationStack),
+    noTranslationMastered: unique(parsed?.noTranslationMastered),
+  };
+}
+
 function loadSchedule() {
   try {
     const parsed = JSON.parse(localStorage.getItem(STORAGE_KEY));
     if (!parsed) return defaultSchedule();
-    const unique = (arr) => [...new Set(Array.isArray(arr) ? arr : [])];
-    const normalizedStats = Object.fromEntries(
-      Object.entries(parsed.statsByDate || {}).map(([key, value]) => {
-        const ids = unique(value?.ids || []);
-        return [key, { done: ids.length, ids }];
-      })
-    );
-    return {
-      cards: parsed.cards || {},
-      statsByDate: normalizedStats,
-      translationStack: unique(parsed.translationStack),
-      noTranslationMastered: unique(parsed.noTranslationMastered),
-    };
+    return normalizeScheduleData(parsed);
   } catch {
     return defaultSchedule();
   }
 }
 
+function loadProgressHistory() {
+  try {
+    const parsed = JSON.parse(localStorage.getItem(PROGRESS_HISTORY_KEY));
+    if (!Array.isArray(parsed)) return [];
+    return parsed
+      .filter((item) => item && typeof item === 'object' && item.id && item.createdAt && item.schedule)
+      .map((item) => ({
+        id: String(item.id),
+        createdAt: Number(item.createdAt),
+        currentCardId: item.currentCardId || null,
+        schedule: normalizeScheduleData(item.schedule),
+      }))
+      .sort((a, b) => b.createdAt - a.createdAt)
+      .slice(0, 20);
+  } catch {
+    return [];
+  }
+}
+
 function saveSchedule() {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(state.schedule));
+}
+
+function saveProgressHistory() {
+  localStorage.setItem(PROGRESS_HISTORY_KEY, JSON.stringify(state.progressHistory));
+}
+
+function currentProgressSignature(schedule = state.schedule, currentCardId = state.currentCard ? cardId(state.currentCard) : null) {
+  return JSON.stringify({ schedule: normalizeScheduleData(schedule), currentCardId });
+}
+
+function saveProgressVersion() {
+  const currentCardId = state.currentCard ? cardId(state.currentCard) : null;
+  const nextSchedule = normalizeScheduleData(state.schedule);
+  const nextSignature = currentProgressSignature(nextSchedule, currentCardId);
+  const latest = state.progressHistory[0];
+  if (latest && currentProgressSignature(latest.schedule, latest.currentCardId) === nextSignature) {
+    return;
+  }
+
+  state.progressHistory = [
+    {
+      id: `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
+      createdAt: Date.now(),
+      currentCardId,
+      schedule: nextSchedule,
+    },
+    ...state.progressHistory,
+  ].slice(0, 20);
+
+  saveProgressHistory();
+  renderProgressHistory();
+}
+
+function formatProgressHistoryDate(ts) {
+  return new Intl.DateTimeFormat(state.locale === 'ru' ? 'ru-RU' : 'en-US', {
+    dateStyle: 'medium',
+    timeStyle: 'short',
+  }).format(new Date(ts));
+}
+
+function renderProgressHistory() {
+  if (!settingsHistoryListEl) return;
+  if (!state.progressHistory.length) {
+    settingsHistoryListEl.innerHTML = `<div class="settings-history-empty">${escapeHtml(t('settingsHistoryEmpty'))}</div>`;
+    return;
+  }
+
+  settingsHistoryListEl.innerHTML = state.progressHistory
+    .map((version) => {
+      const due = state.deck?.questions
+        ? state.deck.questions.filter((card) => {
+            const meta = version.schedule.cards?.[cardId(card)];
+            return Number(meta?.dueAt || 0) <= nowTs();
+          }).length
+        : 0;
+      return `<div class="settings-history-item">
+        <div class="settings-history-meta">
+          <div class="settings-history-date">${escapeHtml(formatProgressHistoryDate(version.createdAt))}</div>
+          <div class="settings-history-stats">${escapeHtml(t('progressDue'))} ${due}</div>
+        </div>
+        <button class="settings-history-restore" type="button" data-restore-version="${escapeHtml(version.id)}">${escapeHtml(t('settingsHistoryRestore'))}</button>
+      </div>`;
+    })
+    .join('');
+}
+
+function bytesToBase64Url(bytes) {
+  let binary = '';
+  const chunkSize = 0x8000;
+  for (let i = 0; i < bytes.length; i += chunkSize) {
+    const chunk = bytes.subarray(i, i + chunkSize);
+    binary += String.fromCharCode(...chunk);
+  }
+  return btoa(binary).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/g, '');
+}
+
+function base64UrlToBytes(input) {
+  const base64 = input.replace(/-/g, '+').replace(/_/g, '/');
+  const padded = base64 + '='.repeat((4 - (base64.length % 4 || 4)) % 4);
+  const binary = atob(padded);
+  const bytes = new Uint8Array(binary.length);
+  for (let i = 0; i < binary.length; i += 1) {
+    bytes[i] = binary.charCodeAt(i);
+  }
+  return bytes;
+}
+
+async function gzipCompress(bytes) {
+  const stream = new Blob([bytes]).stream().pipeThrough(new CompressionStream('gzip'));
+  return new Uint8Array(await new Response(stream).arrayBuffer());
+}
+
+async function gzipDecompress(bytes) {
+  const stream = new Blob([bytes]).stream().pipeThrough(new DecompressionStream('gzip'));
+  return new Uint8Array(await new Response(stream).arrayBuffer());
+}
+
+async function encodeProgressSnapshot(snapshot) {
+  const bytes = new TextEncoder().encode(JSON.stringify(snapshot));
+  if ('CompressionStream' in window) {
+    const compressed = await gzipCompress(bytes);
+    return `gz.${bytesToBase64Url(compressed)}`;
+  }
+  return `raw.${bytesToBase64Url(bytes)}`;
+}
+
+async function decodeProgressSnapshot(serialized) {
+  if (!serialized) return null;
+  const [prefix, payload] = String(serialized).split('.', 2);
+  if (!payload) return null;
+  const bytes = base64UrlToBytes(payload);
+  const decodedBytes = prefix === 'gz' && 'DecompressionStream' in window ? await gzipDecompress(bytes) : bytes;
+  const text = new TextDecoder().decode(decodedBytes);
+  return JSON.parse(text);
+}
+
+function createProgressSnapshot() {
+  return {
+    v: 1,
+    schedule: state.schedule,
+    currentCardId: state.currentCard ? cardId(state.currentCard) : null,
+  };
+}
+
+async function buildProgressUrl() {
+  const url = new URL(window.location.href);
+  const encoded = await encodeProgressSnapshot(createProgressSnapshot());
+  url.searchParams.set(PROGRESS_QUERY_KEY, encoded);
+  return url.toString();
+}
+
+async function copyTextToClipboard(text) {
+  if (navigator.clipboard?.writeText) {
+    await navigator.clipboard.writeText(text);
+    return;
+  }
+
+  const textarea = document.createElement('textarea');
+  textarea.value = text;
+  textarea.setAttribute('readonly', '');
+  textarea.style.position = 'fixed';
+  textarea.style.opacity = '0';
+  document.body.appendChild(textarea);
+  textarea.select();
+  document.execCommand('copy');
+  textarea.remove();
+}
+
+function setCopyProgressLinkState(copied) {
+  clearTimeout(copyProgressLinkTimer);
+  if (copied) {
+    copyProgressLinkBtn.dataset.copied = 'true';
+    copyProgressLinkLabelEl.textContent = t('settingsShareCopied');
+    copyProgressLinkTimer = window.setTimeout(() => {
+      delete copyProgressLinkBtn.dataset.copied;
+      copyProgressLinkLabelEl.textContent = t('settingsShareProgress');
+    }, 1400);
+    return;
+  }
+
+  delete copyProgressLinkBtn.dataset.copied;
+  copyProgressLinkLabelEl.textContent = t('settingsShareProgress');
+}
+
+async function importProgressFromUrl() {
+  const encoded = new URL(window.location.href).searchParams.get(PROGRESS_QUERY_KEY);
+  if (!encoded) return null;
+  try {
+    const snapshot = await decodeProgressSnapshot(encoded);
+    if (!snapshot || snapshot.v !== 1 || typeof snapshot !== 'object') return null;
+    if (!snapshot.schedule || typeof snapshot.schedule !== 'object') return null;
+    return {
+      schedule: normalizeScheduleData(snapshot.schedule),
+      currentCardId: snapshot.currentCardId || null,
+    };
+  } catch (error) {
+    console.warn('Failed to import progress snapshot from URL', error);
+    return null;
+  }
+}
+
+function clearProgressQueryParam() {
+  const url = new URL(window.location.href);
+  url.searchParams.delete(PROGRESS_QUERY_KEY);
+  history.replaceState(null, '', `${url.pathname}${url.search}${url.hash}`);
+}
+
+function openImportProgressModal(snapshot) {
+  pendingImportedProgress = snapshot;
+  importProgressModalEl.classList.remove('hidden');
+}
+
+function closeImportProgressModal() {
+  importProgressModalEl.classList.add('hidden');
+}
+
+function applyImportedProgress(snapshot) {
+  if (!snapshot) return;
+  state.schedule = normalizeScheduleData(snapshot.schedule);
+  saveSchedule();
+  renderStats();
+  const importedCard = snapshot.currentCardId
+    ? state.deck?.questions.find((q) => cardId(q) === snapshot.currentCardId)
+    : null;
+  if (importedCard) {
+    renderCard(importedCard);
+    return;
+  }
+  renderNextCard();
+}
+
+function openRestoreProgressModal(versionId) {
+  pendingRestoreVersionId = versionId;
+  restoreProgressModalEl.classList.remove('hidden');
+}
+
+function closeRestoreProgressModal() {
+  restoreProgressModalEl.classList.add('hidden');
+}
+
+function applyRestoredProgress(version) {
+  if (!version) return;
+  state.schedule = normalizeScheduleData(version.schedule);
+  saveSchedule();
+  renderStats();
+  const restoredCard = version.currentCardId
+    ? state.deck?.questions.find((q) => cardId(q) === version.currentCardId)
+    : null;
+  if (restoredCard) {
+    renderCard(restoredCard);
+    return;
+  }
+  renderNextCard();
 }
 
 function getMeta(card) {
@@ -814,8 +1129,8 @@ function animateFlip(updateUI, direction = 'none') {
 
 function hintForSwipe(dx) {
   if (!state.answerChecked) return null;
-  if (dx <= -60) return 'Easy';
-  if (dx >= 60) return 'Hard';
+  if (dx <= -60) return 'easy';
+  if (dx >= 60) return 'hard';
   return null;
 }
 
@@ -825,7 +1140,7 @@ function renderSwipeHint(label) {
     swipeIndicatorEl.textContent = '';
     return;
   }
-  swipeIndicatorEl.textContent = label;
+  swipeIndicatorEl.textContent = label === 'easy' ? t('gradeEasy') : label === 'hard' ? t('gradeHard') : label;
   swipeIndicatorEl.classList.remove('hidden');
 }
 
@@ -1039,7 +1354,14 @@ function checkAnswer() {
   state.answerChecked = true;
   renderQuizOptions(state.currentCard, true);
   state.lastAnswerCorrect = state.selectedOptionIndex === state.currentCard.correct_index;
-  animateFlip(() => setRevealMode(true));
+  const isCorrect = state.lastAnswerCorrect === true;
+  animateFlip(() => setRevealMode(isCorrect));
+  if (!isCorrect) {
+    window.setTimeout(() => {
+      if (!state.currentCard || !state.answerChecked || state.lastAnswerCorrect !== false) return;
+      applyGrade('hard');
+    }, 520);
+  }
 }
 
 async function loadDeck() {
@@ -1149,8 +1471,31 @@ localeToggleEl.addEventListener('click', () => {
   applyLocale();
 });
 
+copyProgressLinkBtn.addEventListener('click', async () => {
+  try {
+    const url = await buildProgressUrl();
+    await copyTextToClipboard(url);
+    setCopyProgressLinkState(true);
+  } catch (error) {
+    console.warn('Failed to copy progress link', error);
+    setCopyProgressLinkState(false);
+  }
+});
+
+settingsHistoryListEl.addEventListener('click', (event) => {
+  const restoreBtn = event.target.closest('[data-restore-version]');
+  if (!restoreBtn) return;
+  openRestoreProgressModal(restoreBtn.dataset.restoreVersion);
+});
+
 cancelResetBtn.addEventListener('click', () => {
   closeResetModal();
+});
+
+cancelImportProgressBtn.addEventListener('click', () => {
+  pendingImportedProgress = null;
+  closeImportProgressModal();
+  clearProgressQueryParam();
 });
 
 confirmResetBtn.addEventListener('click', () => {
@@ -1160,9 +1505,49 @@ confirmResetBtn.addEventListener('click', () => {
   renderNextCard();
 });
 
+confirmImportProgressBtn.addEventListener('click', () => {
+  saveProgressVersion();
+  if (pendingImportedProgress) {
+    applyImportedProgress(pendingImportedProgress);
+  }
+  pendingImportedProgress = null;
+  closeImportProgressModal();
+  clearProgressQueryParam();
+});
+
+cancelRestoreProgressBtn.addEventListener('click', () => {
+  pendingRestoreVersionId = null;
+  closeRestoreProgressModal();
+});
+
+confirmRestoreProgressBtn.addEventListener('click', () => {
+  const version = state.progressHistory.find((item) => item.id === pendingRestoreVersionId);
+  saveProgressVersion();
+  if (version) {
+    applyRestoredProgress(version);
+  }
+  pendingRestoreVersionId = null;
+  closeRestoreProgressModal();
+});
+
 confirmModalEl.addEventListener('click', (event) => {
   if (event.target === confirmModalEl) {
     closeResetModal();
+  }
+});
+
+importProgressModalEl.addEventListener('click', (event) => {
+  if (event.target === importProgressModalEl) {
+    pendingImportedProgress = null;
+    closeImportProgressModal();
+    clearProgressQueryParam();
+  }
+});
+
+restoreProgressModalEl.addEventListener('click', (event) => {
+  if (event.target === restoreProgressModalEl) {
+    pendingRestoreVersionId = null;
+    closeRestoreProgressModal();
   }
 });
 
@@ -1173,6 +1558,17 @@ document.addEventListener('keydown', (event) => {
   }
   if (event.key === 'Escape' && !confirmModalEl.classList.contains('hidden')) {
     closeResetModal();
+    return;
+  }
+  if (event.key === 'Escape' && !importProgressModalEl.classList.contains('hidden')) {
+    pendingImportedProgress = null;
+    closeImportProgressModal();
+    clearProgressQueryParam();
+    return;
+  }
+  if (event.key === 'Escape' && !restoreProgressModalEl.classList.contains('hidden')) {
+    pendingRestoreVersionId = null;
+    closeRestoreProgressModal();
   }
 });
 
@@ -1231,9 +1627,8 @@ cardEl.addEventListener('pointerup', (event) => {
 
   const swipeLabel = hintForSwipe(dx);
   if (swipeLabel && (Math.abs(dx) > 58 || vx > 0.45)) {
-    const gradeByLabel = { Hard: 'hard', Easy: 'easy' };
     const direction = dx < 0 ? 'left' : 'right';
-    applyGrade(gradeByLabel[swipeLabel], direction);
+    applyGrade(swipeLabel, direction);
     return;
   }
 
@@ -1555,10 +1950,15 @@ async function init() {
     applyLocale();
     state.deck = await loadDeck();
     state.schedule = loadSchedule();
+    state.progressHistory = loadProgressHistory();
+    const importedSnapshot = await importProgressFromUrl();
     syncHashWithTab();
     updateTabButtons();
     cardEl.classList.remove('loading');
     renderNextCard();
+    if (importedSnapshot) {
+      openImportProgressModal(importedSnapshot);
+    }
   } catch (err) {
     state.activeTab = tabFromHash();
     applyLocale();

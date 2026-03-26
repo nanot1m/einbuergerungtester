@@ -740,6 +740,76 @@ mark {
   gap: 10px;
 }
 
+.settings-history {
+  margin-top: 18px;
+  border-top: 1px solid #e2eaee;
+  padding-top: 14px;
+}
+
+.settings-history-title {
+  color: #4f666f;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.settings-history-list {
+  margin-top: 10px;
+  display: grid;
+  gap: 8px;
+  max-height: 260px;
+  overflow-y: auto;
+}
+
+.settings-history-empty {
+  border: 1px dashed #d8e2e7;
+  border-radius: 12px;
+  padding: 12px;
+  color: #61737b;
+  font-size: 0.84rem;
+}
+
+.settings-history-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  border: 1px solid #dbe4e8;
+  background: #fff;
+  border-radius: 12px;
+  padding: 10px 12px;
+}
+
+.settings-history-meta {
+  min-width: 0;
+}
+
+.settings-history-date {
+  color: #213741;
+  font-size: 0.86rem;
+  font-weight: 700;
+}
+
+.settings-history-stats {
+  margin-top: 2px;
+  color: #61737b;
+  font-size: 0.76rem;
+}
+
+.settings-history-restore {
+  border: 1px solid #d4dfe4;
+  background: #f8fbfb;
+  color: #25424c;
+  border-radius: 999px;
+  padding: 6px 10px;
+  font: inherit;
+  font-size: 0.76rem;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
 .settings-btn {
   width: 100%;
   border: 1px solid #d7e1e6;
@@ -1041,5 +1111,196 @@ mark {
 
   .gesture-help {
     font-size: 0.76rem;
+  }
+}
+
+@media (min-width: 980px) {
+  body:not(.viewer-open) {
+    overflow: auto;
+  }
+
+  .app {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 24px 28px 24px 128px;
+    overflow: visible;
+  }
+
+  .topbar {
+    flex: 0 0 auto;
+  }
+
+  .topbar-main {
+    max-width: 1160px;
+    margin: 0 auto;
+    background: rgba(255, 253, 247, 0.78);
+    border: 1px solid #dde7eb;
+    border-radius: 24px;
+    padding: 16px 20px;
+    box-shadow: 0 20px 48px rgba(20, 32, 37, 0.08);
+    backdrop-filter: blur(14px);
+  }
+
+  .progress-row {
+    margin-top: 0;
+  }
+
+  .mini-progress {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 10px 20px;
+    font-size: 0.92rem;
+  }
+
+  .mini-item {
+    white-space: nowrap;
+  }
+
+  .tabs {
+    left: 24px;
+    right: auto;
+    top: 50%;
+    bottom: auto;
+    transform: translateY(-50%);
+    width: 76px;
+    flex-direction: column;
+    gap: 10px;
+    padding: 12px 10px;
+    border-radius: 24px;
+    box-shadow: 0 18px 42px rgba(15, 30, 36, 0.18);
+  }
+
+  .tab-btn {
+    height: 54px;
+    border-radius: 16px;
+  }
+
+  .tab-icon {
+    font-size: 1.15rem;
+  }
+
+  .views-viewport {
+    width: 100%;
+    margin-inline: 0;
+    padding-top: 18px;
+    padding-bottom: 0;
+    overflow: visible;
+  }
+
+  #study-view,
+  .stats-view,
+  .sim-view,
+  .settings-view {
+    padding-inline: 18px;
+    align-items: center;
+    overflow: visible;
+  }
+
+  #study-view > .nav-row,
+  #study-view > .card,
+  #study-view > .empty,
+  .sim-view > .sim-top,
+  .sim-view > .sim-card {
+    width: min(100%, 1120px);
+  }
+
+  .nav-row {
+    margin-top: 0;
+    padding-top: 4px;
+  }
+
+  .card,
+  .stats-view,
+  .settings-card {
+    border-radius: 28px;
+    box-shadow: 0 24px 60px rgba(20, 32, 37, 0.12);
+  }
+
+  .card {
+    margin-top: 14px;
+    padding: 28px;
+  }
+
+  .question {
+    font-size: 1.34rem;
+    line-height: 1.42;
+  }
+
+  .quiz-option-btn {
+    font-size: 1rem;
+    padding: 13px 14px;
+  }
+
+  .primary-btn,
+  .grade-btn {
+    min-height: 50px;
+    padding: 12px 18px;
+    font-size: 1rem;
+  }
+
+  .stats-view {
+    flex: 0 0 25%;
+    min-width: 25%;
+    width: min(100%, 1180px);
+    margin: 18px auto 0;
+    padding: 18px 20px;
+    border-radius: 28px;
+  }
+
+  .stats-list {
+    padding-bottom: 12px;
+  }
+
+  .stats-item-btn {
+    padding: 12px 14px;
+    border-radius: 14px;
+  }
+
+  .stats-item-title {
+    font-size: 0.92rem;
+  }
+
+  .stats-item-question {
+    font-size: 1rem;
+    line-height: 1.35;
+  }
+
+  .settings-view {
+    width: min(100%, 1120px);
+    margin: 18px auto 0;
+    padding-inline: 0;
+  }
+
+  .settings-card {
+    width: 100%;
+    padding: 24px;
+  }
+
+  .settings-btn {
+    min-height: 64px;
+    padding: 14px 18px;
+    font-size: 1rem;
+  }
+
+  .settings-list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: start;
+  }
+
+  .settings-history {
+    margin-top: 22px;
+    padding-top: 18px;
+  }
+
+  .settings-history-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    max-height: none;
+  }
+
+  .sim-view {
+    margin-top: 0;
+  }
+
+  .sim-top {
+    gap: 14px;
   }
 }
