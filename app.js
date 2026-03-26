@@ -300,10 +300,14 @@ function applyStaticTranslations() {
   localeToggleEl.setAttribute('aria-label', t('switchLanguage'));
   localeToggleEl.setAttribute('title', t('switchLanguage'));
   localeToggleLabelEl.textContent = state.locale.toUpperCase();
-  tabStudyEl.textContent = t('tabStudy');
-  tabStatsEl.textContent = t('tabStats');
-  tabSimEl.textContent = t('tabSim');
-  tabSettingsEl.textContent = t('tabSettings');
+  tabStudyEl.setAttribute('aria-label', t('tabStudy'));
+  tabStudyEl.setAttribute('title', t('tabStudy'));
+  tabStatsEl.setAttribute('aria-label', t('tabStats'));
+  tabStatsEl.setAttribute('title', t('tabStats'));
+  tabSimEl.setAttribute('aria-label', t('tabSim'));
+  tabSimEl.setAttribute('title', t('tabSim'));
+  tabSettingsEl.setAttribute('aria-label', t('tabSettings'));
+  tabSettingsEl.setAttribute('title', t('tabSettings'));
   backCardBtn.textContent = t('back');
   forwardCardBtn.textContent = t('forward');
   showAnswerBtn.textContent = t('showAnswer');
