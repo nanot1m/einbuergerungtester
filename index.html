@@ -18,14 +18,19 @@
         <div class="topbar-main">
           <div class="progress-row">
             <div class="mini-progress" aria-label="Прогресс изучения">
-              <span class="mini-item">К изучению <strong id="due-count">0</strong></span>
-              <span class="mini-item">Сегодня <strong id="done-today">0</strong></span>
-              <span class="mini-item">Без перевода <strong id="without-translation-count">0</strong></span>
-              <span class="mini-item">Стек перевода <strong id="translation-stack-count">0</strong></span>
+              <span class="mini-item"><span id="progress-due-label">К изучению</span> <strong id="due-count">0</strong></span>
+              <span class="mini-item"><span id="progress-today-label">Сегодня</span> <strong id="done-today">0</strong></span>
+              <span class="mini-item"><span id="progress-without-translation-label">Без перевода</span> <strong id="without-translation-count">0</strong></span>
+              <span class="mini-item"><span id="progress-translation-stack-label">Стек перевода</span> <strong id="translation-stack-count">0</strong></span>
             </div>
-            <button id="reset-progress" class="icon-btn" aria-label="Сбросить прогресс" title="Сбросить прогресс">
-              <span aria-hidden="true">↺</span><span>Сброс</span>
-            </button>
+            <div class="topbar-actions">
+              <button id="locale-toggle" class="icon-btn locale-btn" type="button" aria-label="Переключить язык" title="Переключить язык">
+                <span id="locale-toggle-label">RU</span>
+              </button>
+              <button id="reset-progress" class="icon-btn" aria-label="Сбросить прогресс" title="Сбросить прогресс">
+                <span aria-hidden="true">↺</span><span id="reset-progress-label">Сброс</span>
+              </button>
+            </div>
           </div>
         </div>
       </header>
@@ -61,14 +66,14 @@
           </div>
 
           <div class="actions hidden" id="grade-actions">
-            <button class="grade-btn hard" data-grade="hard">Сложно</button>
-            <button class="grade-btn easy" data-grade="easy">Легко</button>
+            <button id="grade-hard" class="grade-btn hard" data-grade="hard">Сложно</button>
+            <button id="grade-easy" class="grade-btn easy" data-grade="easy">Легко</button>
           </div>
         </section>
 
         <section id="empty-state" class="empty hidden">
-          <h2>На сегодня карточек нет</h2>
-          <p>Вернитесь позже или сбросьте прогресс, чтобы пройти колоду заново.</p>
+          <h2 id="empty-title">На сегодня карточек нет</h2>
+          <p id="empty-text">Вернитесь позже или сбросьте прогресс, чтобы пройти колоду заново.</p>
         </section>
       </div>
 
@@ -108,7 +113,7 @@
     <div id="confirm-modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="confirm-title">
       <div class="modal-card">
         <h2 id="confirm-title">Сбросить прогресс?</h2>
-        <p>Весь прогресс по карточкам будет удален.</p>
+        <p id="confirm-text">Весь прогресс по карточкам будет удален.</p>
         <div class="modal-actions">
           <button id="cancel-reset" class="modal-btn ghost">Отмена</button>
           <button id="confirm-reset" class="modal-btn danger">Сбросить</button>

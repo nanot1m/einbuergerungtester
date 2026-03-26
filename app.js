@@ -1,5 +1,99 @@
 const DATA_PATH = './data/einbuergerungstest_berlin_310_ru.json';
 const STORAGE_KEY = 'einburgerung-berlin-sm2-v2';
+const LOCALE_STORAGE_KEY = 'einburgerung-ui-locale-v1';
+
+const UI_TEXT = {
+  ru: {
+    progressDue: 'К изучению',
+    progressToday: 'Сегодня',
+    progressWithoutTranslation: 'Без перевода',
+    progressTranslationStack: 'Стек перевода',
+    reset: 'Сброс',
+    switchLanguage: 'Переключить язык',
+    tabStudy: 'Тренировка',
+    tabStats: 'Статистика',
+    tabSim: 'Симуляция',
+    back: '< назад',
+    forward: 'вперед >',
+    tagGeneral: 'Общие #{n}',
+    showAnswer: 'Проверить ответ',
+    gradeHard: 'Сложно',
+    gradeEasy: 'Легко',
+    emptyTitle: 'На сегодня карточек нет',
+    emptyText: 'Вернитесь позже или сбросьте прогресс, чтобы пройти колоду заново.',
+    simNewTest: 'Новый тест (33)',
+    simNotStarted: 'Не начат',
+    simFinish: 'Завершить тест',
+    resetTitle: 'Сбросить прогресс?',
+    resetText: 'Весь прогресс по карточкам будет удален.',
+    cancel: 'Отмена',
+    close: 'Закрыть',
+    openImage: 'Открыть изображение',
+    closeImage: 'Закрыть изображение',
+    viewImage: 'Просмотр изображения',
+    errorsNone: 'Ошибок нет. Отличный результат.',
+    passed: 'Тест сдан',
+    failed: 'Тест не сдан',
+    openInStudy: 'Открыть в тренировке',
+    missingTitle: 'Есть пропуски: {count}. Ответьте на них перед завершением.',
+    questionN: 'Вопрос {n}',
+    statsDue: 'К изучению',
+    statsTranslation: 'С переводом',
+    statsMastered: 'Без перевода',
+    statsRelearn: 'Сложные',
+    statsAll: 'Все',
+    statsEmpty: 'Нет вопросов в этой категории.',
+    chooseOption: 'Выберите вариант',
+    loadError: 'Ошибка загрузки данных: {message}',
+    progressAria: 'Прогресс изучения',
+    startTranslation: 'Закрыть перевод',
+  },
+  en: {
+    progressDue: 'Due',
+    progressToday: 'Today',
+    progressWithoutTranslation: 'Without translation',
+    progressTranslationStack: 'Translation stack',
+    reset: 'Reset',
+    switchLanguage: 'Switch language',
+    tabStudy: 'Study',
+    tabStats: 'Stats',
+    tabSim: 'Simulation',
+    back: '< back',
+    forward: 'next >',
+    tagGeneral: 'General #{n}',
+    showAnswer: 'Check answer',
+    gradeHard: 'Hard',
+    gradeEasy: 'Easy',
+    emptyTitle: 'No cards for today',
+    emptyText: 'Come back later or reset progress to restart the deck.',
+    simNewTest: 'New test (33)',
+    simNotStarted: 'Not started',
+    simFinish: 'Finish test',
+    resetTitle: 'Reset progress?',
+    resetText: 'All card progress will be deleted.',
+    cancel: 'Cancel',
+    close: 'Close',
+    openImage: 'Open image',
+    closeImage: 'Close image',
+    viewImage: 'Image viewer',
+    errorsNone: 'No mistakes. Strong result.',
+    passed: 'Test passed',
+    failed: 'Test failed',
+    openInStudy: 'Open in study',
+    missingTitle: 'Missing answers: {count}. Answer them before finishing.',
+    questionN: 'Question {n}',
+    statsDue: 'Due',
+    statsTranslation: 'With translation',
+    statsMastered: 'Without translation',
+    statsRelearn: 'Hard',
+    statsAll: 'All',
+    statsEmpty: 'No questions in this category.',
+    chooseOption: 'Choose an option',
+    loadError: 'Data loading error: {message}',
+    progressAria: 'Study progress',
+    startTranslation: 'Close translation',
+  },
+};
 
 const state = {
   deck: null,
@@ -10,6 +104,7 @@ const state = {
   lastAnswerCorrect: null,
   translationUsedForCurrent: false,
   suppressOptionClick: false,
+  locale: loadLocale(),
   activeTab: 'study',
   statsCategory: 'due',
   simulation: {
@@ -25,6 +120,10 @@ const dueCountEl = document.getElementById('due-count');
 const doneTodayEl = document.getElementById('done-today');
 const withoutTranslationCountEl = document.getElementById('without-translation-count');
 const translationStackCountEl = document.getElementById('translation-stack-count');
+const progressDueLabelEl = document.getElementById('progress-due-label');
+const progressTodayLabelEl = document.getElementById('progress-today-label');
+const progressWithoutTranslationLabelEl = document.getElementById('progress-without-translation-label');
+const progressTranslationStackLabelEl = document.getElementById('progress-translation-stack-label');
 const cardEl = document.getElementById('card');
 const emptyStateEl = document.getElementById('empty-state');
 const studyViewEl = document.getElementById('study-view');
@@ -32,6 +131,8 @@ const statsViewEl = document.getElementById('stats-view');
 const tabStudyEl = document.getElementById('tab-study');
 const tabStatsEl = document.getElementById('tab-stats');
 const tabSimEl = document.getElementById('tab-sim');
+const localeToggleEl = document.getElementById('locale-toggle');
+const localeToggleLabelEl = document.getElementById('locale-toggle-label');
 const statsCategoriesEl = document.getElementById('stats-categories');
 const statsListEl = document.getElementById('stats-list');
 const simViewEl = document.getElementById('sim-view');
@@ -62,9 +163,14 @@ const revealActionsEl = document.getElementById('reveal-actions');
 const gradeActionsEl = document.getElementById('grade-actions');
 
 const showAnswerBtn = document.getElementById('show-answer');
+const gradeHardBtn = document.getElementById('grade-hard');
+const gradeEasyBtn = document.getElementById('grade-easy');
 const resetProgressBtn = document.getElementById('reset-progress');
+const resetProgressLabelEl = document.getElementById('reset-progress-label');
 const swipeIndicatorEl = document.getElementById('swipe-indicator');
 const confirmModalEl = document.getElementById('confirm-modal');
+const confirmTitleEl = document.getElementById('confirm-title');
+const confirmTextEl = document.getElementById('confirm-text');
 const cancelResetBtn = document.getElementById('cancel-reset');
 const confirmResetBtn = document.getElementById('confirm-reset');
 const translationTooltipEl = document.getElementById('translation-tooltip');
@@ -75,6 +181,8 @@ const imageViewerBackdropEl = document.getElementById('image-viewer-backdrop');
 const imageViewerCloseEl = document.getElementById('image-viewer-close');
 const imageViewerStageEl = document.getElementById('image-viewer-stage');
 const imageViewerImgEl = document.getElementById('image-viewer-img');
+const emptyTitleEl = document.getElementById('empty-title');
+const emptyTextEl = document.getElementById('empty-text');
 
 const gesture = {
   active: false,
@@ -146,9 +254,85 @@ function escapeHtml(text) {
     .replaceAll("'", '&#39;');
 }
 
+function loadLocale() {
+  const stored = localStorage.getItem(LOCALE_STORAGE_KEY);
+  if (stored === 'ru' || stored === 'en') return stored;
+  const lang = navigator.language?.toLowerCase() || '';
+  return lang.startsWith('en') ? 'en' : 'ru';
+}
+
+function saveLocale() {
+  localStorage.setItem(LOCALE_STORAGE_KEY, state.locale);
+}
+
+function t(key, vars = {}) {
+  const dict = UI_TEXT[state.locale] || UI_TEXT.ru;
+  const template = dict[key] || UI_TEXT.ru[key] || key;
+  return Object.entries(vars).reduce((out, [name, value]) => out.replaceAll(`{${name}}`, String(value)), template);
+}
+
+function tagLabel(card) {
+  return card.section === 'state' ? `Berlin #${card.task_number}` : t('tagGeneral', { n: card.task_number });
+}
+
+function applyStaticTranslations() {
+  progressDueLabelEl.textContent = t('progressDue');
+  progressTodayLabelEl.textContent = t('progressToday');
+  progressWithoutTranslationLabelEl.textContent = t('progressWithoutTranslation');
+  progressTranslationStackLabelEl.textContent = t('progressTranslationStack');
+  resetProgressLabelEl.textContent = t('reset');
+  resetProgressBtn.setAttribute('aria-label', t('resetTitle'));
+  resetProgressBtn.setAttribute('title', t('resetTitle'));
+  localeToggleEl.setAttribute('aria-label', t('switchLanguage'));
+  localeToggleEl.setAttribute('title', t('switchLanguage'));
+  localeToggleLabelEl.textContent = state.locale.toUpperCase();
+  tabStudyEl.textContent = t('tabStudy');
+  tabStatsEl.textContent = t('tabStats');
+  tabSimEl.textContent = t('tabSim');
+  backCardBtn.textContent = t('back');
+  forwardCardBtn.textContent = t('forward');
+  showAnswerBtn.textContent = t('showAnswer');
+  gradeHardBtn.textContent = t('gradeHard');
+  gradeEasyBtn.textContent = t('gradeEasy');
+  emptyTitleEl.textContent = t('emptyTitle');
+  emptyTextEl.textContent = t('emptyText');
+  simStartEl.textContent = t('simNewTest');
+  simSubmitEl.textContent = t('simFinish');
+  simPrevEl.textContent = t('back');
+  simNextEl.textContent = t('forward');
+  confirmTitleEl.textContent = t('resetTitle');
+  confirmTextEl.textContent = t('resetText');
+  cancelResetBtn.textContent = t('cancel');
+  confirmResetBtn.textContent = t('reset');
+  simResultCloseEl.textContent = t('close');
+  translationTooltipCloseEl.setAttribute('aria-label', t('startTranslation'));
+  imageViewerEl.setAttribute('aria-label', t('viewImage'));
+  imageViewerCloseEl.setAttribute('aria-label', t('closeImage'));
+  document.querySelector('.mini-progress')?.setAttribute('aria-label', t('progressAria'));
+}
+
+function applyLocale() {
+  saveLocale();
+  document.documentElement.lang = state.locale;
+  applyStaticTranslations();
+  renderStats();
+  if (state.currentCard) {
+    cardTagEl.textContent = tagLabel(state.currentCard);
+    renderQuestionImages(questionMediaEl, state.currentCard);
+  }
+  if (state.activeTab === 'stats' && state.deck) {
+    renderStatsView();
+  }
+  if (state.activeTab === 'sim') {
+    renderSimView();
+  } else if (!state.simulation.active) {
+    simProgressEl.textContent = t('simNotStarted');
+  }
+}
+
 function normalizeImageItem(item) {
   if (!item) return null;
-  if (typeof item === 'string') return { src: item, alt: 'Иллюстрация к вопросу', caption: '' };
+  if (typeof item === 'string') return { src: item, alt: t('viewImage'), caption: '' };
   if (typeof item !== 'object') return null;
 
   const src = item.src || item.url || item.path || item.image || item.image_url;
@@ -156,7 +340,7 @@ function normalizeImageItem(item) {
 
   return {
     src,
-    alt: item.alt || item.caption || item.title || 'Иллюстрация к вопросу',
+    alt: item.alt || item.caption || item.title || t('viewImage'),
     caption: item.caption || item.title || '',
   };
 }
@@ -190,7 +374,7 @@ function renderQuestionImages(container, card) {
   container.innerHTML = images
     .map(
       (image) => `<figure class="question-media-item">
-        <button class="question-media-open" type="button" data-image-src="${escapeHtml(image.src)}" data-image-alt="${escapeHtml(image.alt)}" aria-label="Открыть изображение">
+        <button class="question-media-open" type="button" data-image-src="${escapeHtml(image.src)}" data-image-alt="${escapeHtml(image.alt)}" aria-label="${escapeHtml(t('openImage'))}">
           <img src="${escapeHtml(image.src)}" alt="${escapeHtml(image.alt)}" loading="lazy" />
         </button>
         ${image.caption ? `<figcaption>${escapeHtml(image.caption)}</figcaption>` : ''}
@@ -474,7 +658,7 @@ function startSimulation() {
 function renderSimView() {
   const sim = state.simulation;
   if (!sim.active) {
-    simProgressEl.textContent = 'Не начат';
+    simProgressEl.textContent = t('simNotStarted');
     simCardEl.classList.add('hidden');
     return;
   }
@@ -482,7 +666,7 @@ function renderSimView() {
   const q = sim.questions[sim.current];
   simCardEl.classList.remove('hidden');
   simProgressEl.textContent = `${sim.current + 1} / ${sim.questions.length}`;
-  simTagEl.textContent = q.section === 'state' ? `Berlin #${q.task_number}` : `Общие #${q.task_number}`;
+  simTagEl.textContent = tagLabel(q);
   const stage = getMeta(q).stage;
   simGroupEl.textContent = stage;
   simGroupEl.className = `tag group-tag ${stage}`;
@@ -508,17 +692,17 @@ function openSimResultModal() {
   const wrong = sim.questions.filter((qq) => sim.answers[cardId(qq)] !== qq.correct_index);
 
   simResultContentEl.innerHTML = `
-    <div id="sim-result-title" class="sim-result-title">${passed ? 'Тест сдан' : 'Тест не сдан'} — ${correct} / ${sim.questions.length}</div>
+    <div id="sim-result-title" class="sim-result-title">${passed ? t('passed') : t('failed')} — ${correct} / ${sim.questions.length}</div>
     <div class="sim-result-list">
       ${wrong.length === 0
-        ? '<div class="stats-empty">Ошибок нет. Отличный результат.</div>'
+        ? `<div class="stats-empty">${escapeHtml(t('errorsNone'))}</div>`
         : wrong
             .map((qq) => {
               const idx = state.deck.questions.findIndex((x) => cardId(x) === cardId(qq)) + 1;
               return `<div class="sim-result-item">
                 <div class="sim-result-item-title">${idx} / ${state.deck.questions.length}</div>
                 <div class="sim-result-item-q">${escapeHtml(qq.question)}</div>
-                <button class="back-btn" type="button" data-sim-jump="${cardId(qq)}">Открыть в тренировке</button>
+                <button class="back-btn" type="button" data-sim-jump="${cardId(qq)}">${escapeHtml(t('openInStudy'))}</button>
               </div>`;
             })
             .join('')}
@@ -529,13 +713,13 @@ function openSimResultModal() {
 
 function openSimMissingModal(unanswered) {
   simResultContentEl.innerHTML = `
-    <div id="sim-result-title" class="sim-result-title">Есть пропуски: ${unanswered.length}. Ответьте на них перед завершением.</div>
+    <div id="sim-result-title" class="sim-result-title">${escapeHtml(t('missingTitle', { count: unanswered.length }))}</div>
     <div class="sim-missing">
       <div class="sim-missing-list">
         ${unanswered
           .map((q) => {
             const idx = state.simulation.questions.findIndex((x) => cardId(x) === cardId(q)) + 1;
-            return `<button class="sim-jump-btn" type="button" data-sim-missing-jump="${cardId(q)}">Вопрос ${idx}</button>`;
+            return `<button class="sim-jump-btn" type="button" data-sim-missing-jump="${cardId(q)}">${escapeHtml(t('questionN', { n: idx }))}</button>`;
           })
           .join('')}
       </div>
@@ -702,11 +886,11 @@ function statsCategoryCards(category) {
 function renderStatsView() {
   if (!state.deck) return;
   const categories = [
-    { id: 'due', label: 'К изучению' },
-    { id: 'translation', label: 'С переводом' },
-    { id: 'mastered', label: 'Без перевода' },
-    { id: 'relearn', label: 'Сложные' },
-    { id: 'all', label: 'Все' },
+    { id: 'due', label: t('statsDue') },
+    { id: 'translation', label: t('statsTranslation') },
+    { id: 'mastered', label: t('statsMastered') },
+    { id: 'relearn', label: t('statsRelearn') },
+    { id: 'all', label: t('statsAll') },
   ];
 
   statsCategoriesEl.innerHTML = categories
@@ -719,14 +903,14 @@ function renderStatsView() {
 
   const list = statsCategoryCards(state.statsCategory);
   if (!list.length) {
-    statsListEl.innerHTML = '<div class="stats-empty">Нет вопросов в этой категории.</div>';
+    statsListEl.innerHTML = `<div class="stats-empty">${escapeHtml(t('statsEmpty'))}</div>`;
     return;
   }
 
   statsListEl.innerHTML = list
     .map((q) => {
       const idx = state.deck.questions.findIndex((x) => cardId(x) === cardId(q)) + 1;
-      const label = q.section === 'state' ? `Berlin #${q.task_number}` : `Общие #${q.task_number}`;
+      const label = tagLabel(q);
       const shortQ = escapeHtml(q.question.length > 120 ? `${q.question.slice(0, 120)}...` : q.question);
       return `<button class="stats-item-btn" data-card-id="${cardId(q)}" type="button">
         <div class="stats-item-title">${idx} / ${state.deck.questions.length} • ${label}</div>
@@ -771,7 +955,7 @@ function renderCard(card) {
   const meta = getMeta(card);
 
   cardIndexEl.textContent = `${cardNum} / ${state.deck.questions.length}`;
-  cardTagEl.textContent = card.section === 'state' ? `Berlin #${card.task_number}` : `Общие #${card.task_number}`;
+  cardTagEl.textContent = tagLabel(card);
 
   cardGroupEl.textContent = meta.stage;
   cardGroupEl.className = `tag group-tag ${meta.stage}`;
@@ -897,7 +1081,7 @@ quizOptionsEl.addEventListener('click', (event) => {
 showAnswerBtn.addEventListener('click', () => {
   if (!state.currentCard) return;
   if (state.selectedOptionIndex == null) {
-    renderSwipeHint('Выберите вариант');
+    renderSwipeHint(t('chooseOption'));
     setTimeout(() => renderSwipeHint(null), 700);
     return;
   }
@@ -912,6 +1096,11 @@ gradeActionsEl.addEventListener('click', (event) => {
 
 resetProgressBtn.addEventListener('click', () => {
   openResetModal();
+});
+
+localeToggleEl.addEventListener('click', () => {
+  state.locale = state.locale === 'ru' ? 'en' : 'ru';
+  applyLocale();
 });
 
 cancelResetBtn.addEventListener('click', () => {
@@ -985,7 +1174,7 @@ cardEl.addEventListener('pointerup', (event) => {
     const swipeUp = dy < -58 && Math.abs(dy) > Math.abs(dx);
     if (swipeUp) {
       if (state.selectedOptionIndex == null) {
-        renderSwipeHint('Выберите вариант');
+        renderSwipeHint(t('chooseOption'));
         setTimeout(() => renderSwipeHint(null), 700);
       } else {
         checkAnswer();
@@ -1291,14 +1480,16 @@ simResultModalEl.addEventListener('click', (event) => {
 
 async function init() {
   try {
+    applyLocale();
     state.deck = await loadDeck();
     state.schedule = loadSchedule();
     updateTabButtons();
     cardEl.classList.remove('loading');
     renderNextCard();
   } catch (err) {
+    applyLocale();
     cardEl.classList.remove('loading');
-    cardEl.innerHTML = `<p>Ошибка загрузки данных: ${err.message}</p>`;
+    cardEl.innerHTML = `<p>${escapeHtml(t('loadError', { message: err.message }))}</p>`;
   }
 }
 
