@@ -263,7 +263,7 @@
       "section": "general",
       "state": null,
       "task_number": 8,
-      "question": "Was steht nicht i m Grundgesetz von Deutschland?",
+      "question": "Was steht nicht im Grundgesetz von Deutschland?",
       "options": [
         "Die Würde des Menschen ist unantastbar.",
         "Alle sollen gleich viel Geld haben.",
@@ -754,8 +754,8 @@
       ],
       "correct_letter": "A",
       "correct_index": 0,
-      "correct_option_de": "Bild 1",
-      "correct_option_ru": "Изображение 1",
+      "correct_option_de": "1",
+      "correct_option_ru": "1",
       "question_images": [
         {
           "src": "./data/images/questions/general_21_question.png",
@@ -879,7 +879,7 @@
         "Sachsen-Anhalt"
       ],
       "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
-      "question_ru": "Что не является федеральной землей Федеративная Республика Германия?",
+      "question_ru": "Что из перечисленного не является федеральной землей Федеративной Республики Германия?",
       "options_ru": [
         "Эльзас-Лотарингия",
         "Северный Рейн-Вестфалия",
@@ -1131,12 +1131,12 @@
         "Rechtsprechung"
       ],
       "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
-      "question_ru": "Что не является государственным насилием в Германии?",
+      "question_ru": "Что не относится к ветвям государственной власти в Германии?",
       "options_ru": [
-        "законодательство",
-        "Правительство",
-        "нажимать",
-        "юриспруденция"
+        "законодательная власть",
+        "правительство",
+        "пресса",
+        "правосудие"
       ],
       "keywords_de": [
         "Gesetzgebung",
@@ -1153,7 +1153,7 @@
       "correct_letter": "C",
       "correct_index": 2,
       "correct_option_de": "Presse",
-      "correct_option_ru": "нажимать"
+      "correct_option_ru": "пресса"
     },
     {
       "section": "general",
@@ -1349,10 +1349,10 @@
       "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
       "question_ru": "Федеративная Республика Германия – демократическая и социальная…",
       "options_ru": [
-        "Ассоциация государств.",
-        "Состояние.",
-        "Конфедерация государств.",
-        "Центральное правительство."
+        "объединение государств.",
+        "федеративное государство.",
+        "союз государств.",
+        "централизованное государство."
       ],
       "keywords_de": [
         "Staatenverbund",
@@ -1369,7 +1369,7 @@
       "correct_letter": "B",
       "correct_index": 1,
       "correct_option_de": "Bundesstaat.",
-      "correct_option_ru": "Состояние."
+      "correct_option_ru": "федеративное государство."
     },
     {
       "section": "general",
@@ -1663,7 +1663,7 @@
       "section": "general",
       "state": null,
       "task_number": 47,
-      "question": "Der deutsche Staat hat viele Aufgaben. Welche Aufgabe gehört nicht d azu?",
+      "question": "Der deutsche Staat hat viele Aufgaben. Welche Aufgabe gehört nicht dazu?",
       "options": [
         "Er bezahlt für alle Staatsangehörigen Urlaubsreisen.",
         "Er zahlt Kindergeld.",
@@ -1673,10 +1673,10 @@
       "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
       "question_ru": "У немецкого государства много задач. Какая задача сюда не входит?",
       "options_ru": [
-        "Он оплачивает поездки в отпуск для всех граждан.",
-        "Он платит алименты.",
-        "Он поддерживает музеи.",
-        "Он поддерживает спортсменов."
+        "Оно оплачивает отпускные поездки для всех граждан.",
+        "Оно выплачивает детское пособие.",
+        "Оно поддерживает музеи.",
+        "Оно поддерживает спортсменок и спортсменов."
       ],
       "keywords_de": [
         "Staatsangehörigen",
@@ -1693,7 +1693,7 @@
       "correct_letter": "A",
       "correct_index": 0,
       "correct_option_de": "Er bezahlt für alle Staatsangehörigen Urlaubsreisen.",
-      "correct_option_ru": "Он оплачивает поездки в отпуск для всех граждан."
+      "correct_option_ru": "Оно оплачивает отпускные поездки для всех граждан."
     },
     {
       "section": "general",
@@ -1807,7 +1807,7 @@
       "section": "general",
       "state": null,
       "task_number": 51,
-      "question": "Zu einem demokratischen Rechtsstaat gehört es nicht, d ass …",
+      "question": "Zu einem demokratischen Rechtsstaat gehört es nicht, dass …",
       "options": [
         "Menschen sich kritisch über die Regierung äußern können.",
         "Bürger friedlich demonstrieren gehen dürfen.",
@@ -1951,7 +1951,7 @@
       "section": "general",
       "state": null,
       "task_number": 55,
-      "question": "Was zeigt dieses Bild? © Deutscher Bundestag/Achim Melde",
+      "question": "Was zeigt dieses Bild?",
       "options": [
         "den Bundestagssitz in Berlin",
         "das Bundesverfassungsgericht in Karlsruhe",
@@ -1981,7 +1981,7 @@
       "correct_letter": "A",
       "correct_index": 0,
       "correct_option_de": "den Bundestagssitz in Berlin",
-      "correct_option_ru": "место Бундестага в Берлине",
+      "correct_option_ru": "здание Бундестага в Берлине",
       "question_images": [
         {
           "src": "./data/images/questions/general_55_question.jpg",
@@ -2358,15 +2358,15 @@
         "Berlin und München",
         "Hamburg und Essen",
         "Nürnberg und Stuttgart",
-        "Worms und Speyer A"
+        "Worms und Speyer"
       ],
       "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
       "question_ru": "В каких городах находятся самые большие еврейские общины в Германии?",
       "options_ru": [
         "Берлин и Мюнхен",
-        "Гамбург и еда",
+        "Гамбург и Эссен",
         "Нюрнберг и Штутгарт",
-        "Вормс и Шпейер А"
+        "Вормс и Шпайер"
       ],
       "keywords_de": [
         "Gemeinden",
@@ -2497,7 +2497,7 @@
       "section": "general",
       "state": null,
       "task_number": 70,
-      "question": "Der deutsche Bundespräsident Gustav Heinemann gibt Helmut Schmidt 1974 die Ernennungsurkunde zum deutschen Bundeskanzler. Was gehört zu den Aufgaben der deutschen Bundespräsidentin/des deutschen Bundespräsidenten? © Bundesregierung/Engelbert Reineke",
+      "question": "Der deutsche Bundespräsident Gustav Heinemann gibt Helmut Schmidt 1974 die Ernennungsurkunde zum deutschen Bundeskanzler. Was gehört zu den Aufgaben der deutschen Bundespräsidentin/des deutschen Bundespräsidenten?",
       "options": [
         "Sie/Er führt die Regierungsgeschäfte.",
         "Sie/Er kontrolliert die Regierungspartei.",
@@ -2505,12 +2505,12 @@
         "Sie/Er schlägt die Kanzlerin/den Kanzler zur Wahl vor."
       ],
       "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
-      "question_ru": "Федеральный президент Германии Густав Хайнеманн вручает Гельмуту Шмидту свидетельство о назначении канцлером Германии в 1974 году. Каковы задачи федерального президента Германии? © Федеральное правительство/Энгельберт Райнеке",
+      "question_ru": "Федеральный президент Германии Густав Хайнеманн вручает Гельмуту Шмидту в 1974 году грамоту о назначении федеральным канцлером. Что относится к задачам федерального президента Германии?",
       "options_ru": [
-        "Она/Он управляет правительством.",
+        "Она/Он руководит работой правительства.",
         "Она/Он контролирует правящую партию.",
         "Она/Он выбирает министров.",
-        "Она/он выдвигает кандидатуру канцлера на выборы."
+        "Она/Он предлагает кандидатуру канцлера для избрания."
       ],
       "keywords_de": [
         "Bundespräsident",
@@ -2527,7 +2527,7 @@
       "correct_letter": "D",
       "correct_index": 3,
       "correct_option_de": "Sie/Er schlägt die Kanzlerin/den Kanzler zur Wahl vor.",
-      "correct_option_ru": "Она/он выдвигает кандидатуру канцлера на выборы.",
+      "correct_option_ru": "Она/Он предлагает кандидатуру канцлера для избрания.",
       "question_images": [
         {
           "src": "./data/images/questions/general_70_question.png",
@@ -2539,12 +2539,12 @@
       "section": "general",
       "state": null,
       "task_number": 71,
-      "question": "Wo hält sich die deu tsche Bundeskanzlerin/der deutsche Bundeskanzler am häufigsten auf? Am häufigsten ist sie/er …",
+      "question": "Wo hält sich die deutsche Bundeskanzlerin/der deutsche Bundeskanzler am häufigsten auf? Am häufigsten ist sie/er …",
       "options": [
-        "i n Bonn, weil sich dort das Bundeskanzleramt und der Bundestag befinden.",
-        "a uf Schloss Meseberg, dem Gästehaus der Bundesregierung, um Staatsgäste zu empfangen.",
-        "a uf Schloss Bellevue, dem Amtssitz d er Bundespräsidentin/des Bundespräsidenten, um Staatsgäste zu empfangen.",
-        "i n Berlin, weil sich dort das Bundeskanzleramt und der Bundestag befinden."
+        "in Bonn, weil sich dort das Bundeskanzleramt und der Bundestag befinden.",
+        "auf Schloss Meseberg, dem Gästehaus der Bundesregierung, um Staatsgäste zu empfangen.",
+        "auf Schloss Bellevue, dem Amtssitz der Bundespräsidentin/des Bundespräsidenten, um Staatsgäste zu empfangen.",
+        "in Berlin, weil sich dort das Bundeskanzleramt und der Bundestag befinden."
       ],
       "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
       "question_ru": "Где чаще всего останавливается канцлер Германии? Чаще всего она/он…",
@@ -2568,7 +2568,7 @@
       ],
       "correct_letter": "D",
       "correct_index": 3,
-      "correct_option_de": "i n Berlin, weil sich dort das Bundeskanzleramt und der Bundestag befinden.",
+      "correct_option_de": "in Berlin, weil sich dort das Bundeskanzleramt und der Bundestag befinden.",
       "correct_option_ru": "в Берлине, потому что там расположены Федеральная канцелярия и Бундестаг."
     },
     {
@@ -3444,7 +3444,7 @@
         "Kürzung sozialer Leistungen",
         "bis zu 100 Sozialstunden",
         "gar nicht, Holocaustleugnung ist erlaubt",
-        "mit Freiheitsstrafe bis zu fünf Jahren oder mit Geldstrafe A"
+        "mit Freiheitsstrafe bis zu fünf Jahren oder mit Geldstrafe"
       ],
       "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
       "question_ru": "Как может быть наказан тот, кто отрицает Холокост?",
@@ -3468,7 +3468,7 @@
       ],
       "correct_letter": "D",
       "correct_index": 3,
-      "correct_option_de": "mit Freiheitsstrafe bis zu fünf Jahren oder mit Geldstrafe A",
+      "correct_option_de": "mit Freiheitsstrafe bis zu fünf Jahren oder mit Geldstrafe",
       "correct_option_ru": "с лишением свободы на срок до пяти лет или штрафом А."
     },
     {
@@ -3663,12 +3663,12 @@
         "Ehrentitel \"Held der Deutschen Demokratischen Republik\""
       ],
       "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
-      "question_ru": "Чем можно наградить в Федеративной Республике Германия человека, добившегося особых достижений в политической, экономической, культурной, интеллектуальной или социальной сфере? С …",
+      "question_ru": "Чем в Федеративной Республике Германия могут наградить человека за особые заслуги в политической, экономической, культурной, интеллектуальной или социальной сфере? ...",
       "options_ru": [
-        "Федеральный крест за заслуги",
-        "Федеральный орел",
-        "Патриотический орден «За заслуги»",
-        "Почетное звание «Герой Германской Демократической Республики»."
+        "Федеральным крестом за заслуги",
+        "Федеральным орлом",
+        "Патриотическим орденом «За заслуги»",
+        "Почетным званием «Герой Германской Демократической Республики»"
       ],
       "keywords_de": [
         "Bundesverdienstkreuz",
@@ -3685,7 +3685,7 @@
       "correct_letter": "A",
       "correct_index": 0,
       "correct_option_de": "Bundesverdienstkreuz",
-      "correct_option_ru": "Федеральный крест за заслуги"
+      "correct_option_ru": "Федеральным крестом за заслуги"
     },
     {
       "section": "general",
@@ -3727,9 +3727,9 @@
       "section": "general",
       "state": null,
       "task_number": 104,
-      "question": "Eine Frau in Deutschland verliert ihre Arbeit. Was darf nicht d er Grund für diese Entlassung sein?",
+      "question": "Eine Frau in Deutschland verliert ihre Arbeit. Was darf nicht der Grund für diese Entlassung sein?",
       "options": [
-        "D ie Frau ist lange krank und arbeitsunfähig.",
+        "Die Frau ist lange krank und arbeitsunfähig.",
         "Die Frau kam oft zu spät zur Arbeit.",
         "Die Frau erledigt private Sachen während der Arbeitszeit.",
         "Die Frau bekommt ein Kind und ihr Chef weiß das."
@@ -4347,12 +4347,12 @@
         "Richtlinie."
       ],
       "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
-      "question_ru": "Партия хочет попасть в немецкий Бундестаг. Но оно должно иметь минимальную долю голосов. Это значит…",
+      "question_ru": "Партия хочет попасть в немецкий Бундестаг. Но для этого она должна набрать минимальную долю голосов избирателей. Это называется…",
       "options_ru": [
-        "5% барьер.",
-        "Лимит приема.",
-        "Базовая ценность.",
-        "Политика."
+        "пятипроцентный барьер.",
+        "порог допуска.",
+        "базовое значение.",
+        "руководящий принцип."
       ],
       "keywords_de": [
         "Bundestag",
@@ -4369,7 +4369,7 @@
       "correct_letter": "A",
       "correct_index": 0,
       "correct_option_de": "5%-Hürde.",
-      "correct_option_ru": "5% барьер."
+      "correct_option_ru": "пятипроцентный барьер."
     },
     {
       "section": "general",
@@ -5217,12 +5217,12 @@
         "Legislative"
       ],
       "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
-      "question_ru": "В Германии государственная власть разделена. В каком правительстве работает судья? Для …",
+      "question_ru": "В Германии государственная власть разделена. К какой ветви власти относится работа судьи? К ...",
       "options_ru": [
-        "судебная власть",
-        "исполнительный",
-        "нажимать",
-        "Законодательная власть"
+        "судебной власти",
+        "исполнительной власти",
+        "прессе",
+        "законодательной власти"
       ],
       "keywords_de": [
         "Staatsgewalt",
@@ -5239,7 +5239,7 @@
       "correct_letter": "A",
       "correct_index": 0,
       "correct_option_de": "Judikative",
-      "correct_option_ru": "судебная власть"
+      "correct_option_ru": "судебной власти"
     },
     {
       "section": "general",
@@ -6497,7 +6497,7 @@
       "section": "general",
       "state": null,
       "task_number": 181,
-      "question": "Was wollte Willy Brandt mit seinem Kniefall 1970 im ehemaligen jüdischen Ghetto in Warschau ausdrücken? © Bundesregierung/Engelbert Reineke",
+      "question": "Was wollte Willy Brandt mit seinem Kniefall 1970 im ehemaligen jüdischen Ghetto in Warschau ausdrücken?",
       "options": [
         "Er hat sich den ehemaligen Alliierten unterworfen.",
         "Er bat Polen und die polnischen Juden um Vergebung.",
@@ -6505,7 +6505,7 @@
         "Er sprach ein Gebet am Grab des Unbekannten Soldaten."
       ],
       "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
-      "question_ru": "Что хотел выразить Вилли Брандт, преклонив колени в бывшем еврейском гетто в Варшаве в 1970 году? © Федеральное правительство/Энгельберт Райнеке",
+      "question_ru": "Что хотел выразить Вилли Брандт, преклонив колени в 1970 году в бывшем еврейском гетто в Варшаве?",
       "options_ru": [
         "Он подчинился бывшим союзникам.",
         "Он попросил у Польши и польских евреев прощения.",
@@ -6544,7 +6544,7 @@
         "Basilika",
         "Moschee",
         "Synagoge",
-        "Kirche A"
+        "Kirche"
       ],
       "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
       "question_ru": "Как называется еврейский молитвенный дом?",
@@ -6615,12 +6615,12 @@
         "ein Vorschlag der UdSSR"
       ],
       "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
-      "question_ru": "184. На какой правовой основе было основано Государство Израиль?",
+      "question_ru": "На какой правовой основе было основано государство Израиль?",
       "options_ru": [
         "резолюция ООН",
-        "резолюция сионистского конгресса",
+        "решение Сионистского конгресса",
         "предложение федерального правительства",
-        "предложение из СССР"
+        "предложение СССР"
       ],
       "keywords_de": [
         "Vorschlag",
@@ -6979,12 +6979,12 @@
         "Städte."
       ],
       "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
-      "question_ru": "3 октября в Германии отмечают День Германии.",
+      "question_ru": "3 октября в Германии отмечают День немецкого ...",
       "options_ru": [
-        "Единица.",
-        "Нация.",
-        "Федеральные штаты.",
-        "Города."
+        "единства.",
+        "нации.",
+        "федеральных земель.",
+        "городов."
       ],
       "keywords_de": [
         "Bundesländer",
@@ -7001,7 +7001,7 @@
       "correct_letter": "A",
       "correct_index": 0,
       "correct_option_de": "Einheit.",
-      "correct_option_ru": "Единица."
+      "correct_option_ru": "единства."
     },
     {
       "section": "general",
@@ -7403,7 +7403,7 @@
       "section": "general",
       "state": null,
       "task_number": 206,
-      "question": "206. Woran erinnern die sogenannten „Stolpersteine“ in Deutschland?",
+      "question": "Woran erinnern die sogenannten „Stolpersteine“ in Deutschland?",
       "options": [
         "an berühmte deutsche Politikerinnen und Politiker",
         "an die Opfer des Nationalsozialismus",
@@ -7411,12 +7411,12 @@
         "an bekannte jüdische Musiker"
       ],
       "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
-      "question_ru": "206. О чем напоминают нам так называемые «камни преткновения» в Германии?",
+      "question_ru": "О чем в Германии напоминают так называемые «Камни преткновения» (Stolpersteine)?",
       "options_ru": [
-        "известным немецким политикам",
-        "жертвам национал-социализма",
-        "смертей в результате дорожно-транспортных происшествий",
-        "известным еврейским музыкантам"
+        "об известных немецких политиках",
+        "о жертвах национал-социализма",
+        "о погибших в ДТП",
+        "об известных еврейских музыкантах"
       ],
       "keywords_de": [
         "Stolpersteine",
@@ -7433,7 +7433,7 @@
       "correct_letter": "B",
       "correct_index": 1,
       "correct_option_de": "an die Opfer des Nationalsozialismus",
-      "correct_option_ru": "жертвам национал-социализма"
+      "correct_option_ru": "о жертвах национал-социализма"
     },
     {
       "section": "general",
@@ -7538,8 +7538,8 @@
       ],
       "correct_letter": "D",
       "correct_index": 3,
-      "correct_option_de": "Bild 4",
-      "correct_option_ru": "Изображение 4",
+      "correct_option_de": "4",
+      "correct_option_ru": "4",
       "question_images": [
         {
           "src": "./data/images/questions/general_209_question.png",
@@ -7631,9 +7631,9 @@
         "Bundesbezirk Deutschland"
       ],
       "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
-      "question_ru": "Как полное название Германии?",
+      "question_ru": "Каково полное официальное название Германии?",
       "options_ru": [
-        "Федеральная земля Германия",
+        "Федеральное государство Германия",
         "Федеральные земли Германии",
         "Федеративная Республика Германия",
         "Федеральный округ Германии"
@@ -7765,7 +7765,7 @@
       "section": "general",
       "state": null,
       "task_number": 216,
-      "question": "Welches Symbol ist im Plenarsaal des Deutschen Bundestages zu sehen? © Deutscher Bundestag/Janine Schmitz",
+      "question": "Welches Symbol ist im Plenarsaal des Deutschen Bundestages zu sehen?",
       "options": [
         "der Bundesadler",
         "die Fahne der Stadt Berlin",
@@ -7773,7 +7773,7 @@
         "die Reichskrone"
       ],
       "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
-      "question_ru": "Какой символ можно увидеть в зале пленарных заседаний немецкого Бундестага? © Бундестаг Германии/Янин Шмитц",
+      "question_ru": "Какой символ можно увидеть в зале пленарных заседаний немецкого Бундестага?",
       "options_ru": [
         "федеральный орел",
         "флаг города Берлина",
@@ -8154,8 +8154,8 @@
       ],
       "correct_letter": "B",
       "correct_index": 1,
-      "correct_option_de": "Bild 2",
-      "correct_option_ru": "Изображение 2",
+      "correct_option_de": "2",
+      "correct_option_ru": "2",
       "question_images": [
         {
           "src": "./data/images/questions/general_226_question.png",
@@ -8455,7 +8455,7 @@
       "section": "general",
       "state": null,
       "task_number": 235,
-      "question": "Der damalige französische Staatspräsident François Mitterrand und der damalige deutsche Bundeskanzler Helmut Kohl gedenken in Verdun gemeinsam der Toten beider Weltkriege. Welches Ziel der Europäischen Union wird bei diesem Treffen deutlich? © Bundesregierung/Richard Schulze-Vorberg",
+      "question": "Der damalige französische Staatspräsident François Mitterrand und der damalige deutsche Bundeskanzler Helmut Kohl gedenken in Verdun gemeinsam der Toten beider Weltkriege. Welches Ziel der Europäischen Union wird bei diesem Treffen deutlich?",
       "options": [
         "Freundschaft zwischen England und Deutschland",
         "Reisefreiheit in alle Länder der EU",
@@ -8463,7 +8463,7 @@
         "einheitliche Feiertage in den Ländern der EU"
       ],
       "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
-      "question_ru": "Тогдашний президент Франции Франсуа Миттеран и тогдашний канцлер Германии Гельмут Коль вместе почтили память погибших в обеих мировых войнах в Вердене. Какая цель Европейского Союза будет прояснена на этой встрече? © Федеральное правительство/Ричард Шульце-Форберг",
+      "question_ru": "Тогдашний президент Франции Франсуа Миттеран и тогдашний федеральный канцлер Германии Гельмут Коль вместе почтили в Вердене память погибших в обеих мировых войнах. Какая цель Европейского Союза особенно ясно проявляется на этой встрече?",
       "options_ru": [
         "Дружба между Англией и Германией",
         "Свобода путешествовать во все страны ЕС",
@@ -8645,12 +8645,12 @@
         "2005"
       ],
       "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
-      "question_ru": "С каких это пор в Германии люди платят наличными в евро?",
+      "question_ru": "С какого года в Германии расплачиваются наличными в евро?",
       "options_ru": [
         "1995 год",
         "1998 год",
-        "2002 г.",
-        "2005 г."
+        "2002 год",
+        "2005 год"
       ],
       "keywords_de": [
         "Seit",
@@ -8665,7 +8665,7 @@
       "correct_letter": "C",
       "correct_index": 2,
       "correct_option_de": "2002",
-      "correct_option_ru": "2002 г."
+      "correct_option_ru": "2002 год"
     },
     {
       "section": "general",
@@ -8815,7 +8815,7 @@
       "section": "general",
       "state": null,
       "task_number": 245,
-      "question": "Wer darf in Deutschland nicht a ls Paar zusammenleben?",
+      "question": "Wer darf in Deutschland nicht als Paar zusammenleben?",
       "options": [
         "Hans (20 Jahre) und Marie (19 Jahre)",
         "Tom (20 Jahre) und Klaus (45 Jahre)",
@@ -8890,15 +8890,15 @@
         "Elternzeit",
         "Mutterschutz",
         "Geburtsvorbereitung",
-        "Wochenbett A"
+        "Wochenbett"
       ],
       "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
       "question_ru": "Женщина беременна. Она находится под особой защитой закона незадолго до и после рождения ребенка. Как называется эта защита?",
       "options_ru": [
-        "Отпуск по уходу за ребенком",
-        "Декретный отпуск",
-        "Подготовка к родам",
-        "Послеродовый А"
+        "отпуск по уходу за ребенком",
+        "охрана материнства",
+        "подготовка к родам",
+        "послеродовой период"
       ],
       "keywords_de": [
         "Elternzeit",
@@ -8915,7 +8915,7 @@
       "correct_letter": "B",
       "correct_index": 1,
       "correct_option_de": "Mutterschutz",
-      "correct_option_ru": "Декретный отпуск"
+      "correct_option_ru": "охрана материнства"
     },
     {
       "section": "general",
@@ -10045,12 +10045,12 @@
         "die Adresse des nächsten Ordnungsamtes."
       ],
       "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
-      "question_ru": "В большинстве многоквартирных домов Германии существуют «домашние правила». Что говорят эти «домашние правила»? Она звонит...",
+      "question_ru": "В большинстве многоквартирных домов в Германии есть «правила внутреннего распорядка». Что обычно указано в таком распорядке? В нем перечисляются ...",
       "options_ru": [
-        "Правила пользования общественным транспортом.",
+        "правила пользования общественным транспортом.",
         "все жильцы дома.",
-        "Правила, которые должны соблюдать все жильцы.",
-        "адрес ближайшего офиса общественного порядка."
+        "правила, которые должны соблюдать все жильцы.",
+        "адрес ближайшего ведомства общественного порядка (Ordnungsamt)."
       ],
       "keywords_de": [
         "Hausordnung",
@@ -10067,7 +10067,7 @@
       "correct_letter": "C",
       "correct_index": 2,
       "correct_option_de": "Regeln, an die sich alle Bewohnerinnen und Bewohner halten müssen.",
-      "correct_option_ru": "Правила, которые должны соблюдать все жильцы."
+      "correct_option_ru": "правила, которые должны соблюдать все жильцы."
     },
     {
       "section": "general",
@@ -10225,12 +10225,12 @@
         "Alle müssen früher aufhören zu arbeiten, weil sich alles ändert."
       ],
       "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
-      "question_ru": "То, что вам нужно уметь делать для работы, в будущем очень быстро изменится. Что ты можешь сделать?",
+      "question_ru": "То, что нужно уметь для работы, в будущем будет очень быстро меняться. Что вы можете сделать?",
       "options_ru": [
-        "Неважно, чему вы научитесь.",
-        "Взрослые должны продолжать учиться даже после обучения.",
-        "В школе дети учатся всему, что важно для их карьеры. Вам не обязательно продолжать обучение после школы.",
-        "Всем приходится прекращать работу раньше, потому что все меняется."
+        "Неважно, чему вы учитесь.",
+        "Взрослые должны продолжать учиться и после получения профессии.",
+        "В школе дети изучают все, что важно для профессии. После школы учиться дальше не нужно.",
+        "Все должны раньше прекращать работать, потому что все меняется."
       ],
       "keywords_de": [
         "lernen",
@@ -10247,15 +10247,15 @@
       "correct_letter": "B",
       "correct_index": 1,
       "correct_option_de": "Erwachsene müssen auch nach der Ausbildung immer weiter lernen.",
-      "correct_option_ru": "Взрослые должны продолжать учиться даже после обучения."
+      "correct_option_ru": "Взрослые должны продолжать учиться и после получения профессии."
     },
     {
       "section": "general",
       "state": null,
       "task_number": 285,
-      "question": "Frau Frost a rbeitet als fest angestellte Mitarbeiterin in einem Büro. Was muss sie nicht von ihrem Gehalt bezahlen?",
+      "question": "Frau Frost arbeitet als fest angestellte Mitarbeiterin in einem Büro. Was muss sie nicht von ihrem Gehalt bezahlen?",
       "options": [
-        "L ohnsteuer",
+        "Lohnsteuer",
         "Beiträge zur Arbeitslosenversicherung",
         "Beiträge zur Renten- und Krankenversicherung",
         "Umsatzsteuer"
@@ -10441,11 +10441,11 @@
         "die Garantie verlängern"
       ],
       "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
-      "question_ru": "Вы купили телевизор в Германии. Дома распаковываешь телевизор, а он не работает. Телевизор сломан. Что ты можешь сделать?",
+      "question_ru": "Вы купили телевизор в Германии. Дома вы его распаковали, но он не работает. Телевизор неисправен. Что вы можете сделать?",
       "options_ru": [
-        "написать объявление",
-        "жаловаться на телевизор",
-        "замените устройство, не спрашивая",
+        "подать заявление",
+        "предъявить претензию на телевизор",
+        "самовольно обменять устройство",
         "продлить гарантию"
       ],
       "keywords_de": [
@@ -10463,7 +10463,7 @@
       "correct_letter": "B",
       "correct_index": 1,
       "correct_option_de": "den Fernseher reklamieren",
-      "correct_option_ru": "жаловаться на телевизор"
+      "correct_option_ru": "предъявить претензию на телевизор"
     },
     {
       "section": "general",
@@ -10477,12 +10477,12 @@
         "die Kirche für die Steuererklärung verantwortlich ist."
       ],
       "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
-      "question_ru": "Почему в Германии в налоговой декларации нужно указывать независимо от того, принадлежите ли вы к церкви или нет? Потому что …",
+      "question_ru": "Почему в Германии в налоговой декларации нужно указывать, принадлежите ли вы к церкви или нет? Потому что ...",
       "options_ru": [
-        "Существует церковный налог, который привязан к подоходному налогу и налогу на заработную плату.",
-        "что важно для статистики в Германии.",
-        "вам придется платить больше налогов, если вы не принадлежите к церкви.",
-        "Церковь несет ответственность за налоговую декларацию."
+        "существует церковный налог, связанный с подоходным налогом и налогом на заработную плату.",
+        "это важно для статистики в Германии.",
+        "если вы не принадлежите к церкви, вам приходится платить больше налогов.",
+        "церковь отвечает за налоговую декларацию."
       ],
       "keywords_de": [
         "Kirche",
@@ -10499,7 +10499,7 @@
       "correct_letter": "A",
       "correct_index": 0,
       "correct_option_de": "es eine Kirchensteuer gibt, die an die Einkommen- und Lohnsteuer geknüpft ist.",
-      "correct_option_ru": "Существует церковный налог, который привязан к подоходному налогу и налогу на заработную плату."
+      "correct_option_ru": "существует церковный налог, связанный с подоходным налогом и налогом на заработную плату."
     },
     {
       "section": "general",
@@ -10795,7 +10795,7 @@
       "task_number": 300,
       "question": "Aus welchem Land kamen die ersten Gastarbeiterinnen und Gastarbeiter in die Bundesrepublik Deutschland?",
       "options": [
-        "Ita lien",
+        "Italien",
         "Spanien",
         "Portugal",
         "Türkei"
@@ -10822,7 +10822,7 @@
       ],
       "correct_letter": "A",
       "correct_index": 0,
-      "correct_option_de": "Ita lien",
+      "correct_option_de": "Italien",
       "correct_option_ru": "Италия"
     },
     {
@@ -10854,8 +10854,8 @@
       ],
       "correct_letter": "D",
       "correct_index": 3,
-      "correct_option_de": "Bild 4",
-      "correct_option_ru": "Изображение 4",
+      "correct_option_de": "4",
+      "correct_option_ru": "4",
       "question_images": [
         {
           "src": "./data/images/questions/berlin_1_question.png",

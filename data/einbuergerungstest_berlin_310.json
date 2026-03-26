@@ -18,7 +18,11 @@
         "die Menschen das Wahlrecht haben.",
         "hier Meinungsfreiheit gilt."
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 3,
+      "correct_letter": "D",
+      "correct_option_de": "hier Meinungsfreiheit gilt.",
+      "correct_option_ru": "Здесь действует свобода выражения мнений."
     },
     {
       "section": "general",
@@ -31,7 +35,11 @@
         "Politikunterricht teilnimmt.",
         "Sprachunterricht teilnimmt."
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 1,
+      "correct_letter": "B",
+      "correct_option_de": "Religionsunterricht teilnimmt.",
+      "correct_option_ru": "посещает религиозные занятия."
     },
     {
       "section": "general",
@@ -44,7 +52,11 @@
         "Nur Deutsche müssen die Gesetze befolgen.",
         "Die Gerichte machen die Gesetze."
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 0,
+      "correct_letter": "A",
+      "correct_option_de": "Alle Einwohnerinnen/Einwohner und der Staat müssen sich an die Gesetze halten.",
+      "correct_option_ru": "Все жители и государство должны соблюдать закон."
     },
     {
       "section": "general",
@@ -57,7 +69,11 @@
         "Meinungsfreiheit",
         "Selbstjustiz"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 2,
+      "correct_letter": "C",
+      "correct_option_de": "Meinungsfreiheit",
+      "correct_option_ru": "Свобода выражения мнений"
     },
     {
       "section": "general",
@@ -70,7 +86,11 @@
         "Die Wählerin/der Wähler darf bei der Wahl weder beeinflusst noch zu einer bestimmten Stimmabgabe gezwungen werden und keine Nachteile durch die Wahl haben.",
         "Alle wahlberechtigten Personen müssen wählen."
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 2,
+      "correct_letter": "C",
+      "correct_option_de": "Die Wählerin/der Wähler darf bei der Wahl weder beeinflusst noch zu einer bestimmten Stimmabgabe gezwungen werden und keine Nachteile durch die Wahl haben.",
+      "correct_option_ru": "На избирателя нельзя ни влиять, ни принуждать его отдать конкретный голос во время выборов, и он не может пострадать в результате выборов."
     },
     {
       "section": "general",
@@ -83,7 +103,11 @@
         "Deutsches Gesetz",
         "Grundgesetz"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 3,
+      "correct_letter": "D",
+      "correct_option_de": "Grundgesetz",
+      "correct_option_ru": "Основной закон"
     },
     {
       "section": "general",
@@ -96,20 +120,28 @@
         "Arbeit",
         "Wohnung"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 0,
+      "correct_letter": "A",
+      "correct_option_de": "Glaubens- und Gewissensfreiheit",
+      "correct_option_ru": "Свобода вероисповедания и совести"
     },
     {
       "section": "general",
       "state": null,
       "task_number": 8,
-      "question": "Was steht nicht i m Grundgesetz von Deutschland?",
+      "question": "Was steht nicht im Grundgesetz von Deutschland?",
       "options": [
         "Die Würde des Menschen ist unantastbar.",
         "Alle sollen gleich viel Geld haben.",
         "Jeder Mensch darf seine Meinung sagen.",
         "Alle sind vor dem Gesetz gleich."
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 1,
+      "correct_letter": "B",
+      "correct_option_de": "Alle sollen gleich viel Geld haben.",
+      "correct_option_ru": "У всех должно быть одинаковое количество денег."
     },
     {
       "section": "general",
@@ -122,7 +154,11 @@
         "Asyl",
         "Meinungsfreiheit"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 2,
+      "correct_letter": "C",
+      "correct_option_de": "Asyl",
+      "correct_option_ru": "убежище"
     },
     {
       "section": "general",
@@ -135,7 +171,11 @@
         "die Todesstrafe",
         "die Geldstrafe"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 3,
+      "correct_letter": "D",
+      "correct_option_de": "die Geldstrafe",
+      "correct_option_ru": "штраф"
     },
     {
       "section": "general",
@@ -148,7 +188,11 @@
         "Gesetzbuch",
         "Verfassungsvertrag"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 0,
+      "correct_letter": "A",
+      "correct_option_de": "Grundgesetz",
+      "correct_option_ru": "Основной закон"
     },
     {
       "section": "general",
@@ -161,7 +205,11 @@
         "Nein, denn die Pressefreiheit ist ein Grundrecht. Sie kann nicht abgeschafft werden.",
         "Nein, denn nur der Bundesrat kann die Pressefreiheit abschaffen."
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 2,
+      "correct_letter": "C",
+      "correct_option_de": "Nein, denn die Pressefreiheit ist ein Grundrecht. Sie kann nicht abgeschafft werden.",
+      "correct_option_ru": "Нет, потому что свобода прессы является фундаментальным правом. Его нельзя отменить."
     },
     {
       "section": "general",
@@ -174,7 +222,11 @@
         "alle Parteien, die bei der letzten Wahl die 5%-Hürde erreichen konnten.",
         "alle Abgeordneten, die nicht zu der Regierungspartei/den Regierungsparteien gehören."
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 3,
+      "correct_letter": "D",
+      "correct_option_de": "alle Abgeordneten, die nicht zu der Regierungspartei/den Regierungsparteien gehören.",
+      "correct_option_ru": "все депутаты, не принадлежащие к правящей партии (партиям)."
     },
     {
       "section": "general",
@@ -187,7 +239,11 @@
         "Nazi-, Hamas- oder Islamischer Staat-Symbole öffentlich tragen darf.",
         "meine Meinung nur dann äußern darf, solange ich der Regierung nicht widerspreche."
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 1,
+      "correct_letter": "B",
+      "correct_option_de": "meine Meinung im Internet äußern kann.",
+      "correct_option_ru": "могу высказать свое мнение в Интернете."
     },
     {
       "section": "general",
@@ -200,7 +256,11 @@
         "freie Berufswahl",
         "Arbeit im Ausland"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 1,
+      "correct_letter": "B",
+      "correct_option_de": "Zwangsarbeit",
+      "correct_option_ru": "Принудительный труд"
     },
     {
       "section": "general",
@@ -213,7 +273,11 @@
         "bei Diskussionen über Religionen",
         "bei Kritik am Staat"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 0,
+      "correct_letter": "A",
+      "correct_option_de": "bei der öffentlichen Verbreitung falscher Behauptungen über einzelne Personen",
+      "correct_option_ru": "при публичном распространении ложных обвинений в адрес отдельных лиц"
     },
     {
       "section": "general",
@@ -226,7 +290,11 @@
         "Versammlungsfreiheit der Einwohnerinnen und Einwohner.",
         "Ungleichbehandlung der Bürgerinnen und Bürger durch den Staat."
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 3,
+      "correct_letter": "D",
+      "correct_option_de": "Ungleichbehandlung der Bürgerinnen und Bürger durch den Staat.",
+      "correct_option_ru": "Неравное отношение к гражданам со стороны государства."
     },
     {
       "section": "general",
@@ -239,7 +307,11 @@
         "Religionsfreiheit",
         "Meinungsfreiheit"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 0,
+      "correct_letter": "A",
+      "correct_option_de": "die Unantastbarkeit der Menschenwürde",
+      "correct_option_ru": "неприкосновенность человеческого достоинства"
     },
     {
       "section": "general",
@@ -252,7 +324,11 @@
         "Man darf sich für eine andere Religion entscheiden.",
         "Man darf sich in der Öffentlichkeit nur leicht bekleidet bewegen."
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 0,
+      "correct_letter": "A",
+      "correct_option_de": "Man darf sich seinen Wohnort selbst aussuchen.",
+      "correct_option_ru": "Вы можете выбрать, где жить."
     },
     {
       "section": "general",
@@ -265,7 +341,11 @@
         "gesetzestreu.",
         "verfassungswidrig."
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 3,
+      "correct_letter": "D",
+      "correct_option_de": "verfassungswidrig.",
+      "correct_option_ru": "неконституционный."
     },
     {
       "section": "general",
@@ -291,7 +371,11 @@
           "src": "./data/images/questions/general_21_question.png",
           "alt": "Четыре варианта герба, пронумерованные от 1 до 4"
         }
-      ]
+      ],
+      "correct_index": 0,
+      "correct_letter": "A",
+      "correct_option_de": "1",
+      "correct_option_ru": "1"
     },
     {
       "section": "general",
@@ -304,7 +388,11 @@
         "Republik",
         "Fürstentum"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 2,
+      "correct_letter": "C",
+      "correct_option_de": "Republik",
+      "correct_option_ru": "республика"
     },
     {
       "section": "general",
@@ -317,7 +405,11 @@
         "selbstständig mit einer eigenen Firma tätig.",
         "bei einer Firma oder Behörde beschäftigt."
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 3,
+      "correct_letter": "D",
+      "correct_option_de": "bei einer Firma oder Behörde beschäftigt.",
+      "correct_option_ru": "нанятый компанией или органом власти."
     },
     {
       "section": "general",
@@ -330,7 +422,11 @@
         "16",
         "17"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 2,
+      "correct_letter": "C",
+      "correct_option_de": "16",
+      "correct_option_ru": "16"
     },
     {
       "section": "general",
@@ -343,7 +439,12 @@
         "Mecklenburg-Vorpommern",
         "Sachsen-Anhalt"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 0,
+      "correct_letter": "A",
+      "correct_option_de": "Elsass-Lothringen",
+      "correct_option_ru": "Эльзас-Лотарингия",
+      "question_ru": "Что из перечисленного не является федеральной землей Федеративной Республики Германия?"
     },
     {
       "section": "general",
@@ -356,7 +457,11 @@
         "eine kapitalistische und soziale Monarchie.",
         "ein sozialer und sozialistischer Bundesstaat."
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 1,
+      "correct_letter": "B",
+      "correct_option_de": "ein demokratischer und sozialer Bundesstaat.",
+      "correct_option_ru": "демократическое и социальное федеративное государство."
     },
     {
       "section": "general",
@@ -369,7 +474,11 @@
         "eine Diktatur.",
         "eine Monarchie."
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 1,
+      "correct_letter": "B",
+      "correct_option_de": "ein Bundesstaat.",
+      "correct_option_ru": "государство."
     },
     {
       "section": "general",
@@ -382,7 +491,11 @@
         "das wahlberechtigte Volk",
         "die Verwaltung"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 2,
+      "correct_letter": "C",
+      "correct_option_de": "das wahlberechtigte Volk",
+      "correct_option_ru": "люди, имеющие право голоса"
     },
     {
       "section": "general",
@@ -395,7 +508,11 @@
         "Bär",
         "Pferd"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 1,
+      "correct_letter": "B",
+      "correct_option_de": "Adler",
+      "correct_option_ru": "орел"
     },
     {
       "section": "general",
@@ -408,7 +525,11 @@
         "Meinungsfreiheit",
         "verschiedene Parteien"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 1,
+      "correct_letter": "B",
+      "correct_option_de": "Pressezensur",
+      "correct_option_ru": "Цензура прессы"
     },
     {
       "section": "general",
@@ -421,7 +542,11 @@
         "Ministerium.",
         "Fraktion."
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 1,
+      "correct_letter": "B",
+      "correct_option_de": "Koalition.",
+      "correct_option_ru": "Коалиция."
     },
     {
       "section": "general",
@@ -434,7 +559,18 @@
         "Presse",
         "Rechtsprechung"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 2,
+      "correct_letter": "C",
+      "correct_option_de": "Presse",
+      "correct_option_ru": "пресса",
+      "question_ru": "Что не относится к ветвям государственной власти в Германии?",
+      "options_ru": [
+        "законодательная власть",
+        "правительство",
+        "пресса",
+        "правосудие"
+      ]
     },
     {
       "section": "general",
@@ -447,7 +583,11 @@
         "ist der Staat abhängig von den Religionsgemeinschaften.",
         "bilden Staat und Religionsgemeinschaften eine Einheit."
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 0,
+      "correct_letter": "A",
+      "correct_option_de": "sind Staat und Religionsgemeinschaften voneinander getrennt.",
+      "correct_option_ru": "Государство и религиозные общины отделены друг от друга."
     },
     {
       "section": "general",
@@ -460,7 +600,11 @@
         "eine Monarchie",
         "ein Sozialstaat"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 2,
+      "correct_letter": "C",
+      "correct_option_de": "eine Monarchie",
+      "correct_option_ru": "монархия"
     },
     {
       "section": "general",
@@ -473,7 +617,11 @@
         "Spendengeldern",
         "Vereinsbeiträgen"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 1,
+      "correct_letter": "B",
+      "correct_option_de": "Sozialabgaben",
+      "correct_option_ru": "Взносы на социальное обеспечение"
     },
     {
       "section": "general",
@@ -486,7 +634,11 @@
         "die Gebäudeversicherung",
         "die Haftpflichtversicherung"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 0,
+      "correct_letter": "A",
+      "correct_option_de": "die Krankenversicherung",
+      "correct_option_ru": "медицинская страховка"
     },
     {
       "section": "general",
@@ -499,7 +651,11 @@
         "Senatorin/Senator",
         "Ministerpräsidentin/Ministerpräsident"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 3,
+      "correct_letter": "D",
+      "correct_option_de": "Ministerpräsidentin/Ministerpräsident",
+      "correct_option_ru": "Премьер-министр/Премьер-министр"
     },
     {
       "section": "general",
@@ -512,7 +668,17 @@
         "Staatenbund.",
         "Zentralstaat."
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 1,
+      "correct_letter": "B",
+      "correct_option_de": "Bundesstaat.",
+      "correct_option_ru": "федеративное государство.",
+      "options_ru": [
+        "объединение государств.",
+        "федеративное государство.",
+        "союз государств.",
+        "централизованное государство."
+      ]
     },
     {
       "section": "general",
@@ -525,7 +691,11 @@
         "eine eigene Armee",
         "eine eigene Regierung"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 3,
+      "correct_letter": "D",
+      "correct_option_de": "eine eigene Regierung",
+      "correct_option_ru": "собственное правительство"
     },
     {
       "section": "general",
@@ -538,7 +708,11 @@
         "Freude schöner Götterfunken …",
         "Deutschland einig Vaterland …"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 1,
+      "correct_letter": "B",
+      "correct_option_de": "Einigkeit und Recht und Freiheit …",
+      "correct_option_ru": "Единство, справедливость и свобода…"
     },
     {
       "section": "general",
@@ -551,7 +725,11 @@
         "um politische Demonstrationen zu verhindern",
         "um wirtschaftlichen Wettbewerb anzuregen"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 0,
+      "correct_letter": "A",
+      "correct_option_de": "weil dadurch die unterschiedlichen Meinungen der Bürgerinnen und Bürger vertreten werden",
+      "correct_option_ru": "потому что он представляет разные мнения граждан"
     },
     {
       "section": "general",
@@ -564,7 +742,11 @@
         "die Gerichte",
         "die Polizei"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 1,
+      "correct_letter": "B",
+      "correct_option_de": "das Parlament",
+      "correct_option_ru": "парламент"
     },
     {
       "section": "general",
@@ -577,7 +759,11 @@
         "wenn sie Kritik am Staatsoberhaupt äußert",
         "wenn ihr Programm eine neue Richtung vorschlägt"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 1,
+      "correct_letter": "B",
+      "correct_option_de": "wenn sie gegen die Verfassung kämpft",
+      "correct_option_ru": "когда она борется против конституции"
     },
     {
       "section": "general",
@@ -590,7 +776,11 @@
         "Landtagsabgeordnete",
         "Bundestagsabgeordnete"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 1,
+      "correct_letter": "B",
+      "correct_option_de": "Die Bundespräsidentin/den Bundespräsidenten",
+      "correct_option_ru": "Федеральный президент"
     },
     {
       "section": "general",
@@ -603,7 +793,11 @@
         "Hausratsversicherung",
         "Haftpflicht- und Feuerversicherung"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 0,
+      "correct_letter": "A",
+      "correct_option_de": "Sozialversicherung",
+      "correct_option_ru": "социальное обеспечение"
     },
     {
       "section": "general",
@@ -616,20 +810,34 @@
         "Er versorgt alle Einwohnerinnen und Einwohner kostenlos mit Zeitungen.",
         "Er produziert Autos und Busse."
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 0,
+      "correct_letter": "A",
+      "correct_option_de": "Er baut Straßen und Schulen.",
+      "correct_option_ru": "Он строит дороги и школы."
     },
     {
       "section": "general",
       "state": null,
       "task_number": 47,
-      "question": "Der deutsche Staat hat viele Aufgaben. Welche Aufgabe gehört nicht d azu?",
+      "question": "Der deutsche Staat hat viele Aufgaben. Welche Aufgabe gehört nicht dazu?",
       "options": [
         "Er bezahlt für alle Staatsangehörigen Urlaubsreisen.",
         "Er zahlt Kindergeld.",
         "Er unterstützt Museen.",
         "Er fördert Sportlerinnen und Sportler."
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 0,
+      "correct_letter": "A",
+      "correct_option_de": "Er bezahlt für alle Staatsangehörigen Urlaubsreisen.",
+      "correct_option_ru": "Оно оплачивает отпускные поездки для всех граждан.",
+      "options_ru": [
+        "Оно оплачивает отпускные поездки для всех граждан.",
+        "Оно выплачивает детское пособие.",
+        "Оно поддерживает музеи.",
+        "Оно поддерживает спортсменок и спортсменов."
+      ]
     },
     {
       "section": "general",
@@ -642,7 +850,11 @@
         "die Bürgerversammlung",
         "die Regierung"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 2,
+      "correct_letter": "C",
+      "correct_option_de": "die Bürgerversammlung",
+      "correct_option_ru": "собрание граждан"
     },
     {
       "section": "general",
@@ -655,7 +867,11 @@
         "das Familienministerium",
         "die Universitäten"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 1,
+      "correct_letter": "B",
+      "correct_option_de": "die Bundesländer",
+      "correct_option_ru": "федеральные земли"
     },
     {
       "section": "general",
@@ -668,20 +884,28 @@
         "gelenkte Zentralwirtschaft.",
         "Planwirtschaft."
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 1,
+      "correct_letter": "B",
+      "correct_option_de": "soziale Marktwirtschaft.",
+      "correct_option_ru": "социальная рыночная экономика."
     },
     {
       "section": "general",
       "state": null,
       "task_number": 51,
-      "question": "Zu einem demokratischen Rechtsstaat gehört es nicht, d ass …",
+      "question": "Zu einem demokratischen Rechtsstaat gehört es nicht, dass …",
       "options": [
         "Menschen sich kritisch über die Regierung äußern können.",
         "Bürger friedlich demonstrieren gehen dürfen.",
         "Menschen von einer Privatpolizei ohne Grund verhaftet werden.",
         "jemand ein Verbrechen begeht und deshalb verhaftet wird."
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 2,
+      "correct_letter": "C",
+      "correct_option_de": "Menschen von einer Privatpolizei ohne Grund verhaftet werden.",
+      "correct_option_ru": "Людей арестовывает частная полиция без всякой причины."
     },
     {
       "section": "general",
@@ -694,7 +918,11 @@
         "preußischen König aus.",
         "Bundesverfassungsgericht aus."
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 0,
+      "correct_letter": "A",
+      "correct_option_de": "Volke aus.",
+      "correct_option_ru": "люди выходят."
     },
     {
       "section": "general",
@@ -707,7 +935,11 @@
         "Die Bürgerinnen und Bürger entscheiden über Gesetze.",
         "Der Staat muss die Gesetze einhalten."
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 3,
+      "correct_letter": "D",
+      "correct_option_de": "Der Staat muss die Gesetze einhalten.",
+      "correct_option_ru": "Государство должно соблюдать законы."
     },
     {
       "section": "general",
@@ -720,13 +952,17 @@
         "Exekutive",
         "Direktive"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 3,
+      "correct_letter": "D",
+      "correct_option_de": "Direktive",
+      "correct_option_ru": "директива"
     },
     {
       "section": "general",
       "state": null,
       "task_number": 55,
-      "question": "Was zeigt dieses Bild? © Deutscher Bundestag/Achim Melde",
+      "question": "Was zeigt dieses Bild?",
       "options": [
         "den Bundestagssitz in Berlin",
         "das Bundesverfassungsgericht in Karlsruhe",
@@ -746,7 +982,11 @@
         "Федеральный конституционный суд в Карлсруэ",
         "здание Бундесрата в Берлине",
         "Федеральная канцелярия в Берлине"
-      ]
+      ],
+      "correct_index": 0,
+      "correct_letter": "A",
+      "correct_option_de": "den Bundestagssitz in Berlin",
+      "correct_option_ru": "здание Бундестага в Берлине"
     },
     {
       "section": "general",
@@ -759,7 +999,11 @@
         "Finanzamt",
         "Auswärtiges Amt"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 1,
+      "correct_letter": "B",
+      "correct_option_de": "Ordnungsamt",
+      "correct_option_ru": "Офис общественного порядка"
     },
     {
       "section": "general",
@@ -772,7 +1016,11 @@
         "eine ehemalige Bundeskanzlerin/ein ehemaliger Bundeskanzler",
         "eine Abgeordnete/ein Abgeordneter der stärksten Fraktion"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 3,
+      "correct_letter": "D",
+      "correct_option_de": "eine Abgeordnete/ein Abgeordneter der stärksten Fraktion",
+      "correct_option_ru": "один депутат от сильнейшей парламентской группы"
     },
     {
       "section": "general",
@@ -785,7 +1033,11 @@
         "die Bundesratspräsidentin/der Bundesratspräsident",
         "die Bundestagspräsidentin/der Bundestagspräsident"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 1,
+      "correct_letter": "B",
+      "correct_option_de": "die Bundespräsidentin/der Bundespräsident",
+      "correct_option_ru": "Федеральный президент"
     },
     {
       "section": "general",
@@ -798,7 +1050,11 @@
         "vor etwa 1150 Jahren",
         "vor etwa 1700 Jahren"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 3,
+      "correct_letter": "D",
+      "correct_option_de": "vor etwa 1700 Jahren",
+      "correct_option_ru": "около 1700 лет назад"
     },
     {
       "section": "general",
@@ -811,7 +1067,11 @@
         "Direktive.",
         "Judikative."
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 1,
+      "correct_letter": "B",
+      "correct_option_de": "Legislative.",
+      "correct_option_ru": "Законодательная власть."
     },
     {
       "section": "general",
@@ -824,7 +1084,11 @@
         "Die Interessenverbände üben die Souveränität zusammen mit der Regierung aus.",
         "Die Staatsgewalt geht vom Volke aus."
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 3,
+      "correct_letter": "D",
+      "correct_option_de": "Die Staatsgewalt geht vom Volke aus.",
+      "correct_option_ru": "Государственная власть исходит от народа."
     },
     {
       "section": "general",
@@ -837,7 +1101,11 @@
         "Europawahl",
         "Bundestagswahl"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 1,
+      "correct_letter": "B",
+      "correct_option_de": "Landtagswahl",
+      "correct_option_ru": "Государственные выборы"
     },
     {
       "section": "general",
@@ -850,7 +1118,11 @@
         "das Finanzamt",
         "die Ministerien"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 1,
+      "correct_letter": "B",
+      "correct_option_de": "die Gerichte",
+      "correct_option_ru": "суды"
     },
     {
       "section": "general",
@@ -863,7 +1135,11 @@
         "16 Kantone.",
         "Bund, Länder und Kommunen."
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 3,
+      "correct_letter": "D",
+      "correct_option_de": "Bund, Länder und Kommunen.",
+      "correct_option_ru": "Федеральное правительство, правительство штата и местные органы власти."
     },
     {
       "section": "general",
@@ -876,7 +1152,11 @@
         "die Bundeskanzlerin/den Bundeskanzler zu wählen.",
         "das Bundeskabinett zu bilden."
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 3,
+      "correct_letter": "D",
+      "correct_option_de": "das Bundeskabinett zu bilden.",
+      "correct_option_ru": "сформировать федеральный кабинет министров."
     },
     {
       "section": "general",
@@ -887,9 +1167,19 @@
         "Berlin und München",
         "Hamburg und Essen",
         "Nürnberg und Stuttgart",
-        "Worms und Speyer A"
+        "Worms und Speyer"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 0,
+      "correct_letter": "A",
+      "correct_option_de": "Berlin und München",
+      "correct_option_ru": "Берлин и Мюнхен",
+      "options_ru": [
+        "Берлин и Мюнхен",
+        "Гамбург и Эссен",
+        "Нюрнберг и Штутгарт",
+        "Вормс и Шпайер"
+      ]
     },
     {
       "section": "general",
@@ -902,7 +1192,11 @@
         "Wirtschaftspolitik",
         "Schulpolitik"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 3,
+      "correct_letter": "D",
+      "correct_option_de": "Schulpolitik",
+      "correct_option_ru": "Школьная политика"
     },
     {
       "section": "general",
@@ -915,7 +1209,11 @@
         "weil es in den Bundesländern verschiedene Schulen gibt",
         "weil es nach dem Grundgesetz seine Aufgabe ist"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 3,
+      "correct_letter": "D",
+      "correct_option_de": "weil es nach dem Grundgesetz seine Aufgabe ist",
+      "correct_option_ru": "потому что это его работа по Основному Закону"
     },
     {
       "section": "general",
@@ -928,13 +1226,17 @@
         "Gemeinden",
         "Bezirksämter"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 2,
+      "correct_letter": "C",
+      "correct_option_de": "Gemeinden",
+      "correct_option_ru": "сообщества"
     },
     {
       "section": "general",
       "state": null,
       "task_number": 70,
-      "question": "Der deutsche Bundespräsident Gustav Heinemann gibt Helmut Schmidt 1974 die Ernennungsurkunde zum deutschen Bundeskanzler. Was gehört zu den Aufgaben der deutschen Bundespräsidentin/des deutschen Bundespräsidenten? © Bundesregierung/Engelbert Reineke",
+      "question": "Der deutsche Bundespräsident Gustav Heinemann gibt Helmut Schmidt 1974 die Ernennungsurkunde zum deutschen Bundeskanzler. Was gehört zu den Aufgaben der deutschen Bundespräsidentin/des deutschen Bundespräsidenten?",
       "options": [
         "Sie/Er führt die Regierungsgeschäfte.",
         "Sie/Er kontrolliert die Regierungspartei.",
@@ -947,20 +1249,35 @@
           "src": "./data/images/questions/general_70_question.png",
           "alt": "Густав Хайнеманн вручает Хельмуту Шмидту грамоту о назначении"
         }
+      ],
+      "correct_index": 3,
+      "correct_letter": "D",
+      "correct_option_de": "Sie/Er schlägt die Kanzlerin/den Kanzler zur Wahl vor.",
+      "correct_option_ru": "Она/Он предлагает кандидатуру канцлера для избрания.",
+      "question_ru": "Федеральный президент Германии Густав Хайнеманн вручает Гельмуту Шмидту в 1974 году грамоту о назначении федеральным канцлером. Что относится к задачам федерального президента Германии?",
+      "options_ru": [
+        "Она/Он руководит работой правительства.",
+        "Она/Он контролирует правящую партию.",
+        "Она/Он выбирает министров.",
+        "Она/Он предлагает кандидатуру канцлера для избрания."
       ]
     },
     {
       "section": "general",
       "state": null,
       "task_number": 71,
-      "question": "Wo hält sich die deu tsche Bundeskanzlerin/der deutsche Bundeskanzler am häufigsten auf? Am häufigsten ist sie/er …",
+      "question": "Wo hält sich die deutsche Bundeskanzlerin/der deutsche Bundeskanzler am häufigsten auf? Am häufigsten ist sie/er …",
       "options": [
-        "i n Bonn, weil sich dort das Bundeskanzleramt und der Bundestag befinden.",
-        "a uf Schloss Meseberg, dem Gästehaus der Bundesregierung, um Staatsgäste zu empfangen.",
-        "a uf Schloss Bellevue, dem Amtssitz d er Bundespräsidentin/des Bundespräsidenten, um Staatsgäste zu empfangen.",
-        "i n Berlin, weil sich dort das Bundeskanzleramt und der Bundestag befinden."
+        "in Bonn, weil sich dort das Bundeskanzleramt und der Bundestag befinden.",
+        "auf Schloss Meseberg, dem Gästehaus der Bundesregierung, um Staatsgäste zu empfangen.",
+        "auf Schloss Bellevue, dem Amtssitz der Bundespräsidentin/des Bundespräsidenten, um Staatsgäste zu empfangen.",
+        "in Berlin, weil sich dort das Bundeskanzleramt und der Bundestag befinden."
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 3,
+      "correct_letter": "D",
+      "correct_option_de": "in Berlin, weil sich dort das Bundeskanzleramt und der Bundestag befinden.",
+      "correct_option_ru": "в Берлине, потому что там расположены Федеральная канцелярия и Бундестаг."
     },
     {
       "section": "general",
@@ -973,7 +1290,11 @@
         "Ursula von der Leyen",
         "Friedrich Merz"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 3,
+      "correct_letter": "D",
+      "correct_option_de": "Friedrich Merz",
+      "correct_option_ru": "Фридрих Мерц"
     },
     {
       "section": "general",
@@ -986,7 +1307,11 @@
         "Bündnis 90/Die Grünen und SPD.",
         "Die Linke und CDU/CSU."
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 0,
+      "correct_letter": "A",
+      "correct_option_de": "CDU/CSU und AfD.",
+      "correct_option_ru": "ХДС/ХСС и АдГ."
     },
     {
       "section": "general",
@@ -999,7 +1324,11 @@
         "Bundestag",
         "Bundesgerichtshof"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 2,
+      "correct_letter": "C",
+      "correct_option_de": "Bundestag",
+      "correct_option_ru": "Бундестаг"
     },
     {
       "section": "general",
@@ -1012,7 +1341,11 @@
         "Bodo Ramelow",
         "Joachim Gauck"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 0,
+      "correct_letter": "A",
+      "correct_option_de": "Frank-Walter Steinmeier",
+      "correct_option_ru": "Фрэнк Уолтер Штайнмайер"
     },
     {
       "section": "general",
@@ -1025,7 +1358,11 @@
         "Christlicher Deutscher Umweltschutz",
         "Christlich Demokratische Union"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 3,
+      "correct_letter": "D",
+      "correct_option_de": "Christlich Demokratische Union",
+      "correct_option_ru": "Христианско-демократический союз"
     },
     {
       "section": "general",
@@ -1038,7 +1375,11 @@
         "eine deutsche Bürgerinitiative",
         "die deutsche Armee"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 3,
+      "correct_letter": "D",
+      "correct_option_de": "die deutsche Armee",
+      "correct_option_ru": "немецкая армия"
     },
     {
       "section": "general",
@@ -1051,7 +1392,11 @@
         "Sozialdemokratische Partei Deutschlands",
         "Sozialgerechte Partei Deutschlands"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 2,
+      "correct_letter": "C",
+      "correct_option_de": "Sozialdemokratische Partei Deutschlands",
+      "correct_option_ru": "Социал-демократическая партия Германии"
     },
     {
       "section": "general",
@@ -1064,7 +1409,11 @@
         "Führende Demokratische Partei",
         "Freie Demokratische Partei"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 3,
+      "correct_letter": "D",
+      "correct_option_de": "Freie Demokratische Partei",
+      "correct_option_ru": "Свободная демократическая партия"
     },
     {
       "section": "general",
@@ -1077,7 +1426,11 @@
         "Bundesverfassungsgericht",
         "Verwaltungsgericht"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 2,
+      "correct_letter": "C",
+      "correct_option_de": "Bundesverfassungsgericht",
+      "correct_option_ru": "Федеральный конституционный суд"
     },
     {
       "section": "general",
@@ -1090,7 +1443,11 @@
         "das Volk",
         "der Bundestag"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 3,
+      "correct_letter": "D",
+      "correct_option_de": "der Bundestag",
+      "correct_option_ru": "Бундестаг"
     },
     {
       "section": "general",
@@ -1103,7 +1460,11 @@
         "die Bundesratspräsidentin/der Bundesratspräsident",
         "die Bundeskanzlerin/der Bundeskanzler"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 3,
+      "correct_letter": "D",
+      "correct_option_de": "die Bundeskanzlerin/der Bundeskanzler",
+      "correct_option_ru": "Федеральный канцлер"
     },
     {
       "section": "general",
@@ -1116,7 +1477,11 @@
         "der Bundestag",
         "die Bundesregierung"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 2,
+      "correct_letter": "C",
+      "correct_option_de": "der Bundestag",
+      "correct_option_ru": "Бундестаг"
     },
     {
       "section": "general",
@@ -1129,7 +1494,11 @@
         "repräsentiert das Land.",
         "überwacht die Einhaltung der Gesetze."
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 2,
+      "correct_letter": "C",
+      "correct_option_de": "repräsentiert das Land.",
+      "correct_option_ru": "представляет страну."
     },
     {
       "section": "general",
@@ -1142,7 +1511,11 @@
         "die Regierungsvertreter der Bundesländer",
         "die Parteimitglieder"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 2,
+      "correct_letter": "C",
+      "correct_option_de": "die Regierungsvertreter der Bundesländer",
+      "correct_option_ru": "представители правительств федеральных земель"
     },
     {
       "section": "general",
@@ -1155,7 +1528,11 @@
         "das Bundesparlament",
         "das Bundesverfassungsgericht"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 0,
+      "correct_letter": "A",
+      "correct_option_de": "die Bundesversammlung",
+      "correct_option_ru": "Федеральное Собрание"
     },
     {
       "section": "general",
@@ -1168,7 +1545,11 @@
         "die Bundesratspräsidentin/der Bundesratspräsident",
         "die Bundestagspräsidentin/der Bundestagspräsident"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 1,
+      "correct_letter": "B",
+      "correct_option_de": "die Bundespräsidentin/der Bundespräsident",
+      "correct_option_ru": "Федеральный президент"
     },
     {
       "section": "general",
@@ -1181,7 +1562,11 @@
         "bestimmt, wer im Bundesrat sitzt.",
         "schlägt die Regierungschefinnen/Regierungschefs der Länder vor."
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 0,
+      "correct_letter": "A",
+      "correct_option_de": "kontrolliert die Regierung.",
+      "correct_option_ru": "контролирует правительство."
     },
     {
       "section": "general",
@@ -1194,7 +1579,11 @@
         "Fraktion",
         "Opposition"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 2,
+      "correct_letter": "C",
+      "correct_option_de": "Fraktion",
+      "correct_option_ru": "дробь"
     },
     {
       "section": "general",
@@ -1207,7 +1596,11 @@
         "den Bundestag.",
         "die Bundesregierung."
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 0,
+      "correct_letter": "A",
+      "correct_option_de": "den Bundesrat.",
+      "correct_option_ru": "Федеральный совет."
     },
     {
       "section": "general",
@@ -1220,7 +1613,11 @@
         "schwieriger, wenn dadurch die Mehrheit im Bundesrat verändert wird.",
         "leichter, wenn es sich um ein reiches Bundesland handelt."
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 2,
+      "correct_letter": "C",
+      "correct_option_de": "schwieriger, wenn dadurch die Mehrheit im Bundesrat verändert wird.",
+      "correct_option_ru": "сложнее, если это изменит большинство в Федеральном совете."
     },
     {
       "section": "general",
@@ -1233,7 +1630,11 @@
         "Christlich Sozialer Unternehmerverband",
         "Christlich Soziale Union"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 3,
+      "correct_letter": "D",
+      "correct_option_de": "Christlich Soziale Union",
+      "correct_option_ru": "Христианско-социальный союз"
     },
     {
       "section": "general",
@@ -1246,7 +1647,11 @@
         "größer ist das Risiko, eine Koalition bilden zu müssen.",
         "mehr Sitze erhält die Partei im Parlament."
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 3,
+      "correct_letter": "D",
+      "correct_option_de": "mehr Sitze erhält die Partei im Parlament.",
+      "correct_option_ru": "Партия получает больше мест в парламенте."
     },
     {
       "section": "general",
@@ -1259,7 +1664,11 @@
         "21",
         "23"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 1,
+      "correct_letter": "B",
+      "correct_option_de": "18",
+      "correct_option_ru": "18"
     },
     {
       "section": "general",
@@ -1272,7 +1681,11 @@
         "Schweigepflicht",
         "Religionspflicht"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 1,
+      "correct_letter": "B",
+      "correct_option_de": "Schulpflicht",
+      "correct_option_ru": "Обязательное школьное образование"
     },
     {
       "section": "general",
@@ -1283,9 +1696,13 @@
         "Kürzung sozialer Leistungen",
         "bis zu 100 Sozialstunden",
         "gar nicht, Holocaustleugnung ist erlaubt",
-        "mit Freiheitsstrafe bis zu fünf Jahren oder mit Geldstrafe A"
+        "mit Freiheitsstrafe bis zu fünf Jahren oder mit Geldstrafe"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 3,
+      "correct_letter": "D",
+      "correct_option_de": "mit Freiheitsstrafe bis zu fünf Jahren oder mit Geldstrafe",
+      "correct_option_ru": "с лишением свободы на срок до пяти лет или штрафом А."
     },
     {
       "section": "general",
@@ -1298,7 +1715,11 @@
         "Kindergeld",
         "Wohngeld"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 0,
+      "correct_letter": "A",
+      "correct_option_de": "Sozialversicherung",
+      "correct_option_ru": "социальное обеспечение"
     },
     {
       "section": "general",
@@ -1311,7 +1732,11 @@
         "muss die Bundespräsidentin/der Bundespräsident zuvor ihr/sein Einverständnis geben.",
         "dürfen die Wählerinnen/Wähler dieser Abgeordneten noch einmal wählen."
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 1,
+      "correct_letter": "B",
+      "correct_option_de": "kann die Regierung ihre Mehrheit verlieren.",
+      "correct_option_ru": "правительство может потерять большинство."
     },
     {
       "section": "general",
@@ -1324,7 +1749,11 @@
         "alle Staatsangehörigen",
         "nur Arbeitgeberinnen/Arbeitgeber"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 0,
+      "correct_letter": "A",
+      "correct_option_de": "Arbeitgeberinnen/Arbeitgeber und Arbeitnehmerinnen/Arbeitnehmer",
+      "correct_option_ru": "Работодатели и сотрудники"
     },
     {
       "section": "general",
@@ -1337,7 +1766,11 @@
         "die Arbeitslosenversicherung",
         "die Pflegeversicherung"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 0,
+      "correct_letter": "A",
+      "correct_option_de": "die Lebensversicherung",
+      "correct_option_ru": "страхование жизни"
     },
     {
       "section": "general",
@@ -1350,7 +1783,11 @@
         "Rentnerinnen und Rentner.",
         "Arbeitgeberinnen und Arbeitgeber."
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 1,
+      "correct_letter": "B",
+      "correct_option_de": "Arbeitnehmerinnen und Arbeitnehmer.",
+      "correct_option_ru": "сотрудники."
     },
     {
       "section": "general",
@@ -1363,7 +1800,18 @@
         "Vaterländischen Verdienstorden",
         "Ehrentitel \"Held der Deutschen Demokratischen Republik\""
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 0,
+      "correct_letter": "A",
+      "correct_option_de": "Bundesverdienstkreuz",
+      "correct_option_ru": "Федеральным крестом за заслуги",
+      "question_ru": "Чем в Федеративной Республике Германия могут наградить человека за особые заслуги в политической, экономической, культурной, интеллектуальной или социальной сфере? ...",
+      "options_ru": [
+        "Федеральным крестом за заслуги",
+        "Федеральным орлом",
+        "Патриотическим орденом «За заслуги»",
+        "Почетным званием «Герой Германской Демократической Республики»"
+      ]
     },
     {
       "section": "general",
@@ -1376,20 +1824,28 @@
         "von CSU, Die LINKE und Bündnis 90/Die Grünen in einer Regierung",
         "der Bundestagsfraktionen von CDU und SPD"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 1,
+      "correct_letter": "B",
+      "correct_option_de": "von SPD, FDP und Bündnis 90/Die Grünen in einer Regierung",
+      "correct_option_ru": "СДПГ, СвДП и Альянс 90/Зеленые в одном правительстве"
     },
     {
       "section": "general",
       "state": null,
       "task_number": 104,
-      "question": "Eine Frau in Deutschland verliert ihre Arbeit. Was darf nicht d er Grund für diese Entlassung sein?",
+      "question": "Eine Frau in Deutschland verliert ihre Arbeit. Was darf nicht der Grund für diese Entlassung sein?",
       "options": [
-        "D ie Frau ist lange krank und arbeitsunfähig.",
+        "Die Frau ist lange krank und arbeitsunfähig.",
         "Die Frau kam oft zu spät zur Arbeit.",
         "Die Frau erledigt private Sachen während der Arbeitszeit.",
         "Die Frau bekommt ein Kind und ihr Chef weiß das."
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 3,
+      "correct_letter": "D",
+      "correct_option_de": "Die Frau bekommt ein Kind und ihr Chef weiß das.",
+      "correct_option_ru": "Женщина рожает ребенка, и ее начальник знает об этом."
     },
     {
       "section": "general",
@@ -1402,7 +1858,11 @@
         "Sie geben Zwischenergebnisse an die Medien weiter.",
         "Sie zählen die Stimmen nach dem Ende der Wahl."
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 3,
+      "correct_letter": "D",
+      "correct_option_de": "Sie zählen die Stimmen nach dem Ende der Wahl.",
+      "correct_option_ru": "Они подсчитывают голоса после окончания выборов."
     },
     {
       "section": "general",
@@ -1415,7 +1875,11 @@
         "Sie geben Zwischenergebnisse an Journalisten weiter.",
         "Sie zählen die Stimmen nach dem Ende der Wahl."
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 3,
+      "correct_letter": "D",
+      "correct_option_de": "Sie zählen die Stimmen nach dem Ende der Wahl.",
+      "correct_option_ru": "Они подсчитывают голоса после окончания выборов."
     },
     {
       "section": "general",
@@ -1428,7 +1892,11 @@
         "6 Jahre",
         "8 Jahre"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 1,
+      "correct_letter": "B",
+      "correct_option_de": "4 Jahre",
+      "correct_option_ru": "4 года"
     },
     {
       "section": "general",
@@ -1441,7 +1909,11 @@
         "seit mindestens 3 Jahren in der Bundesrepublik Deutschland lebt.",
         "Bürgerin/Bürger der Bundesrepublik Deutschland ist und mindestens 21 Jahre alt ist."
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 1,
+      "correct_letter": "B",
+      "correct_option_de": "Bürgerin/Bürger der Bundesrepublik Deutschland ist und mindestens 18 Jahre alt ist.",
+      "correct_option_ru": "является гражданином Федеративной Республики Германия и достиг возраста 18 лет."
     },
     {
       "section": "general",
@@ -1454,7 +1926,11 @@
         "alle fünf Jahre",
         "alle sechs Jahre"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 1,
+      "correct_letter": "B",
+      "correct_option_de": "alle vier Jahre",
+      "correct_option_ru": "каждые четыре года"
     },
     {
       "section": "general",
@@ -1467,7 +1943,11 @@
         "4 Jahre",
         "5 Jahre"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 2,
+      "correct_letter": "C",
+      "correct_option_de": "4 Jahre",
+      "correct_option_ru": "4 года"
     },
     {
       "section": "general",
@@ -1480,7 +1960,11 @@
         "eine Diskussion über die Politik Israels",
         "der öffentliche Aufruf zur Vernichtung Israels"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 0,
+      "correct_letter": "A",
+      "correct_option_de": "die Politik Israels öffentlich kritisieren",
+      "correct_option_ru": "публично критиковать политику Израиля"
     },
     {
       "section": "general",
@@ -1493,7 +1977,11 @@
         "berufsbezogen.",
         "geschlechtsabhängig."
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 1,
+      "correct_letter": "B",
+      "correct_option_de": "geheim.",
+      "correct_option_ru": "секрет."
     },
     {
       "section": "general",
@@ -1506,7 +1994,11 @@
         "die meisten Stimmen bei den Arbeiterinnen/Arbeitern bekommen hat.",
         "die meisten Erststimmen für ihre Kanzlerkandidatin/ihren Kanzlerkandidaten erhalten hat."
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 0,
+      "correct_letter": "A",
+      "correct_option_de": "die meisten Stimmen bekommt.",
+      "correct_option_ru": "получает наибольшее количество голосов."
     },
     {
       "section": "general",
@@ -1519,7 +2011,11 @@
         "ein Zwang.",
         "eine Last."
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 1,
+      "correct_letter": "B",
+      "correct_option_de": "ein Recht.",
+      "correct_option_ru": "право."
     },
     {
       "section": "general",
@@ -1532,7 +2028,11 @@
         "Man kann wählen.",
         "Man muss zur Auszählung der Stimmen gehen."
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 2,
+      "correct_letter": "C",
+      "correct_option_de": "Man kann wählen.",
+      "correct_option_ru": "Вы можете выбирать."
     },
     {
       "section": "general",
@@ -1545,7 +2045,11 @@
         "aktiver Wahlkampf.",
         "aktives Wahlrecht."
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 3,
+      "correct_letter": "D",
+      "correct_option_de": "aktives Wahlrecht.",
+      "correct_option_ru": "активное избирательное право."
     },
     {
       "section": "general",
@@ -1558,7 +2062,11 @@
         "5%",
         "6%"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 2,
+      "correct_letter": "C",
+      "correct_option_de": "5%",
+      "correct_option_ru": "5%"
     },
     {
       "section": "general",
@@ -1571,7 +2079,11 @@
         "nur religiöse Menschen",
         "alle Menschen"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 3,
+      "correct_letter": "D",
+      "correct_option_de": "alle Menschen",
+      "correct_option_ru": "все люди"
     },
     {
       "section": "general",
@@ -1584,7 +2096,11 @@
         "Jede Person kann ohne Zwang entscheiden, ob sie wählen möchte und wen sie wählen möchte.",
         "Ich kann frei entscheiden, wo ich wählen gehen möchte."
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 2,
+      "correct_letter": "C",
+      "correct_option_de": "Jede Person kann ohne Zwang entscheiden, ob sie wählen möchte und wen sie wählen möchte.",
+      "correct_option_ru": "Каждый человек может без принуждения решить, хочет ли он голосовать и за кого он хочет голосовать."
     },
     {
       "section": "general",
@@ -1597,7 +2113,11 @@
         "Mehrheits- und Verhältniswahlrecht.",
         "allgemeines Männerwahlrecht."
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 2,
+      "correct_letter": "C",
+      "correct_option_de": "Mehrheits- und Verhältniswahlrecht.",
+      "correct_option_ru": "Мажоритарное и пропорциональное представительство."
     },
     {
       "section": "general",
@@ -1610,7 +2130,18 @@
         "Basiswert.",
         "Richtlinie."
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 0,
+      "correct_letter": "A",
+      "correct_option_de": "5%-Hürde.",
+      "correct_option_ru": "пятипроцентный барьер.",
+      "question_ru": "Партия хочет попасть в немецкий Бундестаг. Но для этого она должна набрать минимальную долю голосов избирателей. Это называется…",
+      "options_ru": [
+        "пятипроцентный барьер.",
+        "порог допуска.",
+        "базовое значение.",
+        "руководящий принцип."
+      ]
     },
     {
       "section": "general",
@@ -1623,7 +2154,11 @@
         "geschlossen, gleich, sicher.",
         "sicher, offen, freiwillig."
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 0,
+      "correct_letter": "A",
+      "correct_option_de": "frei, gleich, geheim.",
+      "correct_option_ru": "свободный, равный, тайный."
     },
     {
       "section": "general",
@@ -1636,7 +2171,11 @@
         "Mindestanteil an Wählerstimmen, um ins Parlament zu kommen",
         "Anwesenheitskontrolle im Bundesrat für Abstimmungen"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 2,
+      "correct_letter": "C",
+      "correct_option_de": "Mindestanteil an Wählerstimmen, um ins Parlament zu kommen",
+      "correct_option_ru": "Минимальная доля голосов для попадания в парламент"
     },
     {
       "section": "general",
@@ -1649,7 +2188,11 @@
         "des Parlaments für Deutschland.",
         "der Bundespräsidentin/des Bundespräsidenten."
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 2,
+      "correct_letter": "C",
+      "correct_option_de": "des Parlaments für Deutschland.",
+      "correct_option_ru": "парламента Германии."
     },
     {
       "section": "general",
@@ -1662,7 +2205,11 @@
         "im Land bestehende Gesetze beizubehalten.",
         "den Armen mehr Macht zu geben."
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 1,
+      "correct_letter": "B",
+      "correct_option_de": "nach dem Willen der Wählermehrheit den Wechsel der Regierung zu ermöglichen.",
+      "correct_option_ru": "обеспечить возможность смены правительства в соответствии с волей большинства избирателей."
     },
     {
       "section": "general",
@@ -1675,7 +2222,11 @@
         "eine Benachrichtigung von der Bundesversammlung",
         "eine Benachrichtigung vom Pfarramt"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 0,
+      "correct_letter": "A",
+      "correct_option_de": "eine Wahlbenachrichtigung von der Gemeinde",
+      "correct_option_ru": "уведомление о выборах от муниципалитета"
     },
     {
       "section": "general",
@@ -1688,7 +2239,11 @@
         "viele kleine Parteien die Regierungsbildung erschweren.",
         "die kleinen Parteien nicht so viel Geld haben, um die Politikerinnen und Politiker zu bezahlen."
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 2,
+      "correct_letter": "C",
+      "correct_option_de": "viele kleine Parteien die Regierungsbildung erschweren.",
+      "correct_option_ru": "Множество мелких партий затрудняют формирование правительства."
     },
     {
       "section": "general",
@@ -1701,7 +2256,11 @@
         "Botschafterinnen/Botschafter.",
         "Ministerpräsidentinnen/Ministerpräsidenten."
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 0,
+      "correct_letter": "A",
+      "correct_option_de": "Abgeordnete.",
+      "correct_option_ru": "Депутаты."
     },
     {
       "section": "general",
@@ -1714,7 +2273,11 @@
         "der Bundestag.",
         "die Bundespräsidentin/der Bundespräsident."
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 2,
+      "correct_letter": "C",
+      "correct_option_de": "der Bundestag.",
+      "correct_option_ru": "Бундестаг."
     },
     {
       "section": "general",
@@ -1740,7 +2303,11 @@
         "2",
         "3",
         "4"
-      ]
+      ],
+      "correct_index": 0,
+      "correct_letter": "A",
+      "correct_option_de": "1",
+      "correct_option_ru": "1"
     },
     {
       "section": "general",
@@ -1753,7 +2320,11 @@
         "das Oberhaupt einer Gemeinde.",
         "die/der Vorsitzende einer Partei."
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 2,
+      "correct_letter": "C",
+      "correct_option_de": "das Oberhaupt einer Gemeinde.",
+      "correct_option_ru": "глава общины."
     },
     {
       "section": "general",
@@ -1766,7 +2337,11 @@
         "Sie arbeiten in der Bundesregierung.",
         "Sie arbeiten in einem Krankenhaus und verdienen dabei Geld."
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 1,
+      "correct_letter": "B",
+      "correct_option_de": "Sie arbeiten freiwillig und unbezahlt in Vereinen und Verbänden.",
+      "correct_option_ru": "Они работают добровольно и бесплатно в клубах и ассоциациях."
     },
     {
       "section": "general",
@@ -1779,7 +2354,11 @@
         "Man kann am Wahltag telefonisch seine Stimme abgeben.",
         "Kinder ab dem Alter von 14 Jahren dürfen wählen."
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 1,
+      "correct_letter": "B",
+      "correct_option_de": "Man kann durch Briefwahl seine Stimme abgeben.",
+      "correct_option_ru": "Вы можете отдать свой голос путем голосования по почте."
     },
     {
       "section": "general",
@@ -1792,7 +2371,11 @@
         "Ich wende mich an das Finanzamt, weil ich als Steuerzahlerin/Steuerzahler ein Recht auf die Buslinie habe.",
         "Ich schreibe einen Brief an das Forstamt der Gemeinde."
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 0,
+      "correct_letter": "A",
+      "correct_option_de": "Ich beteilige mich an einer Bürgerinitiative für die Erhaltung der Buslinie oder gründe selber eine Initiative.",
+      "correct_option_ru": "Я принимаю участие в инициативе граждан по сохранению автобусного маршрута или запускаю инициативу сам."
     },
     {
       "section": "general",
@@ -1805,7 +2388,11 @@
         "Selbstständige",
         "Arbeitnehmerinnen und Arbeitnehmer"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 3,
+      "correct_letter": "D",
+      "correct_option_de": "Arbeitnehmerinnen und Arbeitnehmer",
+      "correct_option_ru": "сотрудники"
     },
     {
       "section": "general",
@@ -1818,7 +2405,11 @@
         "Problemen mit den Nachbarinnen/Nachbarn.",
         "Schwierigkeiten nach einem Verkehrsunfall."
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 1,
+      "correct_letter": "B",
+      "correct_option_de": "ungerechtfertigter Kündigung durch Ihre Chefin/Ihren Chef.",
+      "correct_option_ru": "необоснованное увольнение со стороны начальника."
     },
     {
       "section": "general",
@@ -1831,7 +2422,11 @@
         "das Arbeitsgericht",
         "das Amtsgericht"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 2,
+      "correct_letter": "C",
+      "correct_option_de": "das Arbeitsgericht",
+      "correct_option_ru": "трудовой суд"
     },
     {
       "section": "general",
@@ -1844,7 +2439,11 @@
         "Kündigungsschutzklage erheben",
         "die Arbeitgeberin/den Arbeitgeber bei der Polizei anzeigen"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 2,
+      "correct_letter": "C",
+      "correct_option_de": "Kündigungsschutzklage erheben",
+      "correct_option_ru": "Подайте иск о защите от увольнения"
     },
     {
       "section": "general",
@@ -1857,7 +2456,11 @@
         "eine andere Meinung als die der Regierung vertritt.",
         "sein Auto falsch geparkt hat und es abgeschleppt wird."
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 1,
+      "correct_letter": "B",
+      "correct_option_de": "eine Straftat begangen hat und angeklagt wird.",
+      "correct_option_ru": "совершил преступление и ему предъявлено обвинение."
     },
     {
       "section": "general",
@@ -1870,7 +2473,11 @@
         "stellt Urkunden aus.",
         "verteidigt die Angeklagte/den Angeklagten."
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 0,
+      "correct_letter": "A",
+      "correct_option_de": "entscheidet mit Richterinnen/Richtern über Schuld und Strafe.",
+      "correct_option_ru": "решает с судьями вопросы вины и наказания."
     },
     {
       "section": "general",
@@ -1883,7 +2490,11 @@
         "eine Schöffin/ein Schöffe",
         "eine Staatsanwältin/ein Staatsanwalt"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 0,
+      "correct_letter": "A",
+      "correct_option_de": "eine Rechtsanwältin/ein Rechtsanwalt",
+      "correct_option_ru": "адвокат"
     },
     {
       "section": "general",
@@ -1896,7 +2507,11 @@
         "ändert Gesetze.",
         "betreut Jugendliche vor Gericht."
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 1,
+      "correct_letter": "B",
+      "correct_option_de": "arbeitet an einem Gericht und spricht Urteile.",
+      "correct_option_ru": "работает в суде и выносит решения."
     },
     {
       "section": "general",
@@ -1909,7 +2524,11 @@
         "Operative.",
         "Legislative."
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 0,
+      "correct_letter": "A",
+      "correct_option_de": "Judikative.",
+      "correct_option_ru": "Судебная власть."
     },
     {
       "section": "general",
@@ -1922,7 +2541,11 @@
         "planenden Gewalt.",
         "gesetzgebenden Gewalt."
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 1,
+      "correct_letter": "B",
+      "correct_option_de": "rechtsprechenden Gewalt.",
+      "correct_option_ru": "судебная власть."
     },
     {
       "section": "general",
@@ -1935,7 +2558,18 @@
         "Presse",
         "Legislative"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 0,
+      "correct_letter": "A",
+      "correct_option_de": "Judikative",
+      "correct_option_ru": "судебной власти",
+      "question_ru": "В Германии государственная власть разделена. К какой ветви власти относится работа судьи? К ...",
+      "options_ru": [
+        "судебной власти",
+        "исполнительной власти",
+        "прессе",
+        "законодательной власти"
+      ]
     },
     {
       "section": "general",
@@ -1948,7 +2582,11 @@
         "Protokoll",
         "Prozess"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 3,
+      "correct_letter": "D",
+      "correct_option_de": "Prozess",
+      "correct_option_ru": "процесс"
     },
     {
       "section": "general",
@@ -1961,7 +2599,11 @@
         "Pläne erstellen",
         "Gesetze erlassen"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 1,
+      "correct_letter": "B",
+      "correct_option_de": "Recht sprechen",
+      "correct_option_ru": "Говори справедливо"
     },
     {
       "section": "general",
@@ -1974,7 +2616,11 @@
         "die Gesetze zu beschließen",
         "die Einhaltung von Gesetzen zu überwachen"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 3,
+      "correct_letter": "D",
+      "correct_option_de": "die Einhaltung von Gesetzen zu überwachen",
+      "correct_option_ru": "контролировать соблюдение законов"
     },
     {
       "section": "general",
@@ -1987,7 +2633,11 @@
         "den Holocaust leugnen",
         "gegen Juden Fußball spielen."
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 2,
+      "correct_letter": "C",
+      "correct_option_de": "den Holocaust leugnen",
+      "correct_option_ru": "отрицать Холокост"
     },
     {
       "section": "general",
@@ -2000,7 +2650,11 @@
         "ein Mitglied eines Gemeinderats.",
         "eine Person, die Jura studiert hat."
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 1,
+      "correct_letter": "B",
+      "correct_option_de": "eine ehrenamtliche Richterin/ein ehrenamtlicher Richter.",
+      "correct_option_ru": "судья-волонтер."
     },
     {
       "section": "general",
@@ -2013,7 +2667,11 @@
         "die Bundesrepublik Deutschland",
         "die USA"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 1,
+      "correct_letter": "B",
+      "correct_option_de": "die DDR",
+      "correct_option_ru": "ГДР"
     },
     {
       "section": "general",
@@ -2026,7 +2684,11 @@
         "1933 bis 1945",
         "1945 bis 1989"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 2,
+      "correct_letter": "C",
+      "correct_option_de": "1933 bis 1945",
+      "correct_option_ru": "1933-1945 гг."
     },
     {
       "section": "general",
@@ -2039,7 +2701,11 @@
         "Wahl von Konrad Adenauer zum Bundeskanzler",
         "Ende des Zweiten Weltkriegs in Europa"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 3,
+      "correct_letter": "D",
+      "correct_option_de": "Ende des Zweiten Weltkriegs in Europa",
+      "correct_option_ru": "Конец Второй мировой войны в Европе"
     },
     {
       "section": "general",
@@ -2052,7 +2718,11 @@
         "1949",
         "1961"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 1,
+      "correct_letter": "B",
+      "correct_option_de": "1945",
+      "correct_option_ru": "1945 год"
     },
     {
       "section": "general",
@@ -2065,7 +2735,11 @@
         "1933 bis 1945",
         "1949 bis 1963"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 2,
+      "correct_letter": "C",
+      "correct_option_de": "1933 bis 1945",
+      "correct_option_ru": "1933-1945 гг."
     },
     {
       "section": "general",
@@ -2078,7 +2752,11 @@
         "1933",
         "1936"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 2,
+      "correct_letter": "C",
+      "correct_option_de": "1933",
+      "correct_option_ru": "1933 год"
     },
     {
       "section": "general",
@@ -2091,7 +2769,11 @@
         "eine Monarchie.",
         "ein Fürstentum."
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 0,
+      "correct_letter": "A",
+      "correct_option_de": "eine Diktatur.",
+      "correct_option_ru": "диктатура."
     },
     {
       "section": "general",
@@ -2104,7 +2786,11 @@
         "Monarchie.",
         "Räterepublik."
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 0,
+      "correct_letter": "A",
+      "correct_option_de": "Diktatur.",
+      "correct_option_ru": "Диктатура."
     },
     {
       "section": "general",
@@ -2117,7 +2803,11 @@
         "willkürliche Verhaftungen",
         "Verfolgung von Juden"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 0,
+      "correct_letter": "A",
+      "correct_option_de": "freie Wahlen",
+      "correct_option_ru": "свободные выборы"
     },
     {
       "section": "general",
@@ -2130,7 +2820,11 @@
         "der Vietnamkrieg",
         "der Golfkrieg"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 1,
+      "correct_letter": "B",
+      "correct_option_de": "der Zweite Weltkrieg",
+      "correct_option_ru": "Вторая мировая война"
     },
     {
       "section": "general",
@@ -2143,7 +2837,11 @@
         "der allgemeinen Religionsfreiheit",
         "der Entwicklung der Demokratie"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 0,
+      "correct_letter": "A",
+      "correct_option_de": "des staatlichen Rassismus",
+      "correct_option_ru": "государственного расизма"
     },
     {
       "section": "general",
@@ -2156,7 +2854,11 @@
         "den Aufbau der Wehrmacht.",
         "das Attentat auf Hitler am 20. Juli 1944."
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 3,
+      "correct_letter": "D",
+      "correct_option_de": "das Attentat auf Hitler am 20. Juli 1944.",
+      "correct_option_ru": "Покушение на Гитлера 20 июля 1944 года."
     },
     {
       "section": "general",
@@ -2169,7 +2871,11 @@
         "1938",
         "1945"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 2,
+      "correct_letter": "C",
+      "correct_option_de": "1938",
+      "correct_option_ru": "1938 год"
     },
     {
       "section": "general",
@@ -2182,7 +2888,11 @@
         "Jüdische Geschäfte und Synagogen werden durch Nationalsozialisten und ihre Anhänger zerstört.",
         "Hitler wird Reichspräsident und lässt alle Parteien verbieten."
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 2,
+      "correct_letter": "C",
+      "correct_option_de": "Jüdische Geschäfte und Synagogen werden durch Nationalsozialisten und ihre Anhänger zerstört.",
+      "correct_option_ru": "Еврейские магазины и синагоги разрушаются нацистами и их сторонниками."
     },
     {
       "section": "general",
@@ -2195,7 +2905,11 @@
         "Helmut Schmidt",
         "Willy Brandt"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 0,
+      "correct_letter": "A",
+      "correct_option_de": "Konrad Adenauer",
+      "correct_option_ru": "Конрад Аденауэр"
     },
     {
       "section": "general",
@@ -2208,7 +2922,11 @@
         "bei den Anti-Atomkraft-Demonstrationen 1985 in der Bundesrepublik Deutschland",
         "bei den Montagsdemonstrationen 1989 in der DDR"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 3,
+      "correct_letter": "D",
+      "correct_option_de": "bei den Montagsdemonstrationen 1989 in der DDR",
+      "correct_option_ru": "на демонстрациях по понедельникам в 1989 году в ГДР"
     },
     {
       "section": "general",
@@ -2221,7 +2939,11 @@
         "USA, Sowjetunion, Spanien, Portugal",
         "USA, Sowjetunion, Großbritannien, Frankreich"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 3,
+      "correct_letter": "D",
+      "correct_option_de": "USA, Sowjetunion, Großbritannien, Frankreich",
+      "correct_option_ru": "США, Советский Союз, Великобритания, Франция"
     },
     {
       "section": "general",
@@ -2234,7 +2956,11 @@
         "Frankreich",
         "Japan"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 3,
+      "correct_letter": "D",
+      "correct_option_de": "Japan",
+      "correct_option_ru": "Япония"
     },
     {
       "section": "general",
@@ -2247,7 +2973,11 @@
         "1949",
         "1951"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 2,
+      "correct_letter": "C",
+      "correct_option_de": "1949",
+      "correct_option_ru": "1949 год"
     },
     {
       "section": "general",
@@ -2260,7 +2990,11 @@
         "Pressefreiheit",
         "den Schutz der Menschenwürde"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 0,
+      "correct_letter": "A",
+      "correct_option_de": "das Verbot von Parteien",
+      "correct_option_ru": "запрет на вечеринки"
     },
     {
       "section": "general",
@@ -2273,7 +3007,11 @@
         "richtet sich nach der Nachfrage im Ausland.",
         "richtet sich nach Angebot und Nachfrage, aber der Staat sorgt für einen sozialen Ausgleich."
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 3,
+      "correct_letter": "D",
+      "correct_option_de": "richtet sich nach Angebot und Nachfrage, aber der Staat sorgt für einen sozialen Ausgleich.",
+      "correct_option_ru": "зависит от спроса и предложения, но государство обеспечивает социальное равновесие."
     },
     {
       "section": "general",
@@ -2286,7 +3024,11 @@
         "britischen Besatzungszone",
         "sowjetischen Besatzungszone"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 3,
+      "correct_letter": "D",
+      "correct_option_de": "sowjetischen Besatzungszone",
+      "correct_option_ru": "Советская оккупационная зона"
     },
     {
       "section": "general",
@@ -2299,7 +3041,11 @@
         "der Europäischen Union (EU).",
         "des Warschauer Pakts."
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 2,
+      "correct_letter": "C",
+      "correct_option_de": "der Europäischen Union (EU).",
+      "correct_option_ru": "Европейский Союз (ЕС)."
     },
     {
       "section": "general",
@@ -2312,7 +3058,11 @@
         "1953",
         "1956"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 1,
+      "correct_letter": "B",
+      "correct_option_de": "1949",
+      "correct_option_ru": "1949 год"
     },
     {
       "section": "general",
@@ -2325,7 +3075,11 @@
         "5",
         "6"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 1,
+      "correct_letter": "B",
+      "correct_option_de": "4",
+      "correct_option_ru": "4"
     },
     {
       "section": "general",
@@ -2344,7 +3098,11 @@
           "src": "./data/images/questions/general_176_question.png",
           "alt": "Карта Германии с четырьмя пронумерованными зонами оккупации"
         }
-      ]
+      ],
+      "correct_index": 2,
+      "correct_letter": "C",
+      "correct_option_de": "1=Großbritannien, 2=Sowjetunion, 3=USA, 4=Frankreich",
+      "correct_option_ru": "1=Великобритания, 2=Советский Союз, 3=США, 4=Франция"
     },
     {
       "section": "general",
@@ -2357,7 +3115,11 @@
         "Dresden",
         "Frankfurt/Oder"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 1,
+      "correct_letter": "B",
+      "correct_option_de": "Berlin",
+      "correct_option_ru": "Берлин"
     },
     {
       "section": "general",
@@ -2370,7 +3132,11 @@
         "Für Großbritannien war die Versorgung über die Luftbrücke schneller.",
         "Die Sowjetunion unterbrach den gesamten Verkehr auf dem Landwege."
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 3,
+      "correct_letter": "D",
+      "correct_option_de": "Die Sowjetunion unterbrach den gesamten Verkehr auf dem Landwege.",
+      "correct_option_ru": "Советский Союз приостановил весь наземный транспорт."
     },
     {
       "section": "general",
@@ -2383,7 +3149,11 @@
         "mit dem Rückzug der Deutschen aus den besetzten Gebieten",
         "durch eine Revolution in Deutschland"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 1,
+      "correct_letter": "B",
+      "correct_option_de": "durch die bedingungslose Kapitulation Deutschlands",
+      "correct_option_ru": "через безоговорочную капитуляцию Германии"
     },
     {
       "section": "general",
@@ -2396,13 +3166,17 @@
         "Konrad Adenauer.",
         "Gerhard Schröder."
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 2,
+      "correct_letter": "C",
+      "correct_option_de": "Konrad Adenauer.",
+      "correct_option_ru": "Конрад Аденауэр."
     },
     {
       "section": "general",
       "state": null,
       "task_number": 181,
-      "question": "Was wollte Willy Brandt mit seinem Kniefall 1970 im ehemaligen jüdischen Ghetto in Warschau ausdrücken? © Bundesregierung/Engelbert Reineke",
+      "question": "Was wollte Willy Brandt mit seinem Kniefall 1970 im ehemaligen jüdischen Ghetto in Warschau ausdrücken?",
       "options": [
         "Er hat sich den ehemaligen Alliierten unterworfen.",
         "Er bat Polen und die polnischen Juden um Vergebung.",
@@ -2415,7 +3189,12 @@
           "src": "./data/images/questions/general_181_question.jpg",
           "alt": "Вилли Брандт стоит на коленях в Варшаве"
         }
-      ]
+      ],
+      "correct_index": 1,
+      "correct_letter": "B",
+      "correct_option_de": "Er bat Polen und die polnischen Juden um Vergebung.",
+      "correct_option_ru": "Он попросил у Польши и польских евреев прощения.",
+      "question_ru": "Что хотел выразить Вилли Брандт, преклонив колени в 1970 году в бывшем еврейском гетто в Варшаве?"
     },
     {
       "section": "general",
@@ -2426,9 +3205,13 @@
         "Basilika",
         "Moschee",
         "Synagoge",
-        "Kirche A"
+        "Kirche"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 2,
+      "correct_letter": "C",
+      "correct_option_de": "Synagoge",
+      "correct_option_ru": "синагога"
     },
     {
       "section": "general",
@@ -2441,7 +3224,11 @@
         "70er Jahre",
         "80er Jahre"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 1,
+      "correct_letter": "B",
+      "correct_option_de": "50er Jahre",
+      "correct_option_ru": "50-е годы"
     },
     {
       "section": "general",
@@ -2454,7 +3241,18 @@
         "ein Vorschlag der Bundesregierung",
         "ein Vorschlag der UdSSR"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 0,
+      "correct_letter": "A",
+      "correct_option_de": "eine Resolution der Vereinten Nationen",
+      "correct_option_ru": "резолюция ООН",
+      "question_ru": "На какой правовой основе было основано государство Израиль?",
+      "options_ru": [
+        "резолюция ООН",
+        "решение Сионистского конгресса",
+        "предложение федерального правительства",
+        "предложение СССР"
+      ]
     },
     {
       "section": "general",
@@ -2467,7 +3265,11 @@
         "Nazi-Deutschlands gegen die Alliierten",
         "Europas gegen die USA"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 0,
+      "correct_letter": "A",
+      "correct_option_de": "des Warschauer Pakts gegen den Westen",
+      "correct_option_ru": "Варшавского договора против Запада"
     },
     {
       "section": "general",
@@ -2480,7 +3282,11 @@
         "20. Juli",
         "9. November"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 1,
+      "correct_letter": "B",
+      "correct_option_de": "17. Juni",
+      "correct_option_ru": "17 июня"
     },
     {
       "section": "general",
@@ -2499,7 +3305,11 @@
           "src": "./data/images/questions/general_187_question.png",
           "alt": "Флаг с молотом, циркулем и венком из колосьев"
         }
-      ]
+      ],
+      "correct_index": 3,
+      "correct_letter": "D",
+      "correct_option_de": "DDR",
+      "correct_option_ru": "ГДР"
     },
     {
       "section": "general",
@@ -2512,7 +3322,11 @@
         "1959",
         "1961"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 3,
+      "correct_letter": "D",
+      "correct_option_de": "1961",
+      "correct_option_ru": "1961 год"
     },
     {
       "section": "general",
@@ -2525,7 +3339,11 @@
         "1961",
         "1990"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 2,
+      "correct_letter": "C",
+      "correct_option_de": "1961",
+      "correct_option_ru": "1961 год"
     },
     {
       "section": "general",
@@ -2538,7 +3356,11 @@
         "Dritte Deutsche Republik",
         "Deutsche Demokratische Republik"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 3,
+      "correct_letter": "D",
+      "correct_option_de": "Deutsche Demokratische Republik",
+      "correct_option_ru": "Германская Демократическая Республика"
     },
     {
       "section": "general",
@@ -2551,7 +3373,11 @@
         "1992",
         "1995"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 1,
+      "correct_letter": "B",
+      "correct_option_de": "1989",
+      "correct_option_ru": "1989 год"
     },
     {
       "section": "general",
@@ -2564,7 +3390,11 @@
         "Saarland",
         "Hessen"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 0,
+      "correct_letter": "A",
+      "correct_option_de": "Brandenburg",
+      "correct_option_ru": "Бранденбург"
     },
     {
       "section": "general",
@@ -2577,7 +3407,11 @@
         "durch eine Mauer geteilt.",
         "nur mit dem Flugzeug erreichbar."
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 2,
+      "correct_letter": "C",
+      "correct_option_de": "durch eine Mauer geteilt.",
+      "correct_option_ru": "разделенный стеной."
     },
     {
       "section": "general",
@@ -2590,7 +3424,18 @@
         "Bundesländer.",
         "Städte."
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 0,
+      "correct_letter": "A",
+      "correct_option_de": "Einheit.",
+      "correct_option_ru": "единства.",
+      "question_ru": "3 октября в Германии отмечают День немецкого ...",
+      "options_ru": [
+        "единства.",
+        "нации.",
+        "федеральных земель.",
+        "городов."
+      ]
     },
     {
       "section": "general",
@@ -2603,7 +3448,11 @@
         "Nordrhein-Westfalen",
         "Saarland"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 1,
+      "correct_letter": "B",
+      "correct_option_de": "Sachsen-Anhalt",
+      "correct_option_ru": "Саксония-Анхальт"
     },
     {
       "section": "general",
@@ -2616,7 +3465,11 @@
         "von einer Monarchie zur Sozialdemokratie.",
         "von einem religiösen Staat zu einem kommunistischen Staat."
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 0,
+      "correct_letter": "A",
+      "correct_option_de": "von einer Diktatur zur Demokratie.",
+      "correct_option_ru": "от диктатуры к демократии."
     },
     {
       "section": "general",
@@ -2629,7 +3482,11 @@
         "Bayern",
         "Bremen"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 0,
+      "correct_letter": "A",
+      "correct_option_de": "Thüringen",
+      "correct_option_ru": "Тюрингия"
     },
     {
       "section": "general",
@@ -2642,7 +3499,11 @@
         "Sachsen",
         "Baden-Württemberg"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 2,
+      "correct_letter": "C",
+      "correct_option_de": "Sachsen",
+      "correct_option_ru": "Саксония"
     },
     {
       "section": "general",
@@ -2655,7 +3516,11 @@
         "eine regierende Partei.",
         "das Ministerium für Volksbildung."
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 1,
+      "correct_letter": "B",
+      "correct_option_de": "das Ministerium für Staatssicherheit.",
+      "correct_option_ru": "Министерство государственной безопасности."
     },
     {
       "section": "general",
@@ -2668,7 +3533,11 @@
         "Mecklenburg-Vorpommern",
         "Saarland"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 2,
+      "correct_letter": "C",
+      "correct_option_de": "Mecklenburg-Vorpommern",
+      "correct_option_ru": "Мекленбург-Передняя Померания"
     },
     {
       "section": "general",
@@ -2681,7 +3550,11 @@
         "Bayern, Baden-Württemberg, Rheinland-Pfalz, Thüringen, Sachsen",
         "Sachsen, Thüringen, Hessen, Niedersachen, Brandenburg"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 1,
+      "correct_letter": "B",
+      "correct_option_de": "Mecklenburg-Vorpommern, Brandenburg, Sachsen, Sachsen-Anhalt, Thüringen",
+      "correct_option_ru": "Мекленбург-Передняя Померания, Бранденбург, Саксония, Саксония-Анхальт, Тюрингия"
     },
     {
       "section": "general",
@@ -2694,7 +3567,11 @@
         "zur NATO",
         "zu den blockfreien Staaten"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 1,
+      "correct_letter": "B",
+      "correct_option_de": "zum Warschauer Pakt",
+      "correct_option_ru": "к Варшавскому договору"
     },
     {
       "section": "general",
@@ -2707,7 +3584,11 @@
         "Angebot und Nachfrage",
         "Kapitalismus"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 1,
+      "correct_letter": "B",
+      "correct_option_de": "Planwirtschaft",
+      "correct_option_ru": "Плановая экономика"
     },
     {
       "section": "general",
@@ -2720,7 +3601,11 @@
         "Die westlichen Bundesländer sind der DDR beigetreten.",
         "Die DDR hat die Bundesrepublik Deutschland besetzt."
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 1,
+      "correct_letter": "B",
+      "correct_option_de": "Die heutigen fünf östlichen Bundesländer sind der Bundesrepublik Deutschland beigetreten.",
+      "correct_option_ru": "Сегодня пять восточных федеральных земель присоединились к Федеративной Республике Германия."
     },
     {
       "section": "general",
@@ -2733,20 +3618,35 @@
         "zur OPEC.",
         "zur Europäischen Verteidigungsgemeinschaft."
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 0,
+      "correct_letter": "A",
+      "correct_option_de": "zur Europäischen Union.",
+      "correct_option_ru": "в Европейский Союз."
     },
     {
       "section": "general",
       "state": null,
       "task_number": 206,
-      "question": "206. Woran erinnern die sogenannten „Stolpersteine“ in Deutschland?",
+      "question": "Woran erinnern die sogenannten „Stolpersteine“ in Deutschland?",
       "options": [
         "an berühmte deutsche Politikerinnen und Politiker",
         "an die Opfer des Nationalsozialismus",
         "an Verkehrstote",
         "an bekannte jüdische Musiker"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 1,
+      "correct_letter": "B",
+      "correct_option_de": "an die Opfer des Nationalsozialismus",
+      "correct_option_ru": "о жертвах национал-социализма",
+      "question_ru": "О чем в Германии напоминают так называемые «Камни преткновения» (Stolpersteine)?",
+      "options_ru": [
+        "об известных немецких политиках",
+        "о жертвах национал-социализма",
+        "о погибших в ДТП",
+        "об известных еврейских музыкантах"
+      ]
     },
     {
       "section": "general",
@@ -2759,7 +3659,11 @@
         "im Warschauer Pakt",
         "im Europabündnis"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 2,
+      "correct_letter": "C",
+      "correct_option_de": "im Warschauer Pakt",
+      "correct_option_ru": "в Варшавском договоре"
     },
     {
       "section": "general",
@@ -2772,7 +3676,11 @@
         "der Geheimdienst der DDR",
         "ein deutscher Sportverein während des Zweiten Weltkrieges"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 2,
+      "correct_letter": "C",
+      "correct_option_de": "der Geheimdienst der DDR",
+      "correct_option_ru": "секретная служба ГДР"
     },
     {
       "section": "general",
@@ -2798,7 +3706,11 @@
           "src": "./data/images/questions/general_209_question.png",
           "alt": "Четыре варианта герба, пронумерованные от 1 до 4"
         }
-      ]
+      ],
+      "correct_index": 3,
+      "correct_letter": "D",
+      "correct_option_de": "4",
+      "correct_option_ru": "4"
     },
     {
       "section": "general",
@@ -2811,7 +3723,11 @@
         "der 1. SED-Parteitag",
         "der erste Besuch Fidel Castros"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 1,
+      "correct_letter": "B",
+      "correct_option_de": "landesweite Streiks und ein Volksaufstand",
+      "correct_option_ru": "общенациональные забастовки и народное восстание"
     },
     {
       "section": "general",
@@ -2824,7 +3740,11 @@
         "Michail Gorbatschow",
         "Ludwig Erhard"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 1,
+      "correct_letter": "B",
+      "correct_option_de": "Willy Brandt",
+      "correct_option_ru": "Вилли Брандт"
     },
     {
       "section": "general",
@@ -2837,7 +3757,18 @@
         "Bundesrepublik Deutschland",
         "Bundesbezirk Deutschland"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 2,
+      "correct_letter": "C",
+      "correct_option_de": "Bundesrepublik Deutschland",
+      "correct_option_ru": "Федеративная Республика Германия",
+      "question_ru": "Каково полное официальное название Германии?",
+      "options_ru": [
+        "Федеральное государство Германия",
+        "Федеральные земли Германии",
+        "Федеративная Республика Германия",
+        "Федеральный округ Германии"
+      ]
     },
     {
       "section": "general",
@@ -2850,7 +3781,11 @@
         "84 Millionen",
         "90 Millionen"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 2,
+      "correct_letter": "C",
+      "correct_option_de": "84 Millionen",
+      "correct_option_ru": "84 миллиона"
     },
     {
       "section": "general",
@@ -2863,7 +3798,11 @@
         "schwarz-rot-grün",
         "schwarz-gelb-rot"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 0,
+      "correct_letter": "A",
+      "correct_option_de": "schwarz-rot-gold",
+      "correct_option_ru": "черно-красно-золотой"
     },
     {
       "section": "general",
@@ -2876,13 +3815,17 @@
         "Konrad Adenauer",
         "Helmut Schmidt"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 1,
+      "correct_letter": "B",
+      "correct_option_de": "Helmut Kohl",
+      "correct_option_ru": "Гельмут Коль"
     },
     {
       "section": "general",
       "state": null,
       "task_number": 216,
-      "question": "Welches Symbol ist im Plenarsaal des Deutschen Bundestages zu sehen? © Deutscher Bundestag/Janine Schmitz",
+      "question": "Welches Symbol ist im Plenarsaal des Deutschen Bundestages zu sehen?",
       "options": [
         "der Bundesadler",
         "die Fahne der Stadt Berlin",
@@ -2895,7 +3838,12 @@
           "src": "./data/images/questions/general_216_question.jpg",
           "alt": "Пленарный зал немецкого Бундестага"
         }
-      ]
+      ],
+      "correct_index": 0,
+      "correct_letter": "A",
+      "correct_option_de": "der Bundesadler",
+      "correct_option_ru": "федеральный орел",
+      "question_ru": "Какой символ можно увидеть в зале пленарных заседаний немецкого Бундестага?"
     },
     {
       "section": "general",
@@ -2908,7 +3856,11 @@
         "1945 bis 1961",
         "1949 bis 1990"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 3,
+      "correct_letter": "D",
+      "correct_option_de": "1949 bis 1990",
+      "correct_option_ru": "1949 по 1990 год"
     },
     {
       "section": "general",
@@ -2921,7 +3873,11 @@
         "6",
         "7"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 1,
+      "correct_letter": "B",
+      "correct_option_de": "5",
+      "correct_option_ru": "5"
     },
     {
       "section": "general",
@@ -2934,7 +3890,11 @@
         "1971",
         "1990"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 3,
+      "correct_letter": "D",
+      "correct_option_de": "1990",
+      "correct_option_ru": "1990 год"
     },
     {
       "section": "general",
@@ -2947,7 +3907,11 @@
         "an die Wiedervereinigung Deutschlands",
         "an die Opfer des Nationalsozialismus (Tag der Befreiung des Vernichtungslagers Auschwitz)"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 3,
+      "correct_letter": "D",
+      "correct_option_de": "an die Opfer des Nationalsozialismus (Tag der Befreiung des Vernichtungslagers Auschwitz)",
+      "correct_option_ru": "жертвам национал-социализма (день освобождения лагеря смерти Освенцим)"
     },
     {
       "section": "general",
@@ -2960,7 +3924,11 @@
         "Deutsche können ohne Passkontrolle in jedes Land reisen.",
         "Deutsche können in jedem Land mit dem Euro bezahlen."
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 0,
+      "correct_letter": "A",
+      "correct_option_de": "Deutsche können in viele Länder Europas ohne Passkontrolle reisen.",
+      "correct_option_ru": "Немцы могут путешествовать во многие европейские страны без паспортного контроля."
     },
     {
       "section": "general",
@@ -2973,7 +3941,11 @@
         "Spanien",
         "Schweiz"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 3,
+      "correct_letter": "D",
+      "correct_option_de": "Schweiz",
+      "correct_option_ru": "Швейцария"
     },
     {
       "section": "general",
@@ -2986,7 +3958,11 @@
         "Polen",
         "Griechenland"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 2,
+      "correct_letter": "C",
+      "correct_option_de": "Polen",
+      "correct_option_ru": "Польша"
     },
     {
       "section": "general",
@@ -2999,7 +3975,11 @@
         "Einheitliche Union",
         "Euro Union"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 1,
+      "correct_letter": "B",
+      "correct_option_de": "Europäische Union",
+      "correct_option_ru": "Евросоюз"
     },
     {
       "section": "general",
@@ -3012,7 +3992,11 @@
         "Spanien",
         "Österreich"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 3,
+      "correct_letter": "D",
+      "correct_option_de": "Österreich",
+      "correct_option_ru": "Австрия"
     },
     {
       "section": "general",
@@ -3038,7 +4022,11 @@
           "src": "./data/images/questions/general_226_question.png",
           "alt": "Четыре флага, пронумерованные от 1 до 4"
         }
-      ]
+      ],
+      "correct_index": 1,
+      "correct_letter": "B",
+      "correct_option_de": "2",
+      "correct_option_ru": "2"
     },
     {
       "section": "general",
@@ -3051,7 +4039,11 @@
         "Norwegen",
         "Schweden"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 1,
+      "correct_letter": "B",
+      "correct_option_de": "Dänemark",
+      "correct_option_ru": "Дания"
     },
     {
       "section": "general",
@@ -3064,7 +4056,11 @@
         "Deutsche Wiedervereinigung",
         "Europäische Gemeinschaft"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 2,
+      "correct_letter": "C",
+      "correct_option_de": "Deutsche Wiedervereinigung",
+      "correct_option_ru": "воссоединение Германии"
     },
     {
       "section": "general",
@@ -3077,7 +4073,11 @@
         "Norwegen",
         "Luxemburg"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 3,
+      "correct_letter": "D",
+      "correct_option_de": "Luxemburg",
+      "correct_option_ru": "Люксембург"
     },
     {
       "section": "general",
@@ -3090,7 +4090,11 @@
         "7 Jahre.",
         "8 Jahre."
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 0,
+      "correct_letter": "A",
+      "correct_option_de": "5 Jahre.",
+      "correct_option_ru": "5 лет."
     },
     {
       "section": "general",
@@ -3103,7 +4107,11 @@
         "Damit sind europäische Auswanderinnen und Auswanderer in den USA gemeint.",
         "Der Begriff meint den Zusammenschluss europäischer Staaten zur EU."
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 3,
+      "correct_letter": "D",
+      "correct_option_de": "Der Begriff meint den Zusammenschluss europäischer Staaten zur EU.",
+      "correct_option_ru": "Этот термин означает слияние европейских государств с образованием ЕС."
     },
     {
       "section": "general",
@@ -3116,7 +4124,11 @@
         "die Abgeordneten des Europäischen Parlaments",
         "die europäische Verfassung"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 2,
+      "correct_letter": "C",
+      "correct_option_de": "die Abgeordneten des Europäischen Parlaments",
+      "correct_option_ru": "члены Европейского парламента"
     },
     {
       "section": "general",
@@ -3129,7 +4141,11 @@
         "Griechenland",
         "Portugal"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 0,
+      "correct_letter": "A",
+      "correct_option_de": "Tschechien",
+      "correct_option_ru": "Чешская Республика"
     },
     {
       "section": "general",
@@ -3142,13 +4158,17 @@
         "Berlin",
         "Straßburg"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 3,
+      "correct_letter": "D",
+      "correct_option_de": "Straßburg",
+      "correct_option_ru": "Страсбург"
     },
     {
       "section": "general",
       "state": null,
       "task_number": 235,
-      "question": "Der damalige französische Staatspräsident François Mitterrand und der damalige deutsche Bundeskanzler Helmut Kohl gedenken in Verdun gemeinsam der Toten beider Weltkriege. Welches Ziel der Europäischen Union wird bei diesem Treffen deutlich? © Bundesregierung/Richard Schulze-Vorberg",
+      "question": "Der damalige französische Staatspräsident François Mitterrand und der damalige deutsche Bundeskanzler Helmut Kohl gedenken in Verdun gemeinsam der Toten beider Weltkriege. Welches Ziel der Europäischen Union wird bei diesem Treffen deutlich?",
       "options": [
         "Freundschaft zwischen England und Deutschland",
         "Reisefreiheit in alle Länder der EU",
@@ -3161,7 +4181,12 @@
           "src": "./data/images/questions/general_235_question.jpg",
           "alt": "Франсуа Миттеран и Гельмут Коль в Вердене"
         }
-      ]
+      ],
+      "correct_index": 2,
+      "correct_letter": "C",
+      "correct_option_de": "Frieden und Sicherheit in den Ländern der EU",
+      "correct_option_ru": "Мир и безопасность в странах ЕС",
+      "question_ru": "Тогдашний президент Франции Франсуа Миттеран и тогдашний федеральный канцлер Германии Гельмут Коль вместе почтили в Вердене память погибших в обеих мировых войнах. Какая цель Европейского Союза особенно ясно проявляется на этой встрече?"
     },
     {
       "section": "general",
@@ -3174,7 +4199,11 @@
         "25",
         "27"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 3,
+      "correct_letter": "D",
+      "correct_option_de": "27",
+      "correct_option_ru": "27"
     },
     {
       "section": "general",
@@ -3187,7 +4216,11 @@
         "Verpflichtung Deutschlands zu Reparationsleistungen",
         "Festlegung der Oder-Neiße-Linie als Ostgrenze"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 1,
+      "correct_letter": "B",
+      "correct_option_de": "Gründung der Europäischen Wirtschaftsgemeinschaft (EWG)",
+      "correct_option_ru": "Создание Европейского экономического сообщества (ЕЭС)"
     },
     {
       "section": "general",
@@ -3200,7 +4233,11 @@
         "Rom, Bern und Wien",
         "Bonn, Zürich und Mailand"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 1,
+      "correct_letter": "B",
+      "correct_option_de": "Straßburg, Luxemburg und Brüssel",
+      "correct_option_ru": "Страсбург, Люксембург и Брюссель"
     },
     {
       "section": "general",
@@ -3213,7 +4250,11 @@
         "durch die \"Pariser Verträge\"",
         "durch die \"Londoner Verträge\""
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 1,
+      "correct_letter": "B",
+      "correct_option_de": "durch die \"Römischen Verträge\"",
+      "correct_option_ru": "через «Римские договоры»"
     },
     {
       "section": "general",
@@ -3226,7 +4267,18 @@
         "2002",
         "2005"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 2,
+      "correct_letter": "C",
+      "correct_option_de": "2002",
+      "correct_option_ru": "2002 год",
+      "question_ru": "С какого года в Германии расплачиваются наличными в евро?",
+      "options_ru": [
+        "1995 год",
+        "1998 год",
+        "2002 год",
+        "2005 год"
+      ]
     },
     {
       "section": "general",
@@ -3239,7 +4291,11 @@
         "Sie muss nichts tun, denn sie bekommt automatisch Elterngeld.",
         "Sie muss das Arbeitsamt um Erlaubnis bitten."
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 1,
+      "correct_letter": "B",
+      "correct_option_de": "Sie muss einen Antrag bei der Elterngeldstelle stellen.",
+      "correct_option_ru": "Ей необходимо подать заявление в отдел родительских пособий."
     },
     {
       "section": "general",
@@ -3252,7 +4308,11 @@
         "die Eltern/die Erziehungsberechtigten",
         "die Schulen"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 2,
+      "correct_letter": "C",
+      "correct_option_de": "die Eltern/die Erziehungsberechtigten",
+      "correct_option_ru": "родители/опекуны"
     },
     {
       "section": "general",
@@ -3265,7 +4325,11 @@
         "Sie können gar nichts tun, denn Demonstrationen sind in Deutschland grundsätzlich verboten.",
         "Maik und Sybille müssen einen neuen Verein gründen, weil nur Vereine demonstrieren dürfen."
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 0,
+      "correct_letter": "A",
+      "correct_option_de": "Sie müssen die Demonstration anmelden.",
+      "correct_option_ru": "Вам необходимо зарегистрировать демонстрацию."
     },
     {
       "section": "general",
@@ -3278,20 +4342,28 @@
         "die Prokura",
         "eine Gesellenprüfung"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 0,
+      "correct_letter": "A",
+      "correct_option_de": "das Abitur",
+      "correct_option_ru": "диплом средней школы"
     },
     {
       "section": "general",
       "state": null,
       "task_number": 245,
-      "question": "Wer darf in Deutschland nicht a ls Paar zusammenleben?",
+      "question": "Wer darf in Deutschland nicht als Paar zusammenleben?",
       "options": [
         "Hans (20 Jahre) und Marie (19 Jahre)",
         "Tom (20 Jahre) und Klaus (45 Jahre)",
         "Sofie (35 Jahre) und Lisa (40 Jahre)",
         "Anne (13 Jahre) und Tim (25 Jahre)"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 3,
+      "correct_letter": "D",
+      "correct_option_de": "Anne (13 Jahre) und Tim (25 Jahre)",
+      "correct_option_ru": "Энн (13 лет) и Тим (25 лет)"
     },
     {
       "section": "general",
@@ -3304,7 +4376,11 @@
         "19",
         "21"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 1,
+      "correct_letter": "B",
+      "correct_option_de": "18",
+      "correct_option_ru": "18"
     },
     {
       "section": "general",
@@ -3315,9 +4391,19 @@
         "Elternzeit",
         "Mutterschutz",
         "Geburtsvorbereitung",
-        "Wochenbett A"
+        "Wochenbett"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 1,
+      "correct_letter": "B",
+      "correct_option_de": "Mutterschutz",
+      "correct_option_ru": "охрана материнства",
+      "options_ru": [
+        "отпуск по уходу за ребенком",
+        "охрана материнства",
+        "подготовка к родам",
+        "послеродовой период"
+      ]
     },
     {
       "section": "general",
@@ -3330,7 +4416,11 @@
         "der Großeltern.",
         "der Schulen."
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 1,
+      "correct_letter": "B",
+      "correct_option_de": "der Eltern.",
+      "correct_option_ru": "родителей."
     },
     {
       "section": "general",
@@ -3343,7 +4433,11 @@
         "die Verwandten",
         "die Schulen"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 1,
+      "correct_letter": "B",
+      "correct_option_de": "die Eltern",
+      "correct_option_ru": "родители"
     },
     {
       "section": "general",
@@ -3356,7 +4450,11 @@
         "eine Frau ist.",
         "Mitglied einer Partei ist."
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 1,
+      "correct_letter": "B",
+      "correct_option_de": "gut ausgebildet ist.",
+      "correct_option_ru": "хорошо обучен."
     },
     {
       "section": "general",
@@ -3369,7 +4467,11 @@
         "kann man dafür nicht bestraft werden.",
         "kann man dafür bestraft werden."
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 3,
+      "correct_letter": "D",
+      "correct_option_de": "kann man dafür bestraft werden.",
+      "correct_option_ru": "тебя могут за это наказать."
     },
     {
       "section": "general",
@@ -3382,7 +4484,11 @@
         "darf man nicht wieder heiraten, wenn man einmal verheiratet war.",
         "darf eine Frau nicht wieder heiraten, wenn ihr Mann gestorben ist."
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 0,
+      "correct_letter": "A",
+      "correct_option_de": "darf man zur gleichen Zeit nur mit einer Partnerin/einem Partner verheiratet sein.",
+      "correct_option_ru": "Вы можете состоять в браке только с одним партнером одновременно."
     },
     {
       "section": "general",
@@ -3395,7 +4501,11 @@
         "beim Ordnungsamt",
         "beim Gewerbeamt"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 0,
+      "correct_letter": "A",
+      "correct_option_de": "beim Einwohnermeldeamt",
+      "correct_option_ru": "в органе регистрации жильцов"
     },
     {
       "section": "general",
@@ -3408,7 +4518,11 @@
         "Das Besuchsrecht für die Kinder gilt ein Jahr.",
         "Die Ehegatten führen mindestens ein Jahr getrennt ihr eigenes Leben. Danach ist die Scheidung möglich."
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 3,
+      "correct_letter": "D",
+      "correct_option_de": "Die Ehegatten führen mindestens ein Jahr getrennt ihr eigenes Leben. Danach ist die Scheidung möglich.",
+      "correct_option_ru": "Супруги не менее года живут раздельно. После этого возможен развод."
     },
     {
       "section": "general",
@@ -3421,7 +4535,11 @@
         "Jugendamt.",
         "Gesundheitsamt."
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 2,
+      "correct_letter": "C",
+      "correct_option_de": "Jugendamt.",
+      "correct_option_ru": "Управление по делам молодежи."
     },
     {
       "section": "general",
@@ -3434,7 +4552,11 @@
         "eine Genehmigung des Einwohnermeldeamts",
         "eine Gaststättenerlaubnis von der zuständigen Behörde"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 3,
+      "correct_letter": "D",
+      "correct_option_de": "eine Gaststättenerlaubnis von der zuständigen Behörde",
+      "correct_option_ru": "разрешение на ресторан от ответственного органа"
     },
     {
       "section": "general",
@@ -3447,7 +4569,11 @@
         "einer Hauptschule.",
         "einer Privatuniversität."
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 1,
+      "correct_letter": "B",
+      "correct_option_de": "einem Abendgymnasium.",
+      "correct_option_ru": "вечерняя средняя школа."
     },
     {
       "section": "general",
@@ -3460,7 +4586,11 @@
         "Es bezahlt das Kindergeld an die Eltern.",
         "Es kontrolliert, ob das Kind einen Kindergarten besucht."
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 1,
+      "correct_letter": "B",
+      "correct_option_de": "Es kann ein Kind, das geschlagen wird oder hungern muss, aus der Familie nehmen.",
+      "correct_option_ru": "Он может забрать из семьи ребенка, которого избивают или голодают."
     },
     {
       "section": "general",
@@ -3473,7 +4603,11 @@
         "Steuererklärung.",
         "Krankenversicherung."
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 1,
+      "correct_letter": "B",
+      "correct_option_de": "Lehrstellensuche.",
+      "correct_option_ru": "Поиск стажировок."
     },
     {
       "section": "general",
@@ -3486,7 +4620,11 @@
         "Anspruch auf Schulgeld.",
         "Anwesenheitspflicht."
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 3,
+      "correct_letter": "D",
+      "correct_option_de": "Anwesenheitspflicht.",
+      "correct_option_ru": "Обязательное присутствие."
     },
     {
       "section": "general",
@@ -3499,7 +4637,11 @@
         "einer Hauptschule.",
         "einer Privatuniversität."
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 1,
+      "correct_letter": "B",
+      "correct_option_de": "einem Abendgymnasium.",
+      "correct_option_ru": "вечерняя средняя школа."
     },
     {
       "section": "general",
@@ -3512,7 +4654,11 @@
         "Niemand darf gegen Personen klagen, wenn sie benachteiligt wurden.",
         "Es ist für alle Gesetz, benachteiligten Gruppen jährlich Geld zu spenden."
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 0,
+      "correct_letter": "A",
+      "correct_option_de": "Niemand darf z.B. wegen einer Behinderung benachteiligt werden.",
+      "correct_option_ru": "Например, никто не должен оказаться в невыгодном положении из-за инвалидности."
     },
     {
       "section": "general",
@@ -3525,7 +4671,11 @@
         "teilen die Strafe mit ihren Eltern.",
         "werden nicht bestraft."
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 0,
+      "correct_letter": "A",
+      "correct_option_de": "werden bestraft.",
+      "correct_option_ru": "наказаны."
     },
     {
       "section": "general",
@@ -3538,7 +4688,11 @@
         "beim Oktoberfest",
         "an Pfingsten"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 0,
+      "correct_letter": "A",
+      "correct_option_de": "am Rosenmontag",
+      "correct_option_ru": "в розовый понедельник"
     },
     {
       "section": "general",
@@ -3551,7 +4705,11 @@
         "zur Agentur für Arbeit",
         "zum Standesamt"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 3,
+      "correct_letter": "D",
+      "correct_option_de": "zum Standesamt",
+      "correct_option_ru": "в ЗАГС"
     },
     {
       "section": "general",
@@ -3564,7 +4722,11 @@
         "um 0 Uhr, Mitternacht",
         "um 22 Uhr"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 3,
+      "correct_letter": "D",
+      "correct_option_de": "um 22 Uhr",
+      "correct_option_ru": "в 22:00"
     },
     {
       "section": "general",
@@ -3577,7 +4739,11 @@
         "Sie können zur Polizei gehen und die Tochter anzeigen.",
         "Sie suchen einen anderen Mann für die Tochter."
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 0,
+      "correct_letter": "A",
+      "correct_option_de": "Sie müssen die Entscheidung der volljährigen Tochter respektieren.",
+      "correct_option_ru": "Вы должны уважать решение взрослой дочери."
     },
     {
       "section": "general",
@@ -3590,7 +4756,11 @@
         "Sie muss den Führerschein in dem Land machen, in dem man ihre Sprache spricht.",
         "Sie kann die Theorie-Prüfung vielleicht in ihrer Muttersprache machen. Es gibt mehr als zehn Sprachen zur Auswahl."
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 3,
+      "correct_letter": "D",
+      "correct_option_de": "Sie kann die Theorie-Prüfung vielleicht in ihrer Muttersprache machen. Es gibt mehr als zehn Sprachen zur Auswahl.",
+      "correct_option_ru": "Возможно, она сможет сдать теоретический тест на своем родном языке. На выбор доступно более десяти языков."
     },
     {
       "section": "general",
@@ -3603,7 +4773,11 @@
         "einen Kindergartenplatz.",
         "einen Ferienpass."
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 2,
+      "correct_letter": "C",
+      "correct_option_de": "einen Kindergartenplatz.",
+      "correct_option_ru": "место детского сада."
     },
     {
       "section": "general",
@@ -3616,7 +4790,11 @@
         "zur Weiterbildung.",
         "nur für Rentnerinnen und Rentner."
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 2,
+      "correct_letter": "C",
+      "correct_option_de": "zur Weiterbildung.",
+      "correct_option_ru": "для дальнейшего обучения."
     },
     {
       "section": "general",
@@ -3629,7 +4807,11 @@
         "sich mit Masken und Kostümen verkleiden",
         "Kürbisse vor die Tür stellen"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 1,
+      "correct_letter": "B",
+      "correct_option_de": "einen Tannenbaum schmücken",
+      "correct_option_ru": "украсить елку"
     },
     {
       "section": "general",
@@ -3642,7 +4824,11 @@
         "Ein alleinerziehender Vater lebt mit seinen zwei Kindern zusammen.",
         "Ein Mann ist mit zwei Frauen zur selben Zeit verheiratet."
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 3,
+      "correct_letter": "D",
+      "correct_option_de": "Ein Mann ist mit zwei Frauen zur selben Zeit verheiratet.",
+      "correct_option_ru": "Мужчина женат на двух женщинах одновременно."
     },
     {
       "section": "general",
@@ -3655,7 +4841,11 @@
         "zum Einwohnermeldeamt.",
         "zum Jugendamt."
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 3,
+      "correct_letter": "D",
+      "correct_option_de": "zum Jugendamt.",
+      "correct_option_ru": "в отдел по делам молодежи."
     },
     {
       "section": "general",
@@ -3668,7 +4858,11 @@
         "die Schweigepflicht",
         "die Meinungsfreiheit"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 1,
+      "correct_letter": "B",
+      "correct_option_de": "das Briefgeheimnis",
+      "correct_option_ru": "тайна писем"
     },
     {
       "section": "general",
@@ -3681,7 +4875,11 @@
         "die Einwilligung der Kinder",
         "die Unterstützung einer Anwältin/eines Anwalts"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 3,
+      "correct_letter": "D",
+      "correct_option_de": "die Unterstützung einer Anwältin/eines Anwalts",
+      "correct_option_ru": "поддержка адвоката"
     },
     {
       "section": "general",
@@ -3694,7 +4892,11 @@
         "Ich drohe der Person.",
         "Ich kann mich bei der Behördenleiterin/beim Behördenleiter beschweren."
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 3,
+      "correct_letter": "D",
+      "correct_option_de": "Ich kann mich bei der Behördenleiterin/beim Behördenleiter beschweren.",
+      "correct_option_ru": "Могу пожаловаться руководителю органа."
     },
     {
       "section": "general",
@@ -3707,7 +4909,11 @@
         "keine Erfahrungen in diesem Beruf hat.",
         "Mutter ist."
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 3,
+      "correct_letter": "D",
+      "correct_option_de": "Mutter ist.",
+      "correct_option_ru": "мать есть."
     },
     {
       "section": "general",
@@ -3720,7 +4926,11 @@
         "zu hohe Gehaltsvorstellungen hat.",
         "kein Englisch spricht."
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 0,
+      "correct_letter": "A",
+      "correct_option_de": "im Rollstuhl sitzt.",
+      "correct_option_ru": "сидя в инвалидной коляске."
     },
     {
       "section": "general",
@@ -3733,7 +4943,18 @@
         "Regeln, an die sich alle Bewohnerinnen und Bewohner halten müssen.",
         "die Adresse des nächsten Ordnungsamtes."
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 2,
+      "correct_letter": "C",
+      "correct_option_de": "Regeln, an die sich alle Bewohnerinnen und Bewohner halten müssen.",
+      "correct_option_ru": "правила, которые должны соблюдать все жильцы.",
+      "question_ru": "В большинстве многоквартирных домов в Германии есть «правила внутреннего распорядка». Что обычно указано в таком распорядке? В нем перечисляются ...",
+      "options_ru": [
+        "правила пользования общественным транспортом.",
+        "все жильцы дома.",
+        "правила, которые должны соблюдать все жильцы.",
+        "адрес ближайшего ведомства общественного порядка (Ordnungsamt)."
+      ]
     },
     {
       "section": "general",
@@ -3746,7 +4967,11 @@
         "Einspruch einlegen.",
         "warten, bis ein anderer Bescheid kommt."
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 2,
+      "correct_letter": "C",
+      "correct_option_de": "Einspruch einlegen.",
+      "correct_option_ru": "Выдвиньте возражение."
     },
     {
       "section": "general",
@@ -3759,7 +4984,11 @@
         "Versammlungsfreiheit",
         "Freizügigkeit"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 1,
+      "correct_letter": "B",
+      "correct_option_de": "Gleichbehandlung",
+      "correct_option_ru": "Равное обращение"
     },
     {
       "section": "general",
@@ -3772,7 +5001,11 @@
         "Bibliotheksaufsicht",
         "Lehrerin/Lehrer"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 1,
+      "correct_letter": "B",
+      "correct_option_de": "Wahlhelferin/Wahlhelfer",
+      "correct_option_ru": "избирательный работник"
     },
     {
       "section": "general",
@@ -3785,7 +5018,11 @@
         "Ich schicke die Rechnung an die Behörde zurück.",
         "Ich gehe mit der Rechnung zum Finanzamt."
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 1,
+      "correct_letter": "B",
+      "correct_option_de": "Ich lege Widerspruch bei der Behörde ein.",
+      "correct_option_ru": "Я подаю протест властям."
     },
     {
       "section": "general",
@@ -3798,20 +5035,35 @@
         "Kinder lernen in der Schule alles, was im Beruf wichtig ist. Nach der Schule muss man nicht weiter lernen.",
         "Alle müssen früher aufhören zu arbeiten, weil sich alles ändert."
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 1,
+      "correct_letter": "B",
+      "correct_option_de": "Erwachsene müssen auch nach der Ausbildung immer weiter lernen.",
+      "correct_option_ru": "Взрослые должны продолжать учиться и после получения профессии.",
+      "question_ru": "То, что нужно уметь для работы, в будущем будет очень быстро меняться. Что вы можете сделать?",
+      "options_ru": [
+        "Неважно, чему вы учитесь.",
+        "Взрослые должны продолжать учиться и после получения профессии.",
+        "В школе дети изучают все, что важно для профессии. После школы учиться дальше не нужно.",
+        "Все должны раньше прекращать работать, потому что все меняется."
+      ]
     },
     {
       "section": "general",
       "state": null,
       "task_number": 285,
-      "question": "Frau Frost a rbeitet als fest angestellte Mitarbeiterin in einem Büro. Was muss sie nicht von ihrem Gehalt bezahlen?",
+      "question": "Frau Frost arbeitet als fest angestellte Mitarbeiterin in einem Büro. Was muss sie nicht von ihrem Gehalt bezahlen?",
       "options": [
-        "L ohnsteuer",
+        "Lohnsteuer",
         "Beiträge zur Arbeitslosenversicherung",
         "Beiträge zur Renten- und Krankenversicherung",
         "Umsatzsteuer"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 3,
+      "correct_letter": "D",
+      "correct_option_de": "Umsatzsteuer",
+      "correct_option_ru": "Налог с продаж"
     },
     {
       "section": "general",
@@ -3824,7 +5076,11 @@
         "die Betriebsgruppe",
         "das Betriebsmanagement"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 0,
+      "correct_letter": "A",
+      "correct_option_de": "der Betriebsrat",
+      "correct_option_ru": "производственный совет"
     },
     {
       "section": "general",
@@ -3837,7 +5093,11 @@
         "die Kündigungsfrist",
         "die Versicherungspflicht"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 2,
+      "correct_letter": "C",
+      "correct_option_de": "die Kündigungsfrist",
+      "correct_option_ru": "период уведомления"
     },
     {
       "section": "general",
@@ -3850,7 +5110,11 @@
         "aus dem Grundgesetz der Bundesrepublik Deutschland",
         "aus der christlichen Tradition"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 2,
+      "correct_letter": "C",
+      "correct_option_de": "aus dem Grundgesetz der Bundesrepublik Deutschland",
+      "correct_option_ru": "из Основного закона Федеративной Республики Германия"
     },
     {
       "section": "general",
@@ -3863,7 +5127,11 @@
         "er eine dunkle Haut hat.",
         "er keine Erfahrungen im Beruf hat."
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 2,
+      "correct_letter": "C",
+      "correct_option_de": "er eine dunkle Haut hat.",
+      "correct_option_ru": "у него темная кожа."
     },
     {
       "section": "general",
@@ -3876,7 +5144,18 @@
         "das Gerät ungefragt austauschen",
         "die Garantie verlängern"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 1,
+      "correct_letter": "B",
+      "correct_option_de": "den Fernseher reklamieren",
+      "correct_option_ru": "предъявить претензию на телевизор",
+      "question_ru": "Вы купили телевизор в Германии. Дома вы его распаковали, но он не работает. Телевизор неисправен. Что вы можете сделать?",
+      "options_ru": [
+        "подать заявление",
+        "предъявить претензию на телевизор",
+        "самовольно обменять устройство",
+        "продлить гарантию"
+      ]
     },
     {
       "section": "general",
@@ -3889,7 +5168,18 @@
         "man mehr Steuern zahlen muss, wenn man nicht zu einer Kirche gehört.",
         "die Kirche für die Steuererklärung verantwortlich ist."
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 0,
+      "correct_letter": "A",
+      "correct_option_de": "es eine Kirchensteuer gibt, die an die Einkommen- und Lohnsteuer geknüpft ist.",
+      "correct_option_ru": "существует церковный налог, связанный с подоходным налогом и налогом на заработную плату.",
+      "question_ru": "Почему в Германии в налоговой декларации нужно указывать, принадлежите ли вы к церкви или нет? Потому что ...",
+      "options_ru": [
+        "существует церковный налог, связанный с подоходным налогом и налогом на заработную плату.",
+        "это важно для статистики в Германии.",
+        "если вы не принадлежите к церкви, вам приходится платить больше налогов.",
+        "церковь отвечает за налоговую декларацию."
+      ]
     },
     {
       "section": "general",
@@ -3902,7 +5192,11 @@
         "Jeder kann glauben, was er möchte.",
         "Der Staat entscheidet, an welchen Gott die Menschen glauben."
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 2,
+      "correct_letter": "C",
+      "correct_option_de": "Jeder kann glauben, was er möchte.",
+      "correct_option_ru": "Каждый может верить во что хочет."
     },
     {
       "section": "general",
@@ -3915,7 +5209,11 @@
         "Eier bemalen",
         "Raketen in die Luft schießen"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 2,
+      "correct_letter": "C",
+      "correct_option_de": "Eier bemalen",
+      "correct_option_ru": "Роспись яиц"
     },
     {
       "section": "general",
@@ -3928,7 +5226,11 @@
         "internationaler Trauertag.",
         "bayerischer Brauch."
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 0,
+      "correct_letter": "A",
+      "correct_option_de": "christlicher Feiertag.",
+      "correct_option_ru": "Христианский праздник."
     },
     {
       "section": "general",
@@ -3941,7 +5243,11 @@
         "der Buddhismus",
         "der Islam"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 1,
+      "correct_letter": "B",
+      "correct_option_de": "das Christentum",
+      "correct_option_ru": "христианство"
     },
     {
       "section": "general",
@@ -3954,7 +5260,11 @@
         "die Adventszeit.",
         "Allerheiligen."
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 2,
+      "correct_letter": "C",
+      "correct_option_de": "die Adventszeit.",
+      "correct_option_ru": "сезон Адвента."
     },
     {
       "section": "general",
@@ -3967,7 +5277,11 @@
         "Marokko",
         "Türkei"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 3,
+      "correct_letter": "D",
+      "correct_option_de": "Türkei",
+      "correct_option_ru": "Турция"
     },
     {
       "section": "general",
@@ -3980,7 +5294,11 @@
         "Chile, Ungarn, Simbabwe.",
         "Nordkorea, Mexiko, Ägypten."
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 0,
+      "correct_letter": "A",
+      "correct_option_de": "Vietnam, Polen, Mosambik.",
+      "correct_option_ru": "Вьетнам, Польша, Мозамбик."
     },
     {
       "section": "general",
@@ -3993,7 +5311,11 @@
         "Zeitarbeiterinnen/Zeitarbeiter.",
         "Schichtarbeiterinnen/Schichtarbeiter."
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 1,
+      "correct_letter": "B",
+      "correct_option_de": "Gastarbeiterinnen/Gastarbeiter.",
+      "correct_option_ru": "Гастарбайтеры."
     },
     {
       "section": "general",
@@ -4001,12 +5323,16 @@
       "task_number": 300,
       "question": "Aus welchem Land kamen die ersten Gastarbeiterinnen und Gastarbeiter in die Bundesrepublik Deutschland?",
       "options": [
-        "Ita lien",
+        "Italien",
         "Spanien",
         "Portugal",
         "Türkei"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 0,
+      "correct_letter": "A",
+      "correct_option_de": "Italien",
+      "correct_option_ru": "Италия"
     },
     {
       "section": "state",
@@ -4032,7 +5358,11 @@
           "src": "./data/images/questions/berlin_1_question.png",
           "alt": "Четыре варианта герба, пронумерованные от 1 до 4"
         }
-      ]
+      ],
+      "correct_index": 3,
+      "correct_letter": "D",
+      "correct_option_de": "4",
+      "correct_option_ru": "4"
     },
     {
       "section": "state",
@@ -4045,7 +5375,11 @@
         "Pankow",
         "Mecklenburgische Seenplatte"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 2,
+      "correct_letter": "C",
+      "correct_option_de": "Pankow",
+      "correct_option_ru": "Панков"
     },
     {
       "section": "state",
@@ -4058,7 +5392,11 @@
         "5",
         "6"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 2,
+      "correct_letter": "C",
+      "correct_option_de": "5",
+      "correct_option_ru": "5"
     },
     {
       "section": "state",
@@ -4071,7 +5409,11 @@
         "18",
         "20"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 1,
+      "correct_letter": "B",
+      "correct_option_de": "16",
+      "correct_option_ru": "16"
     },
     {
       "section": "state",
@@ -4084,7 +5426,11 @@
         "grün-weiß-rot",
         "schwarz-gold"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 1,
+      "correct_letter": "B",
+      "correct_option_de": "weiß-rot",
+      "correct_option_ru": "бело-красный"
     },
     {
       "section": "state",
@@ -4097,7 +5443,11 @@
         "bei der Verbraucherzentrale",
         "bei der Landeszentrale für politische Bildung"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 3,
+      "correct_letter": "D",
+      "correct_option_de": "bei der Landeszentrale für politische Bildung",
+      "correct_option_ru": "в Государственном центре гражданского образования"
     },
     {
       "section": "state",
@@ -4110,7 +5460,11 @@
         "Brandenburg",
         "Hessen"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 0,
+      "correct_letter": "A",
+      "correct_option_de": "Berlin",
+      "correct_option_ru": "Берлин"
     },
     {
       "section": "state",
@@ -4136,7 +5490,11 @@
         "2",
         "3",
         "4"
-      ]
+      ],
+      "correct_index": 3,
+      "correct_letter": "D",
+      "correct_option_de": "4",
+      "correct_option_ru": "4"
     },
     {
       "section": "state",
@@ -4149,7 +5507,11 @@
         "Präsidentin/Präsident des Senates",
         "Regierende Bürgermeisterin/Regierender Bürgermeister"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 3,
+      "correct_letter": "D",
+      "correct_option_de": "Regierende Bürgermeisterin/Regierender Bürgermeister",
+      "correct_option_ru": "Управляющий мэр"
     },
     {
       "section": "state",
@@ -4162,7 +5524,11 @@
         "Senatorin/Senator für Außenbeziehungen",
         "Justizsenatorin/Justizsenator"
       ],
-      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)"
+      "source": "BAMF Gesamtfragenkatalog (Stand: 07.05.2025)",
+      "correct_index": 2,
+      "correct_letter": "C",
+      "correct_option_de": "Senatorin/Senator für Außenbeziehungen",
+      "correct_option_ru": "Сенатор по международным отношениям"
     }
   ]
 }
