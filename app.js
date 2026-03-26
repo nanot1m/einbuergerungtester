@@ -665,6 +665,29 @@ function shuffled(arr) {
   return out;
 }
 
+function seededValue(str) {
+  let hash = 2166136261;
+  for (let i = 0; i < str.length; i += 1) {
+    hash ^= str.charCodeAt(i);
+    hash = Math.imul(hash, 16777619);
+  }
+  return hash >>> 0;
+}
+
+function optionOrder(card) {
+  const total = Array.isArray(card?.options) ? card.options.length : 0;
+  const indexes = Array.from({ length: total }, (_, idx) => idx);
+  if (total <= 1) return indexes;
+
+  return indexes
+    .map((idx) => ({
+      idx,
+      weight: seededValue(`${cardId(card)}:${idx}`),
+    }))
+    .sort((a, b) => a.weight - b.weight)
+    .map((item) => item.idx);
+}
+
 function startSimulation() {
   const general = state.deck.questions.filter((q) => q.section === 'general');
   const berlin = state.deck.questions.filter((q) => q.section === 'state' && q.state === 'Berlin');
@@ -697,10 +720,11 @@ function renderSimView() {
   simQuestionEl.textContent = q.question;
   renderQuestionImages(simQuestionMediaEl, q);
 
-  simOptionsEl.innerHTML = q.options
-    .map((opt, idx) => {
-      const selected = sim.answers[cardId(q)] === idx ? ' selected' : '';
-      return `<li><button class="quiz-option-btn${selected}" data-sim-option="${idx}" type="button">${renderOptionInner(q, opt, idx)}</button></li>`;
+  simOptionsEl.innerHTML = optionOrder(q)
+    .map((originalIdx) => {
+      const opt = q.options[originalIdx];
+      const selected = sim.answers[cardId(q)] === originalIdx ? ' selected' : '';
+      return `<li><button class="quiz-option-btn${selected}" data-sim-option="${originalIdx}" type="button">${renderOptionInner(q, opt, originalIdx)}</button></li>`;
     })
     .join('');
 
@@ -949,16 +973,17 @@ function updateBackButton() {
 function renderQuizOptions(card, revealCorrect = false) {
   const correctIndex = card.correct_index;
 
-  quizOptionsEl.innerHTML = card.options
-    .map((opt, idx) => {
+  quizOptionsEl.innerHTML = optionOrder(card)
+    .map((originalIdx) => {
+      const opt = card.options[originalIdx];
       const classes = ['quiz-option-btn'];
-      if (state.selectedOptionIndex === idx) classes.push('selected');
-      if (revealCorrect && idx === correctIndex) classes.push('correct');
-      if (revealCorrect && state.selectedOptionIndex === idx && idx !== correctIndex) classes.push('wrong');
+      if (state.selectedOptionIndex === originalIdx) classes.push('selected');
+      if (revealCorrect && originalIdx === correctIndex) classes.push('correct');
+      if (revealCorrect && state.selectedOptionIndex === originalIdx && originalIdx !== correctIndex) classes.push('wrong');
 
       return `<li>
-        <button class="${classes.join(' ')}" data-option-index="${idx}" ${revealCorrect ? 'disabled' : ''}>
-          ${renderOptionInner(card, opt, idx)}
+        <button class="${classes.join(' ')}" data-option-index="${originalIdx}" ${revealCorrect ? 'disabled' : ''}>
+          ${renderOptionInner(card, opt, originalIdx)}
         </button>
       </li>`;
     })
