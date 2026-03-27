@@ -113,7 +113,7 @@
       "correct_letter": "A",
       "correct_index": 0,
       "correct_option_de": "Alle Einwohnerinnen/Einwohner und der Staat müssen sich an die Gesetze halten.",
-      "correct_option_ru": "Все жители и государство должны соблюдать закон."
+      "correct_option_ru": "Все жители и государство должны соблюдать законы."
     },
     {
       "section": "general",
@@ -4006,10 +4006,10 @@
         "действия",
         "висит"
       ],
-      "correct_letter": "A",
-      "correct_index": 0,
-      "correct_option_de": "die Politik Israels öffentlich kritisieren",
-      "correct_option_ru": "публично критиковать политику Израиля"
+      "correct_letter": "D",
+      "correct_index": 3,
+      "correct_option_de": "der öffentliche Aufruf zur Vernichtung Israels",
+      "correct_option_ru": "публичный призыв к уничтожению Израиля"
     },
     {
       "section": "general",
