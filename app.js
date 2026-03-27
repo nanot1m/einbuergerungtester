@@ -1354,14 +1354,7 @@ function checkAnswer() {
   state.answerChecked = true;
   renderQuizOptions(state.currentCard, true);
   state.lastAnswerCorrect = state.selectedOptionIndex === state.currentCard.correct_index;
-  const isCorrect = state.lastAnswerCorrect === true;
-  animateFlip(() => setRevealMode(isCorrect));
-  if (!isCorrect) {
-    window.setTimeout(() => {
-      if (!state.currentCard || !state.answerChecked || state.lastAnswerCorrect !== false) return;
-      applyGrade('hard');
-    }, 520);
-  }
+  animateFlip(() => setRevealMode(true));
 }
 
 async function loadDeck() {
